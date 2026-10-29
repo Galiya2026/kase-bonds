@@ -1,0 +1,9 @@
+{
+  "_comment": "Ключ — префикс тикера. reporting: good / medium / weak. Оценку отчётности вносите вручную по раскрытию на KASE.",
+  "issuers": {
+    "HCBN": { "id": "hcbn", "name": "Home Credit Bank", "sector": "Банк", "reporting": "good", "note": "Отчётность в срок" },
+    "HSBK": { "id": "halyk", "name": "Halyk Bank", "sector": "Банк", "reporting": "good", "note": "Отчётность в срок" },
+    "JSBN": { "id": "otbasy", "name": "Отбасы банк", "sector": "Банк", "reporting": "good", "note": "Отчётность в срок" },
+    "KMGZ": { "id": "kmg", "name": "КазМунайГаз", "sector": "Нефть и газ", "reporting": "good", "note": "Отчётность в срок" }
+  }
+}
