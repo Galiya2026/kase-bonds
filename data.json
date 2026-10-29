@@ -1,0 +1,334 @@
+{
+  "demo": true,
+  "source": "демо-данные",
+  "updatedAt": "2026-10-23T13:30:00Z",
+  "companies": [
+    {
+      "id": "hcbn",
+      "name": "Home Credit Bank",
+      "sector": "Банк",
+      "reporting": "good",
+      "reportingNote": "Отчётность опубликована в срок",
+      "bonds": [
+        {
+          "ticker": "HCBNb30",
+          "isin": "KZ2C00017531",
+          "currency": "KZT",
+          "ytm": 17.7,
+          "price": 100.54,
+          "coupon": 18.0,
+          "couponFreq": "раз в полгода",
+          "maturity": "30.06.2029",
+          "termMonths": 32,
+          "liquidity": {
+            "level": "high",
+            "trades30d": 41,
+            "volume30d": 1250
+          },
+          "bid": {
+            "price": 100.1,
+            "volume": 80
+          },
+          "ask": {
+            "price": 100.54,
+            "volume": 120,
+            "confirmedAt": "2026-10-23T07:58:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb30"
+        },
+        {
+          "ticker": "HCBNb29",
+          "isin": "KZ2C00017523",
+          "currency": "KZT",
+          "ytm": 17.45,
+          "price": 100.82,
+          "coupon": 17.8,
+          "couponFreq": "раз в полгода",
+          "maturity": "28.08.2028",
+          "termMonths": 22,
+          "liquidity": {
+            "level": "high",
+            "trades30d": 33,
+            "volume30d": 980
+          },
+          "bid": {
+            "price": 100.3,
+            "volume": 60
+          },
+          "ask": {
+            "price": 100.82,
+            "volume": 90,
+            "confirmedAt": "2026-10-23T06:20:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb29"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "halyk",
+      "name": "Halyk Bank",
+      "sector": "Банк",
+      "reporting": "good",
+      "reportingNote": "Отчётность опубликована в срок",
+      "bonds": [
+        {
+          "ticker": "HSBKb24",
+          "isin": "KZ2C00020303",
+          "currency": "KZT",
+          "ytm": 15.75,
+          "price": 100.4,
+          "coupon": 15.75,
+          "couponFreq": "раз в полгода",
+          "maturity": "30.09.2030",
+          "termMonths": 47,
+          "liquidity": {
+            "level": "high",
+            "trades30d": 58,
+            "volume30d": 3400
+          },
+          "bid": {
+            "price": 100.2,
+            "volume": 300
+          },
+          "ask": {
+            "price": 100.4,
+            "volume": 400,
+            "confirmedAt": "2026-10-23T04:00:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "otbasy",
+      "name": "Отбасы банк",
+      "sector": "Банк",
+      "reporting": "good",
+      "reportingNote": "Отчётность опубликована в срок",
+      "bonds": [
+        {
+          "ticker": "JSBNb14",
+          "isin": "KZ2C00020162",
+          "currency": "KZT",
+          "ytm": 15.85,
+          "price": 100.1,
+          "coupon": 15.85,
+          "couponFreq": "раз в полгода",
+          "maturity": "14.10.2031",
+          "termMonths": 60,
+          "liquidity": {
+            "level": "medium",
+            "trades30d": 14,
+            "volume30d": 420
+          },
+          "bid": null,
+          "ask": {
+            "price": 100.1,
+            "volume": 150,
+            "confirmedAt": "2026-10-23T03:55:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "kmg",
+      "name": "КазМунайГаз",
+      "sector": "Нефть и газ",
+      "reporting": "good",
+      "reportingNote": "Отчётность опубликована в срок",
+      "bonds": [
+        {
+          "ticker": "KMGZb26",
+          "isin": "",
+          "currency": "KZT",
+          "ytm": 15.2,
+          "price": 102.8,
+          "coupon": 14.5,
+          "couponFreq": "раз в полгода",
+          "maturity": "25.05.2029",
+          "termMonths": 31,
+          "liquidity": {
+            "level": "high",
+            "trades30d": 27,
+            "volume30d": 2100
+          },
+          "bid": {
+            "price": 102.2,
+            "volume": 200
+          },
+          "ask": {
+            "price": 102.8,
+            "volume": 250,
+            "confirmedAt": "2026-10-23T03:30:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "jet",
+      "name": "МФО Jet Finance",
+      "sector": "МФО",
+      "reporting": "good",
+      "reportingNote": "Есть публикации, одна с задержкой",
+      "bonds": [
+        {
+          "ticker": "MFMOb37",
+          "isin": "",
+          "currency": "KZT",
+          "ytm": 23.0,
+          "price": 99.85,
+          "coupon": 23.0,
+          "couponFreq": "раз в квартал",
+          "maturity": "15.03.2028",
+          "termMonths": 17,
+          "liquidity": {
+            "level": "medium",
+            "trades30d": 9,
+            "volume30d": 160
+          },
+          "bid": {
+            "price": 98.5,
+            "volume": 15
+          },
+          "ask": {
+            "price": 99.85,
+            "volume": 30,
+            "confirmedAt": "2026-10-23T06:40:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        },
+        {
+          "ticker": "JETGe2",
+          "isin": "KZQ000000793",
+          "currency": "USD",
+          "ytm": 11.2,
+          "price": 98.4,
+          "coupon": 11.0,
+          "couponFreq": "раз в квартал",
+          "maturity": "12.05.2028",
+          "termMonths": 19,
+          "liquidity": {
+            "level": "low",
+            "trades30d": 2,
+            "volume30d": 0.05
+          },
+          "bid": null,
+          "ask": {
+            "price": 98.4,
+            "volume": 0.05,
+            "confirmedAt": "2026-10-22T09:15:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "rfinance",
+      "name": "МФО R-Finance",
+      "sector": "МФО",
+      "reporting": "medium",
+      "reportingNote": "Отчётность с опозданием",
+      "bonds": [
+        {
+          "ticker": "MFRFb27",
+          "isin": "",
+          "currency": "KZT",
+          "ytm": 22.4,
+          "price": 99.6,
+          "coupon": 22.0,
+          "couponFreq": "раз в квартал",
+          "maturity": "28.08.2027",
+          "termMonths": 10,
+          "liquidity": {
+            "level": "medium",
+            "trades30d": 6,
+            "volume30d": 90
+          },
+          "bid": {
+            "price": 98.0,
+            "volume": 10
+          },
+          "ask": {
+            "price": 99.6,
+            "volume": 20,
+            "confirmedAt": "2026-10-23T08:10:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "demoweak",
+      "name": "Эмитент без заявки (пример)",
+      "sector": "Прочее",
+      "reporting": "weak",
+      "reportingNote": "Отчётность не найдена",
+      "bonds": [
+        {
+          "ticker": "DEMOb1",
+          "isin": "",
+          "currency": "KZT",
+          "ytm": 26.0,
+          "price": 97.0,
+          "coupon": 24.0,
+          "couponFreq": "раз в квартал",
+          "maturity": "01.12.2027",
+          "termMonths": 13,
+          "liquidity": {
+            "level": "low",
+            "trades30d": 1,
+            "volume30d": 5
+          },
+          "bid": null,
+          "ask": null,
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ],
+      "kind": "corp"
+    },
+    {
+      "id": "gov",
+      "kind": "gov",
+      "name": "Минфин РК (пример)",
+      "sector": "Государственные",
+      "reporting": "good",
+      "reportingNote": "",
+      "bonds": [
+        {
+          "ticker": "MUM120_0001",
+          "isin": "",
+          "currency": "KZT",
+          "ytm": 14.1,
+          "price": 100.0,
+          "coupon": 14.0,
+          "couponFreq": "раз в полгода",
+          "maturity": "15.05.2031",
+          "termMonths": 55,
+          "liquidity": {
+            "level": "high",
+            "trades30d": 60,
+            "volume30d": 5000
+          },
+          "bid": {
+            "price": 99.9,
+            "volume": 500
+          },
+          "ask": {
+            "price": 100.0,
+            "volume": 600,
+            "confirmedAt": "2026-10-23T05:00:00Z"
+          },
+          "kaseUrl": "https://kase.kz/ru/bonds/"
+        }
+      ]
+    }
+  ]
+}
