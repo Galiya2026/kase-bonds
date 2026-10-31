@@ -1,122 +1,148 @@
 #!/usr/bin/env python3
-"""Собирает data.json для дашборда из публичных страниц KASE.
+"""Собирает data.json для дашборда из открытого API KASE (список облигаций).
 
-ВАЖНО: адреса и названия колонок KASE (SOURCES, COLUMNS) заданы по общей логике сайта
-и НЕ проверены на живых страницах. Перед первым запуском откройте страницы в браузере
-и поправьте SOURCES/COLUMNS. При любой ошибке старый data.json остаётся нетронутым.
+Запуск:  python scripts/update_data.py            (берёт данные с сайта)
+         python scripts/update_data.py файл.json  (берёт сохранённый ответ API, для проверки)
+Если данные получить не удалось, старый data.json остаётся нетронутым.
 Зависимости: pip install requests beautifulsoup4
 """
-import json, re, sys, datetime as dt
+import json, re, sys, time, datetime as dt
 from pathlib import Path
-import requests
-from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data.json"
-ISSUERS = json.loads((Path(__file__).parent / "issuers.json").read_text(encoding="utf-8"))
-
-SOURCES = {"bonds": "https://kase.kz/ru/bonds/"}           # TODO: проверить адрес списка облигаций
-COLUMNS = {                                                 # заголовок колонки -> поле
-    "код": "ticker", "isin": "isin", "валюта": "currency", "цена": "price",
-    "доходность": "ytm", "купон": "coupon", "погашение": "maturity",
-    "покупка": "bid_price", "объём покупки": "bid_volume",
-    "продажа": "ask_price", "объём продажи": "ask_volume", "время заявки": "ask_time",
-    "сделок за 30 дней": "trades30d", "объём за 30 дней": "volume30d",
-}
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; bonds-dashboard/1.0)"}
+ISSUERS = json.loads((Path(__file__).parent / "issuers.json").read_text(encoding="utf-8"))["issuers"]
+API = ("https://kase.kz/api/instruments/securities?ticker_category=alternative_commercial_bonds,"
+       "alternative_bonds,main_bonds,main_commercial_bonds,private_bonds&category=bond&is_excluded=false&search=")
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; bonds-dashboard/1.0)", "Accept": "application/json",
+           "Referer": "https://kase.kz/ru/markets/corporate-bonds"}
 
 
-def num(s):
-    s = re.sub(r"[^\d,.\-]", "", (s or "").replace("\xa0", "").replace(" ", "")).replace(",", ".")
+def levels(volumes):
+    """Ликвидность по терцилям оборота (в тенге) среди выпусков, по которым были сделки."""
+    vals = sorted(v for v in volumes.values() if v)
+    if not vals:
+        return {k: "low" for k in volumes}
+    hi, mid = vals[int(len(vals) * 2 / 3)], vals[int(len(vals) / 3)]
+    return {k: ("high" if v and v >= hi else "medium" if v and v >= mid else "low") for k, v in volumes.items()}
+
+
+ISSUER_URL = "https://kase.kz/ru/listing/issuers/{code}"
+VALUE = re.compile(r"(-?\d[\d ]*,\d\d)\s*(тыс\.|млн\.?)?\s*([A-Z]{3})")
+
+
+def _row(text, label, n):
+    i = text.find(label)
+    if i < 0:
+        return []
+    out = []
+    for num, unit, _cur in VALUE.findall(text[i + len(label): i + len(label) + 160])[:n]:
+        k = {"тыс.": 1e3, "млн": 1e6, "млн.": 1e6}.get(unit, 1)
+        out.append(float(num.replace(" ", "").replace(",", ".")) * k)
+    return out
+
+
+def parse_reporting(html, today):
+    """Оценка отчётности по странице эмитента: (good / medium / weak / unknown, пояснение)."""
+    from bs4 import BeautifulSoup
+    text = re.sub(r"\s+", " ", BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
+    m = re.search(r"Финансовые показатели((?: \d\d\.\d\d\.\d\d)+)", text)
+    if not m:
+        return "unknown", "нет данных на странице эмитента"
+    dates = m.group(1).split()
+    d, mth, y = (int(x) for x in dates[0].split("."))
+    last = dt.date(2000 + y, mth, d)
+    age = (today - last).days / 30.4
+    assets, liab, profit = (_row(text, lbl, len(dates)) for lbl in
+                            ("Совокупные активы", "Совокупные обязательства", "Чистая прибыль"))
+    if not (assets and liab and profit):
+        return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена"
+    ok_balance, ok_profit = assets[0] > liab[0], profit[0] > 0
+    note = (f"данные на {dates[0]}; активы {'больше' if ok_balance else 'не больше'} обязательств; "
+            f"чистая прибыль {'есть' if ok_profit else 'отсутствует'}")
+    if age > 12 or not ok_balance:
+        return "weak", note
+    if age <= 6 and ok_profit:
+        return "good", note
+    return "medium", note
+
+
+def fetch_reporting(codes, today):
+    import requests
+    res = {}
+    for code in codes:
+        try:
+            r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=30)
+            r.raise_for_status()
+            res[code] = parse_reporting(r.text, today)
+        except Exception as e:
+            res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
+        time.sleep(0.5)
+    return res
+
+
+def ddmmyyyy(iso):
     try:
-        return float(s)
+        return dt.date.fromisoformat((iso or "")[:10]).strftime("%d.%m.%Y")
     except ValueError:
-        return None
+        return ""
 
 
-def ytm(price, coupon, freq, years, face=100.0):
-    """Доходность к погашению (% годовых), метод бисекции. price — % от номинала."""
-    n = max(1, round(years * freq))
-    c = face * coupon / 100 / freq
-    def pv(y):
-        r = y / freq
-        return sum(c / (1 + r) ** k for k in range(1, n + 1)) + face / (1 + r) ** n
-    lo, hi = -0.5, 5.0
-    for _ in range(100):
-        mid = (lo + hi) / 2
-        lo, hi = (mid, hi) if pv(mid) > price else (lo, mid)
-    return round(mid * 100, 2)
-
-
-def term_months(maturity, now):
-    try:
-        d = dt.datetime.strptime(maturity.strip(), "%d.%m.%Y").replace(tzinfo=dt.timezone.utc)
-        return max(0, round((d - now).days / 30.4))
-    except ValueError:
-        return None
-
-
-def liquidity_level(trades, volume_mln, cur):
-    ref = 200 if cur == "KZT" else 0.4
-    if trades >= 20 and volume_mln >= ref: return "high"
-    if trades >= 5: return "medium"
-    return "low"
-
-
-def fetch_rows():
-    html = requests.get(SOURCES["bonds"], headers=HEADERS, timeout=30).text
-    soup = BeautifulSoup(html, "html.parser")
-    table = soup.find("table")
-    if not table:
-        raise RuntimeError("Таблица облигаций не найдена: проверьте SOURCES и вёрстку KASE")
-    heads = [th.get_text(" ", strip=True).lower() for th in table.find_all("th")]
-    idx = {COLUMNS[h]: i for i, h in enumerate(heads) if h in COLUMNS}
-    for need in ("ticker", "currency", "price"):
-        if need not in idx:
-            raise RuntimeError(f"Нет колонки «{need}». Найдены: {heads}")
-    rows = []
-    for tr in table.find_all("tr"):
-        tds = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
-        if len(tds) >= len(heads):
-            rows.append({k: tds[i] for k, i in idx.items()})
-    return rows
-
-
-def build(rows):
-    now = dt.datetime.now(dt.timezone.utc)
+def build(items, reporting=None):
+    reporting = reporting or {}
+    items = [x for x in items if x.get("code") and (x.get("ticker") or {}).get("excl_date") is None]
+    lv = levels({x["code"]: x.get("volkzt") for x in items})
     companies = {}
-    for r in rows:
-        t = r["ticker"]
-        issuer = next((v for p, v in ISSUERS["issuers"].items() if t.startswith(p)), None)
-        if not issuer:          # эмитент не в списке: государственные и неизвестные бумаги пропускаем
-            continue
-        cur = r["currency"].upper()
-        ask_p, bid_p = num(r.get("ask_price")), num(r.get("bid_price"))
-        c = companies.setdefault(issuer["id"], {
-            "id": issuer["id"], "name": issuer["name"], "sector": issuer.get("sector", ""),
-            "reporting": issuer["reporting"], "reportingNote": issuer.get("note", ""), "bonds": []})
+    for x in items:
+        tk = x.get("ticker") or {}
+        code = x.get("org_code") or x["code"]
+        info = ISSUERS.get(code, {})
+        dtm = x.get("dtm")
+        level = lv[x["code"]]
+        if x.get("market_makers") and level == "low":
+            level = "medium"                       # у выпуска есть маркет-мейкер
+        bid, ask = x.get("best_bid"), x.get("best_offer")
+        c = companies.setdefault(code, {
+            "id": code.lower(), "kind": "corp",
+            "name": info.get("name") or x.get("org_short_name_ru") or x.get("org_name_ru") or code,
+            "sector": info.get("sector", ""),
+            "reporting": info.get("reporting") or reporting.get(code, ("unknown", ""))[0],
+            "reportingNote": info.get("note") or reporting.get(code, ("", ""))[1], "bonds": []})
         c["bonds"].append({
-            "ticker": t, "isin": r.get("isin", ""), "currency": cur,
-            "ytm": num(r.get("ytm")), "price": num(r["price"]), "coupon": num(r.get("coupon")),
-            "couponFreq": "раз в полгода", "maturity": r.get("maturity", ""), "termMonths": term_months(r.get("maturity", ""), now),
-            "liquidity": {"level": liquidity_level(num(r.get("trades30d")) or 0, num(r.get("volume30d")) or 0, cur),
-                          "trades30d": num(r.get("trades30d")), "volume30d": num(r.get("volume30d"))},
-            "bid": {"price": bid_p, "volume": num(r.get("bid_volume"))} if bid_p else None,
-            "ask": {"price": ask_p, "volume": num(r.get("ask_volume")),
-                    "confirmedAt": r.get("ask_time") or None} if ask_p else None,
-            "kaseUrl": f"https://kase.kz/ru/investors/bonds/{t}",
+            "ticker": x["code"], "isin": tk.get("nin", ""),
+            "currency": tk.get("currency") or x.get("currency_type") or "KZT",
+            "ytm": x.get("dohod"), "price": x.get("price") or x.get("close_price"),
+            "coupon": tk.get("cupon"), "couponFreq": "", "maturity": ddmmyyyy(tk.get("finish_date")),
+            "termMonths": round(dtm / 30.4) if dtm is not None else None,
+            "liquidity": {"level": level, "trades": x.get("dealcnt"),
+                          "volume": round(x["volkzt"] / 1e6, 3) if x.get("volkzt") else None,
+                          "marketMaker": bool(x.get("market_makers"))},
+            "bid": {"price": bid} if bid else None, "ask": {"price": ask} if ask else None,
+            "asOf": x.get("date0"),
+            "kaseUrl": f"https://kase.kz/ru/investors/bonds/{x['code']}",
         })
-    return {"demo": False, "source": "kase.kz", "updatedAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "companies": list(companies.values())}
+    return {"demo": False, "source": "kase.kz", "updatedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "companies": sorted(companies.values(), key=lambda c: c["name"])}
 
 
 if __name__ == "__main__":
     try:
-        data = build(fetch_rows())
+        if len(sys.argv) > 1:
+            items = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+        else:
+            import requests
+            r = requests.get(API, headers=HEADERS, timeout=40)
+            r.raise_for_status()
+            items = r.json()
+        if not isinstance(items, list) or not items:
+            raise RuntimeError("API вернул пустой или неожиданный ответ")
+        codes = sorted({x.get("org_code") for x in items if x.get("org_code")})
+        reporting = fetch_reporting(codes, dt.date.today()) if len(sys.argv) == 1 else {}
+        data = build(items, reporting)
         if not data["companies"]:
-            raise RuntimeError("Не найдено ни одного выпуска из списка эмитентов")
-    except Exception as e:                      # старый data.json не трогаем
+            raise RuntimeError("Не найдено ни одного выпуска")
+    except Exception as e:
         print("ОШИБКА:", e, file=sys.stderr)
         sys.exit(1)
-    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("Записано выпусков:", sum(len(c["bonds"]) for c in data["companies"]))
+    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("Эмитентов:", len(data["companies"]), "выпусков:", sum(len(c["bonds"]) for c in data["companies"]))
