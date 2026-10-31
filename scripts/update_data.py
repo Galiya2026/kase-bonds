@@ -84,7 +84,7 @@ def fetch_reporting(codes, today):
         except Exception as e:
            res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
         time.sleep(0.7) # чуть больше пауза
-     return res
+      return res
 
 
 def ddmmyyyy(iso):
