@@ -294,31 +294,35 @@ function build() {
 /* ---------- отрисовка ---------- */
 function bar(v) { return `<div class="bar"><i style="width:${clamp(v / 100) * 100}%"></i></div>`; }
 
-function bondHtml(b, cur) {
-  const s = b.s;
-  const ask = b.ask, bid = b.bid;
+function bondHtml(b, s) {
+  const bid = b.bid, ask = b.ask;
+  const mat = b.maturity ? b.maturity : (b.termMonths != null ? b.termMonths + ' мес.' : '—');
   return `<div class="bond">
-    <div class="bond-top"><span class="tkr">${esc(b.ticker)}</span>
-      <span class="num" style="color:var(--accent);font-weight:600">${b.ytm == null ? 'доходность —' : '≈' + fmt(b.ytm) + '%'}</span>
-      <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗</a></div>
-    <div class="kv">
-      <div><div class="k">Цена последней сделки</div><div class="v">${b.price == null ? '—' : fmt(b.price, 2) + '%'}</div></div>
-      <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
-      <div><div class="k">До погашения</div><div class="v">${b.termMonths == null ? '—' : b.termMonths + ' мес.'}</div></div>
-      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' маркет-мейкер' : ''}</div></div>
-      <div><div class="k">Сделок</div><div class="v">${fmt(b.liquidity.trades, 0)}</div></div>
-      <div><div class="k">Оборот, млн</div><div class="v">${fmt(b.liquidity.volume, 3)}</div></div>
-      <div><div class="k">Покупка (bid)</div><div class="v">${bid ? fmt(bid.price, 2) : '—'}</div></div>
-      <div><div class="k">Продажа (ask)</div><div class="v">${ask ? fmt(ask.price, 2) : '—'}</div></div>
-      <div><div class="k">Спред</div><div class="v">${s.spread === null ? '—' : fmt(s.spread) + ' п.п.'}</div></div>
-      <div><div class="k">Данные на</div><div class="v">${b.asOf ? b.asOf.slice(8, 10) + '.' + b.asOf.slice(5, 7) + ' ' + b.asOf.slice(11, 16) : '—'}</div></div>
-      ${b.isin ? `<div><div class="k">ISIN</div><div class="v">${esc(b.isin)}</div></div>` : ''}
+    <div class="bond-top">
+      <span class="tkr">${esc(b.ticker)}</span>
+      <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗️</a>
     </div>
-    <div class="why" aria-label="Из чего сложился балл">
-      <div><div class="k"><span>Отчётность</span><span class="num">${Math.round(s.rep)}</span></div>${bar(s.rep)}</div>
-      <div><div class="k"><span>Ликвидность</span><span class="num">${Math.round(s.liq)}</span></div>${bar(s.liq)}</div>
-      <div><div class="k"><span>Заявки</span><span class="num">${Math.round(s.ord)}</span></div>${bar(s.ord)}</div>
-    </div></div>`;
+    <div class="kv main-kv">
+      <div>
+        <div class="k">Доходность</div>
+        <div class="v big">${b.ytm == null ? '—' : '≈' + fmt(b.ytm) + '%'}</div>
+      </div>
+      <div>
+        <div class="k">Цена</div>
+        <div class="v big">${ask ? fmt(ask.price, 2) + '%' : (b.price != null ? fmt(b.price, 2) + '%' : '—')}</div>
+      </div>
+      <div>
+        <div class="k">Погашение</div>
+        <div class="v big">${esc(mat)}</div>
+      </div>
+    </div>
+    <div class="kv">
+      <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
+      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity?.level || 'low')}">${LIQ_LABEL[b.liquidity?.level] || '—'}</span></div></div>
+      <div><div class="k">Покупка / Продажа</div><div class="v">${bid ? fmt(bid.price, 2) : '—'} / ${ask ? fmt(ask.price, 2) : '—'}</div></div>
+    </div>
+  </div>`;
+};
 }
 
 function coHtml(row, i, cur) {
