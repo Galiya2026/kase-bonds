@@ -139,6 +139,19 @@ footer { color: var(--fg-2); font-size: 12px; }
   .why { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s; } }
+.main-kv {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10px 0 6px;
+  gap: 12px;
+}
+.main-kv .big {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.main-kv .k {
+  margin-bottom: 2px;
+}
 </style>
 
 <div class="wrap">
