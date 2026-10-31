@@ -11,11 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
+        with:
+          python-version: "3.12"
       - run: pip install requests beautifulsoup4
       - run: python scripts/update_data.py
       - name: Коммит data.json
         run: |
-          git config user.name "kase-bot"; git config user.email "kase-bot@users.noreply.github.com"
+          git config user.name "kase-bot"
+          git config user.email "kase-bot@users.noreply.github.com"
           git add data.json
           git diff --cached --quiet || (git commit -m "Обновление данных KASE" && git push)
+
