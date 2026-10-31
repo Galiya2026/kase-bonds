@@ -82,7 +82,7 @@ def fetch_reporting(codes, today):
             r.raise_for_status()
             res[code] = parse_reporting(r.text, today)
         except Exception as e:
-           res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e)._name_})")
+           res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
         time.sleep(0.7)
     return res
 
