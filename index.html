@@ -297,11 +297,13 @@ function bar(v) { return `<div class="bar"><i style="width:${clamp(v / 100) * 10
 function bondHtml(b, s) {
   const bid = b.bid, ask = b.ask;
   const mat = b.maturity ? b.maturity : (b.termMonths != null ? b.termMonths + ' мес.' : '—');
+  
   return `<div class="bond">
     <div class="bond-top">
       <span class="tkr">${esc(b.ticker)}</span>
       <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗️</a>
     </div>
+    
     <div class="kv main-kv">
       <div>
         <div class="k">Доходность</div>
@@ -316,10 +318,20 @@ function bondHtml(b, s) {
         <div class="v big">${esc(mat)}</div>
       </div>
     </div>
+    
     <div class="kv">
-      <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
-      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity?.level || 'low')}">${LIQ_LABEL[b.liquidity?.level] || '—'}</span></div></div>
-      <div><div class="k">Покупка / Продажа</div><div class="v">${bid ? fmt(bid.price, 2) : '—'} / ${ask ? fmt(ask.price, 2) : '—'}</div></div>
+      <div>
+        <div class="k">Купон</div>
+        <div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div>
+      </div>
+      <div>
+        <div class="k">Ликвидность</div>
+        <div class="v"><span class="pill ${esc(b.liquidity?.level || 'low')}">${LIQ_LABEL[b.liquidity?.level] || '—'}</span></div>
+      </div>
+      <div>
+        <div class="k">Покупка / Продажа</div>
+        <div class="v">${bid ? fmt(bid.price, 2) : '—'} / ${ask ? fmt(ask.price, 2) : '—'}</div>
+      </div>
     </div>
   </div>`;
 };
