@@ -72,19 +72,19 @@ def fetch_reporting(codes, today):
     res = {}
     total = len(codes)
     for i, code in enumerate(codes, 1):
-        print(f"[{i}/{total}] {code}", flush=True) # чтобы сразу было видно в логах
+        print(f"[{i}/{total}] {code}", flush=True)
         try:
-           r = requests.get(
-               ISSUER_URL.format(code=code),
-               headers=HEADERS,
-               timeout=12 # было 30
-           )
-           r.raise_for_status()
-           res[code] = parse_reporting(r.text, today)
-       except Exception as e:
-           res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
-       time.sleep(0.7) # чуть больше пауза
-   return res
+            r = requests.get(
+                ISSUER_URL.format(code=code),
+                headers=HEADERS,
+                timeout=12
+            )
+            r.raise_for_status()
+            res[code] = parse_reporting(r.text, today)
+        except Exception as e:
+            res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e)._name_})")
+        time.sleep(0.7)
+    return res
 
 
 def ddmmyyyy(iso):
