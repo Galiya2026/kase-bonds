@@ -6,7 +6,7 @@
 Если данные получить не удалось, старый data.json остаётся нетронутым.
 Зависимости: pip install requests beautifulsoup4
 """
-import json, re, sys, time, datetime as dt
+import json, re, sys, time, signal, datetime as dt
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,17 +67,24 @@ def parse_reporting(html, today):
     return "medium", note
 
 
-def fetch_reporting(codes, today):
+def fetch_reporting(codes, today, budget=180):
+    """Скачивает страницы эмитентов. Не дольше budget секунд; если сайт не отвечает подряд 3 раза, останавливается."""
     import requests
-    res = {}
-    for code in codes:
+    res, fails, t0 = {}, 0, time.time()
+    for n, code in enumerate(codes, 1):
+        if time.time() - t0 > budget or fails >= 3:
+            res[code] = ("unknown", "страница эмитента не загружена вовремя")
+            continue
         try:
-            r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=30)
+            r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=(8, 15))
             r.raise_for_status()
             res[code] = parse_reporting(r.text, today)
+            fails = 0
         except Exception as e:
+            fails += 1
             res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
-        time.sleep(0.5)
+        print(f"отчётность {n}/{len(codes)} {code}: {res[code][0]}", flush=True)
+        time.sleep(0.3)
     return res
 
 
@@ -155,24 +162,44 @@ def build(items, reporting=None):
             "companies": sorted(companies.values(), key=lambda c: c["name"])}
 
 
+def need_codes(items):
+    """Эмитенты, у которых есть выпуск с живым продавцом в нужном ценовом окне: только их отчётность и нужна."""
+    newest = max(dt.date.fromisoformat(x["date0"][:10]) for x in items if x.get("date0"))
+    codes = set()
+    for x in items:
+        info = ISSUERS.get(x.get("org_code"), {})
+        o = x.get("best_offer")
+        if x.get("org_code") and info.get("kind") != "gov" and seller_live(x, newest) and 95 <= o <= 103 and (x.get("dtm") or 0) >= 182:
+            codes.add(x["org_code"])
+    return sorted(codes)
+
+
 if __name__ == "__main__":
+    if hasattr(signal, "SIGALRM"):                   # страховка: не висеть дольше 8 минут
+        def _timeout(*_):
+            raise TimeoutError("превышено общее время работы (8 минут)")
+        signal.signal(signal.SIGALRM, _timeout)
+        signal.alarm(480)
     try:
         if len(sys.argv) > 1:
             items = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
         else:
             import requests
-            r = requests.get(API, headers=HEADERS, timeout=40)
+            print("Загружаю список облигаций с kase.kz…", flush=True)
+            r = requests.get(API, headers=HEADERS, timeout=(8, 30))
             r.raise_for_status()
             items = r.json()
+        print("Получено выпусков:", len(items) if isinstance(items, list) else "?", flush=True)
         if not isinstance(items, list) or not items:
             raise RuntimeError("API вернул пустой или неожиданный ответ")
-        codes = sorted({x.get("org_code") for x in items if x.get("org_code")})
+        codes = need_codes(items)
+        print("Эмитентов для проверки отчётности:", len(codes), flush=True)
         reporting = fetch_reporting(codes, dt.date.today()) if len(sys.argv) == 1 else {}
         data = build(items, reporting)
         if not data["companies"]:
             raise RuntimeError("Не найдено ни одного выпуска")
     except Exception as e:
-        print("ОШИБКА:", e, file=sys.stderr)
+        print("ОШИБКА:", type(e).__name__, e, file=sys.stderr)
         sys.exit(1)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Эмитентов:", len(data["companies"]), "выпусков:", sum(len(c["bonds"]) for c in data["companies"]))
