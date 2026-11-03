@@ -1,7 +1,7 @@
 name: Обновление данных KASE
 on:
   schedule:
-    - cron: "*/30 4-11 * * 1-5"
+    - cron: "0 7 * * 2"
   workflow_dispatch: {}
 permissions:
   contents: write
