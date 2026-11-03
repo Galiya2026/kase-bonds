@@ -70,21 +70,41 @@ def parse_reporting(html, today):
 def fetch_reporting(codes, today):
     import requests
     res = {}
-    total = len(codes)
-    for i, code in enumerate(codes, 1):
-        print(f"[{i}/{total}] {code}", flush=True)
+    for code in codes:
         try:
-            r = requests.get(
-                ISSUER_URL.format(code=code),
-                headers=HEADERS,
-                timeout=12
-            )
+            r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=30)
             r.raise_for_status()
             res[code] = parse_reporting(r.text, today)
         except Exception as e:
-           res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
-        time.sleep(0.7)
+            res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
+        time.sleep(0.5)
     return res
+
+
+def seller_live(x, newest):
+    """Есть ли настоящая заявка продавца. Если живых заявок нет, KASE подставляет цену последней сделки
+    (цена покупки = цена продажи = цена сделки), а дата обновления остаётся старой."""
+    ask, bid, last = x.get("best_offer"), x.get("best_bid"), x.get("price")
+    if not ask:
+        return False
+    if bid == ask == last:
+        return False
+    d = (x.get("date0") or "")[:10]
+    try:
+        return (newest - dt.date.fromisoformat(d)).days <= 3
+    except ValueError:
+        return False
+
+
+def calc_yield(coupon, price, dtm, kase):
+    """Простая доходность к погашению по цене продажи, % годовых. Для индексируемых бумаг
+    (купон сильно расходится с доходностью KASE) берём доходность KASE."""
+    if not coupon or not price or not dtm or dtm <= 0:
+        return kase
+    y = (coupon + (100 - price) / (dtm / 365)) / ((100 + price) / 2) * 100
+    if kase is not None and abs(y - kase) > 4:
+        return kase
+    return round(y, 2)
 
 
 def ddmmyyyy(iso):
@@ -98,6 +118,7 @@ def build(items, reporting=None):
     reporting = reporting or {}
     items = [x for x in items if x.get("code") and (x.get("ticker") or {}).get("excl_date") is None]
     lv = levels({x["code"]: x.get("volkzt") for x in items})
+    newest = max(dt.date.fromisoformat(x["date0"][:10]) for x in items if x.get("date0"))
     companies = {}
     for x in items:
         tk = x.get("ticker") or {}
@@ -107,9 +128,11 @@ def build(items, reporting=None):
         level = lv[x["code"]]
         if x.get("market_makers") and level == "low":
             level = "medium"                       # у выпуска есть маркет-мейкер
-        bid, ask = x.get("best_bid"), x.get("best_offer")
+        live = seller_live(x, newest)
+        bid = x.get("best_bid") if live else None
+        ask = x.get("best_offer") if live else None
         c = companies.setdefault(code, {
-            "id": code.lower(), "kind": "corp",
+            "id": code.lower(), "kind": info.get("kind", "corp"),
             "name": info.get("name") or x.get("org_short_name_ru") or x.get("org_name_ru") or code,
             "sector": info.get("sector", ""),
             "reporting": info.get("reporting") or reporting.get(code, ("unknown", ""))[0],
@@ -117,7 +140,8 @@ def build(items, reporting=None):
         c["bonds"].append({
             "ticker": x["code"], "isin": tk.get("nin", ""),
             "currency": tk.get("currency") or x.get("currency_type") or "KZT",
-            "ytm": x.get("dohod"), "price": x.get("price") or x.get("close_price"),
+            "ytm": calc_yield(tk.get("cupon"), ask, dtm, x.get("dohod")) if ask else x.get("dohod"),
+            "ytmKase": x.get("dohod"), "price": x.get("price") or x.get("close_price"),
             "coupon": tk.get("cupon"), "couponFreq": "", "maturity": ddmmyyyy(tk.get("finish_date")),
             "termMonths": round(dtm / 30.4) if dtm is not None else None,
             "liquidity": {"level": level, "trades": x.get("dealcnt"),
