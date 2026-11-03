@@ -139,19 +139,11 @@ footer { color: var(--fg-2); font-size: 12px; }
   .why { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s; } }
-.main-kv {
-  grid-template-columns: repeat(3, 1fr);
-  margin: 10px 0 6px;
-  gap: 12px;
-}
-.main-kv .big {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--fg);
-}
-.main-kv .k {
-  margin-bottom: 2px;
-}
+.curtag { font-size: 11px; padding: 1px 6px; border-radius: 999px; background: var(--surface-2, rgba(0,0,0,.06)); color: var(--fg-2); }
+.lownote { font-size: 12px; color: var(--fg-2); }
+.lower { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 14px 12px; }
+.lower > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 0; }
+.lower .list { margin-top: 8px; }
 </style>
 
 <div class="wrap">
@@ -200,14 +192,14 @@ footer { color: var(--fg-2); font-size: 12px; }
         <button type="button" class="chip" data-f="corp" aria-pressed="true">Только корпоративные</button>
         <button type="button" class="chip" data-f="kzt" aria-pressed="true">KZT от 17%</button>
         <button type="button" class="chip" data-f="usd" aria-pressed="true">USD от 5%</button>
-        <button type="button" class="chip" data-f="price" aria-pressed="true">Цена продажи 98–102%</button>
+        <button type="button" class="chip" data-f="price" aria-pressed="true">Цена продажи 95–103%</button>
         <button type="button" class="chip" data-f="term6" aria-pressed="true">Срок от 6 месяцев</button>
         <button type="button" class="chip" data-f="avail" aria-pressed="true">Есть актуальный продавец</button>
       </div>
     </div>
     <details class="weights">
       <summary>Как выстроен порядок</summary>
-      <p class="hint">Компании и выпуски идут от более к менее приоритетному: сначала отчётность эмитента (хорошая, средняя, нет оценки, плохая), затем ликвидность выпуска (высокая, средняя, слабая), затем объём: оборот за день служит заменой объёма заявки продавца, которого KASE в открытых данных не отдаёт. При равенстве выше выпуск с большей доходностью. Балл от 0 до 100 на карточке для сравнения: отчётность 50%, ликвидность 30%, заявки 20%. Фильтр цены смотрит на лучшую котировку на продажу. KZT и USD ранжируются отдельно.</p>
+      <p class="hint">Компании и выпуски идут от более к менее приоритетному: сначала отчётность эмитента (хорошая, средняя, нет оценки, плохая), затем ликвидность выпуска (высокая, средняя, слабая), затем объём: оборот за день служит заменой объёма заявки продавца, которого KASE в открытых данных не отдаёт. При равенстве выше выпуск с большей доходностью. Балл от 0 до 100 на карточке для сравнения: отчётность 50%, ликвидность 30%, заявки 20%. Фильтр цены смотрит на лучшую котировку на продажу. Компании делятся на два блока: выше те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней, ниже все остальные. Выпуски в тенге и долларах показаны внутри одной компании.</p>
     </details>
   </section>
 
@@ -225,7 +217,7 @@ const CFG = {
   LIQ: { high: 100, medium: 60, low: 25 },
   W: { rep: 50, liq: 30, ord: 20 },        // веса балла на карточке
   KZT_MIN: 17, USD_MIN: 5, TERM_MIN: 6,    // пороги доходности и срока
-  PRICE_MIN: 98, PRICE_MAX: 102            // цена продажи, % от номинала
+  PRICE_MIN: 95, PRICE_MAX: 103            // цена продажи, % от номинала
 };
 const REP_RANK = { good: 3, medium: 2, unknown: 1, weak: 0 };
 const LIQ_RANK = { high: 3, medium: 2, low: 1 };
@@ -307,62 +299,49 @@ function build() {
 /* ---------- отрисовка ---------- */
 function bar(v) { return `<div class="bar"><i style="width:${clamp(v / 100) * 100}%"></i></div>`; }
 
-function bondHtml(b, s) {
-  const bid = b.bid, ask = b.ask;
-  const mat = b.maturity ? b.maturity : (b.termMonths != null ? b.termMonths + ' мес.' : '—');
-  
+function bondHtml(b, c) {
+  const s = b.s;
+  const lowWhy = !(c.reporting === 'good' && (b.liquidity.level === 'high' || b.liquidity.level === 'medium')) ? (c.reporting !== 'good' ? 'из-за отчётности' : 'из-за слабой ликвидности') : '';
+  const ask = b.ask, bid = b.bid;
   return `<div class="bond">
-    <div class="bond-top">
-      <span class="tkr">${esc(b.ticker)}</span>
-      <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗️</a>
-    </div>
-    
-    <div class="kv main-kv">
-      <div>
-        <div class="k">Доходность</div>
-        <div class="v big">${b.ytm == null ? '—' : '≈' + fmt(b.ytm) + '%'}</div>
-      </div>
-      <div>
-        <div class="k">Цена</div>
-        <div class="v big">${ask ? fmt(ask.price, 2) + '%' : (b.price != null ? fmt(b.price, 2) + '%' : '—')}</div>
-      </div>
-      <div>
-        <div class="k">Погашение</div>
-        <div class="v big">${esc(mat)}</div>
-      </div>
-    </div>
-    
+    <div class="bond-top"><span class="tkr">${esc(b.ticker)}</span><span class="curtag">${b.currency === 'USD' ? '$ USD' : '₸ KZT'}</span>${lowWhy ? `<span class="lownote">Ниже по приоритету: ${lowWhy}.</span>` : ''}
+      <span class="num" style="color:var(--accent);font-weight:600">${b.ytm == null ? 'доходность —' : '≈' + fmt(b.ytm) + '%'}</span>
+      <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗</a></div>
     <div class="kv">
-      <div>
-        <div class="k">Купон</div>
-        <div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div>
-      </div>
-      <div>
-        <div class="k">Ликвидность</div>
-        <div class="v"><span class="pill ${esc(b.liquidity?.level || 'low')}">${LIQ_LABEL[b.liquidity?.level] || '—'}</span></div>
-      </div>
-      <div>
-        <div class="k">Покупка / Продажа</div>
-        <div class="v">${bid ? fmt(bid.price, 2) : '—'} / ${ask ? fmt(ask.price, 2) : '—'}</div>
-      </div>
+      <div><div class="k">Цена последней сделки</div><div class="v">${b.price == null ? '—' : fmt(b.price, 2) + '%'}</div></div>
+      <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
+      <div><div class="k">До погашения</div><div class="v">${b.termMonths == null ? '—' : b.termMonths + ' мес.'}</div></div>
+      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' маркет-мейкер' : ''}</div></div>
+      <div><div class="k">Сделок</div><div class="v">${fmt(b.liquidity.trades, 0)}</div></div>
+      <div><div class="k">Оборот, млн</div><div class="v">${fmt(b.liquidity.volume, 3)}</div></div>
+      <div><div class="k">Покупка (bid)</div><div class="v">${bid ? fmt(bid.price, 2) : '—'}</div></div>
+      <div><div class="k">Продажа (ask)</div><div class="v">${ask ? fmt(ask.price, 2) : '—'}</div></div>
+      <div><div class="k">Спред</div><div class="v">${s.spread === null ? '—' : fmt(s.spread) + ' п.п.'}</div></div>
+      <div><div class="k">Данные на</div><div class="v">${b.asOf ? b.asOf.slice(8, 10) + '.' + b.asOf.slice(5, 7) + ' ' + b.asOf.slice(11, 16) : '—'}</div></div>
+      ${b.isin ? `<div><div class="k">ISIN</div><div class="v">${esc(b.isin)}</div></div>` : ''}
     </div>
-  </div>`;
+    <div class="why" aria-label="Из чего сложился балл">
+      <div><div class="k"><span>Отчётность</span><span class="num">${Math.round(s.rep)}</span></div>${bar(s.rep)}</div>
+      <div><div class="k"><span>Ликвидность</span><span class="num">${Math.round(s.liq)}</span></div>${bar(s.liq)}</div>
+      <div><div class="k"><span>Заявки</span><span class="num">${Math.round(s.ord)}</span></div>${bar(s.ord)}</div>
+    </div></div>`;
 }
 
-function coHtml(row, i, cur) {
-  const { c, bonds, best } = row, key = c.id + cur, isOpen = open.has(key);
+function coHtml(row, i) {
+  const { c, bonds, best } = row, key = c.id, isOpen = open.has(key);
+  const curLabel = ['KZT', 'USD'].filter(k => bonds.some(b => b.currency === k)).map(k => k === 'KZT' ? '₸ KZT' : '$ USD').join(' · ');
   const n = bonds.length;
   return `<article class="co">
     <button class="co-head" type="button" data-key="${esc(key)}" aria-expanded="${isOpen}">
       <span class="rank">${i + 1}</span>
       <span style="min-width:0"><span class="co-name">${esc(c.name)}</span>
         <span class="co-meta"><span class="pill ${esc(c.reporting)}" title="${esc(c.reportingNote)}">Отчётность: ${REP_LABEL[c.reporting] || '—'}</span>
-        <span>${esc(c.sector || '')} · ${n} ${plural(n, 'выпуск', 'выпуска', 'выпусков')} · ${cur === 'KZT' ? '₸ KZT' : '$ USD'}</span></span></span>
+        <span>${esc(c.sector || '')} · ${n} ${plural(n, 'выпуск', 'выпуска', 'выпусков')} · ${curLabel}</span></span></span>
       <span class="co-right"><span class="score">${Math.round(best.s.total)}</span>
         <span class="ytm"> ${esc(best.ticker)}${best.ytm == null ? '' : ' · ≈' + fmt(best.ytm) + '%'}</span>
         <span class="bars">${bar(best.s.rep)}${bar(best.s.liq)}${bar(best.s.ord)}</span></span>
     </button>
-    ${isOpen ? `<div class="co-body">${bonds.map(b => bondHtml(b, cur)).join('')}</div>` : ''}
+    ${isOpen ? `<div class="co-body">${bonds.map(b => bondHtml(b, c)).join('')}</div>` : ''}
   </article>`;
 }
 
@@ -370,24 +349,34 @@ function render() {
   if (!DATA) return;
   const { out, excluded, pool } = build();
   const curs = state.cur === 'all' ? ['KZT', 'USD'] : [state.cur];
-  let html = '', shownIssues = 0, shownCo = 0, topY = [];
-  for (const cur of curs) {
-    const rows = out[cur] || [];
-    if (!rows.length) continue;
-    const bn = rows.reduce((a, r) => a + r.bonds.length, 0);
-    shownIssues += bn; shownCo += rows.length;
-    rows.forEach(r => r.bonds.forEach(b => { if (b.ytm != null) topY.push(b.ytm); }));
-    html += `<h2>${cur === 'KZT' ? 'Тенге' : 'Доллары'} <span class="cnt">${rows.length} ${plural(rows.length, 'компания', 'компании', 'компаний')} · ${bn} ${plural(bn, 'выпуск', 'выпуска', 'выпусков')}</span></h2>
-      <div class="list">${rows.map((r, i) => coHtml(r, i, cur)).join('')}</div>`;
+  // одна компания = одна строка, выпуски в разных валютах внутри неё
+  const byCo = new Map();
+  for (const cur of curs) for (const r of (out[cur] || [])) {
+    const m = byCo.get(r.c.id) || { c: r.c, bonds: [] };
+    m.bonds.push(...r.bonds); byCo.set(r.c.id, m);
   }
+  const rows = [...byCo.values()].map(m => { m.bonds.sort(bondCmp); m.best = m.bonds[0]; return m; });
+  const okBond = (c, b) => c.reporting === 'good' && (b.liquidity.level === 'high' || b.liquidity.level === 'medium');
+  const upper = rows.filter(r => r.bonds.some(b => okBond(r.c, b))).sort(coCmp);
+  const lower = rows.filter(r => !r.bonds.some(b => okBond(r.c, b))).sort(coCmp);
+  const cnt = list => list.reduce((a, r) => a + r.bonds.length, 0);
+  const cLabel = n => `${n} ${plural(n, 'компания', 'компании', 'компаний')}`, iLabel = n => `${n} ${plural(n, 'выпуск', 'выпуска', 'выпусков')}`;
+  const shownCo = rows.length, shownIssues = cnt(rows), topY = [];
+  rows.forEach(r => r.bonds.forEach(b => { if (b.ytm != null) topY.push(b.ytm); }));
+  let html = '';
+  if (upper.length) html += `<div class="listhead"><div><h3>Компании выше по приоритету</h3><p>Нажмите на компанию, чтобы сравнить её выпуски</p></div>
+    <div class="hint num" style="margin:0">${cLabel(upper.length)} · ${iLabel(cnt(upper))}</div></div>
+    <div class="list">${upper.map((r, i) => coHtml(r, i)).join('')}</div>`;
+  if (lower.length) html += `<details class="lower"><summary><span><b>Компании ниже по приоритету</b><br><span class="hint">Здесь нет выпуска с хорошей отчётностью и достаточной ликвидностью</span></span>
+    <span class="hint num">${cLabel(lower.length)} · ${iLabel(cnt(lower))}</span></summary>
+    <div class="list">${lower.map((r, i) => coHtml(r, i)).join('')}</div></details>`;
   if (!html) html = '<div class="empty">Нет выпусков под выбранные критерии. Попробуйте выбрать «Все» в отчётности и ликвидности или отключить часть критериев.</div>';
   const exFiltered = excluded.filter(e => curs.includes(e.b.currency));
   if (exFiltered.length) html += `<p class="excluded">Не вошли в список (${exFiltered.length}): ${exFiltered.map(e => `${esc(e.b.ticker)} — ${esc(e.reason)}`).join('; ')}.</p>`;
   $('out').innerHTML = html;
   $('heading').innerHTML = `<div><h2 style="margin:0">Облигации · ${shownIssues}</h2>
     <p class="hint" style="margin:2px 0 0">Расчётная доходность · ${shownIssues} ${plural(shownIssues, 'выпуск', 'выпуска', 'выпусков')}<br>Цена и доступность указаны у каждого выпуска</p></div>
-    <div class="listhead"><div><h3>Компании выше по приоритету</h3><p>Нажмите на компанию, чтобы сравнить её выпуски</p></div>
-    <div class="hint num" style="margin:0">${shownCo} ${plural(shownCo, 'компания', 'компании', 'компаний')} · ${shownIssues} ${plural(shownIssues, 'выпуск', 'выпуска', 'выпусков')}</div></div>`;
+    `;
 
   const avg = topY.length ? fmt(topY.reduce((a, b) => a + b, 0) / topY.length, 1) + '%' : '—';
   $('summary').innerHTML = `
