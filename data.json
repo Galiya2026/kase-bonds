@@ -1,7 +1,7 @@
 {
  "demo": false,
  "source": "kase.kz",
- "updatedAt": "2026-11-03T06:12:19Z",
+ "updatedAt": "2026-11-03T07:25:14Z",
  "companies": [
   {
    "id": "snsi",
@@ -242,31 +242,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TTLSb2"
     },
     {
-     "ticker": "TTLSb3",
-     "isin": "KZ2P00019102",
-     "currency": "KZT",
-     "ytm": 19.57,
-     "price": 100.9,
-     "coupon": 20.0,
-     "couponFreq": "",
-     "maturity": "13.08.2029",
-     "termMonths": 33,
-     "liquidity": {
-      "level": "medium",
-      "trades": 2,
-      "volume": 0.299,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.9
-     },
-     "ask": {
-      "price": 100.9
-     },
-     "asOf": "2026-11-02T17:02:10",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/TTLSb3"
-    },
-    {
      "ticker": "TTLSb4",
      "isin": "KZ2P00020480",
      "currency": "USD",
@@ -307,6 +282,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TTLSb8"
+    },
+    {
+     "ticker": "TTLSb3",
+     "isin": "KZ2P00019102",
+     "currency": "KZT",
+     "ytm": 19.52,
+     "price": 101.0,
+     "coupon": 20.0,
+     "couponFreq": "",
+     "maturity": "13.08.2029",
+     "termMonths": 33,
+     "liquidity": {
+      "level": "low",
+      "trades": 4,
+      "volume": 0.011,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.0
+     },
+     "ask": {
+      "price": 100.9
+     },
+     "asOf": "2026-11-03T11:47:57",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/TTLSb3"
     },
     {
      "ticker": "TTLSb6",
@@ -364,25 +364,25 @@
      "ticker": "MFSTb1",
      "isin": "KZ2P00016561",
      "currency": "KZT",
-     "ytm": 20.95,
-     "price": 101.0,
+     "ytm": 21.27,
+     "price": 101.8899,
      "coupon": 24.5,
      "couponFreq": "",
      "maturity": "18.02.2027",
      "termMonths": 3,
      "liquidity": {
-      "level": "low",
-      "trades": 28,
-      "volume": 0.01,
+      "level": "medium",
+      "trades": 5,
+      "volume": 0.098,
       "marketMaker": false
      },
      "bid": {
-      "price": 101.9691
+      "price": 101.9
      },
      "ask": {
-      "price": 101.0
+      "price": 100.9
      },
-     "asOf": "2026-11-02T17:02:08",
+     "asOf": "2026-11-03T11:53:14",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSTb1"
     },
     {
@@ -765,31 +765,6 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "TSBNb33",
-     "isin": "KZ2C00004430",
-     "currency": "KZT",
-     "ytm": 17.23,
-     "price": 30.0,
-     "coupon": 0.1,
-     "couponFreq": "",
-     "maturity": "15.01.2034",
-     "termMonths": 85,
-     "liquidity": {
-      "level": "medium",
-      "trades": 2,
-      "volume": 0.006,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 30.0
-     },
-     "ask": {
-      "price": 30.0
-     },
-     "asOf": "2026-10-27T17:01:26",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/TSBNb33"
-    },
-    {
      "ticker": "TSBNb7",
      "isin": "KZ000A0T9AL7",
      "currency": "KZT",
@@ -855,6 +830,31 @@
      "ask": null,
      "asOf": "2019-02-05T18:08:10",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TSBNb30"
+    },
+    {
+     "ticker": "TSBNb33",
+     "isin": "KZ2C00004430",
+     "currency": "KZT",
+     "ytm": 17.27,
+     "price": 30.0,
+     "coupon": 0.1,
+     "couponFreq": "",
+     "maturity": "15.01.2034",
+     "termMonths": 85,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.001,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 30.0
+     },
+     "ask": {
+      "price": 30.0
+     },
+     "asOf": "2026-11-03T11:32:10",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/TSBNb33"
     },
     {
      "ticker": "TSBNpp1",
@@ -1138,31 +1138,6 @@
    "reportingNote": "данные на 01.10.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "FPSTb14",
-     "isin": "KZ2P00020019",
-     "currency": "KZT",
-     "ytm": 20.0,
-     "price": 99.97,
-     "coupon": 20.0,
-     "couponFreq": "",
-     "maturity": "22.09.2027",
-     "termMonths": 10,
-     "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 2.501,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.97
-     },
-     "ask": {
-      "price": 99.97
-     },
-     "asOf": "2026-10-30T17:01:16",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/FPSTb14"
-    },
-    {
      "ticker": "FPSTb7",
      "isin": "KZ2P00017130",
      "currency": "USD",
@@ -1186,6 +1161,31 @@
      },
      "asOf": "2026-03-11T17:00:57",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/FPSTb7"
+    },
+    {
+     "ticker": "FPSTb14",
+     "isin": "KZ2P00020019",
+     "currency": "KZT",
+     "ytm": 20.0,
+     "price": 99.97,
+     "coupon": 20.0,
+     "couponFreq": "",
+     "maturity": "22.09.2027",
+     "termMonths": 10,
+     "liquidity": {
+      "level": "high",
+      "trades": 1,
+      "volume": 2.501,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.97
+     },
+     "ask": {
+      "price": 99.97
+     },
+     "asOf": "2026-10-30T17:01:16",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/FPSTb14"
     },
     {
      "ticker": "FPSTb8",
@@ -1223,18 +1223,18 @@
      "maturity": "20.08.2029",
      "termMonths": 33,
      "liquidity": {
-      "level": "high",
-      "trades": 9,
-      "volume": 2.085,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.463,
       "marketMaker": false
      },
      "bid": {
       "price": 100.0
      },
      "ask": {
-      "price": 99.0
+      "price": 100.0
      },
-     "asOf": "2026-11-02T17:02:15",
+     "asOf": "2026-11-03T11:39:15",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/FPSTb13"
     },
     {
@@ -1344,8 +1344,8 @@
    "kind": "corp",
    "name": "BCC Invest",
    "sector": "",
-   "reporting": "good",
-   "reportingNote": "данные на 01.10.26; активы больше обязательств; чистая прибыль есть",
+   "reporting": "unknown",
+   "reportingNote": "страница эмитента не загрузилась (ConnectTimeout)",
    "bonds": [
     {
      "ticker": "BCCIb1",
@@ -1816,25 +1816,25 @@
      "ticker": "MFBLb7",
      "isin": "KZ2P00014202",
      "currency": "KZT",
-     "ytm": 19.38,
-     "price": 102.5,
+     "ytm": 19.31,
+     "price": 102.6,
      "coupon": 21.0,
      "couponFreq": "",
      "maturity": "24.09.2028",
      "termMonths": 22,
      "liquidity": {
       "level": "low",
-      "trades": 1,
-      "volume": 0.003,
+      "trades": 2,
+      "volume": 0.001,
       "marketMaker": false
      },
      "bid": {
-      "price": 98.51
+      "price": 98.52
      },
      "ask": {
-      "price": 102.5
+      "price": 102.6
      },
-     "asOf": "2026-10-29T17:01:13",
+     "asOf": "2026-11-03T11:38:25",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBLb7"
     },
     {
@@ -1955,31 +1955,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBLb5"
     },
     {
-     "ticker": "MFBLb10",
-     "isin": "KZ2P00016413",
-     "currency": "KZT",
-     "ytm": 22.03,
-     "price": 101.0001,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "21.01.2028",
-     "termMonths": 14,
-     "liquidity": {
-      "level": "low",
-      "trades": 16,
-      "volume": 0.006,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 102.5
-     },
-     "ask": {
-      "price": 100.0
-     },
-     "asOf": "2026-11-02T17:01:58",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBLb10"
-    },
-    {
      "ticker": "MFBLb14",
      "isin": "KZ2P00019029",
      "currency": "KZT",
@@ -2026,6 +2001,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBLb9"
     },
     {
+     "ticker": "MFBLb10",
+     "isin": "KZ2P00016413",
+     "currency": "KZT",
+     "ytm": 22.02,
+     "price": 101.0001,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "21.01.2028",
+     "termMonths": 14,
+     "liquidity": {
+      "level": "medium",
+      "trades": 7,
+      "volume": 0.049,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.004
+     },
+     "ask": {
+      "price": 101.0
+     },
+     "asOf": "2026-11-03T11:54:15",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBLb10"
+    },
+    {
      "ticker": "MFBLb11",
      "isin": "KZ2P00019003",
      "currency": "KZT",
@@ -2057,8 +2057,8 @@
    "kind": "corp",
    "name": "Black Biotechnology (Блэк Биотехнолоджи)",
    "sector": "",
-   "reporting": "weak",
-   "reportingNote": "данные на 01.07.26; активы не больше обязательств; чистая прибыль есть",
+   "reporting": "unknown",
+   "reportingNote": "страница эмитента не загрузилась (ReadTimeout)",
    "bonds": [
     {
      "ticker": "BKBTb1",
@@ -2131,79 +2131,29 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "CLSGb14",
-     "isin": "KZ2P00016538",
+     "ticker": "CLSGb5",
+     "isin": "KZ2P00011612",
      "currency": "KZT",
-     "ytm": 21.04,
-     "price": 101.0,
-     "coupon": 21.5,
+     "ytm": 17.8,
+     "price": 101.4,
+     "coupon": 20.0,
      "couponFreq": "",
-     "maturity": "29.10.2029",
-     "termMonths": 35,
+     "maturity": "12.07.2027",
+     "termMonths": 8,
      "liquidity": {
-      "level": "medium",
-      "trades": 19,
-      "volume": 0.2,
+      "level": "low",
+      "trades": 5,
+      "volume": 0.004,
       "marketMaker": false
      },
      "bid": {
-      "price": 101.9
+      "price": 100.5
      },
      "ask": {
-      "price": 101.0
+      "price": 101.3999
      },
-     "asOf": "2026-11-02T17:01:50",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb14"
-    },
-    {
-     "ticker": "CLSGb9",
-     "isin": "KZ2P00016322",
-     "currency": "KZT",
-     "ytm": 21.83,
-     "price": 101.8888,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "10.12.2028",
-     "termMonths": 25,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.031,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.8888
-     },
-     "ask": {
-      "price": 101.8887
-     },
-     "asOf": "2026-11-02T17:01:54",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb9"
-    },
-    {
-     "ticker": "CLSGb12",
-     "isin": "KZ2P00016512",
-     "currency": "KZT",
-     "ytm": 21.57,
-     "price": 101.9,
-     "coupon": 22.5,
-     "couponFreq": "",
-     "maturity": "01.09.2029",
-     "termMonths": 33,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.021,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.0
-     },
-     "ask": {
-      "price": 101.9
-     },
-     "asOf": "2026-11-02T17:01:49",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb12"
+     "asOf": "2026-10-30T17:01:16",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb5"
     },
     {
      "ticker": "CLSGb11",
@@ -2231,54 +2181,129 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb11"
     },
     {
-     "ticker": "CLSGb5",
-     "isin": "KZ2P00011612",
+     "ticker": "CLSGb12",
+     "isin": "KZ2P00016512",
      "currency": "KZT",
-     "ytm": 17.8,
-     "price": 101.4,
-     "coupon": 20.0,
+     "ytm": 21.53,
+     "price": 101.98,
+     "coupon": 22.5,
      "couponFreq": "",
-     "maturity": "12.07.2027",
-     "termMonths": 8,
+     "maturity": "01.09.2029",
+     "termMonths": 33,
      "liquidity": {
-      "level": "low",
-      "trades": 5,
-      "volume": 0.004,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.053,
       "marketMaker": false
      },
      "bid": {
-      "price": 100.5
+      "price": 101.98
      },
      "ask": {
-      "price": 101.3999
+      "price": 101.98
      },
-     "asOf": "2026-10-30T17:01:16",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb5"
+     "asOf": "2026-11-03T11:46:50",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb12"
     },
     {
      "ticker": "CLSGb13",
      "isin": "KZ2P00016520",
      "currency": "KZT",
      "ytm": 22.0,
-     "price": 100.9996,
+     "price": 101.0002,
      "coupon": 22.5,
      "couponFreq": "",
      "maturity": "24.08.2029",
      "termMonths": 33,
      "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.091,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.9901
+     },
+     "ask": {
+      "price": 100.99
+     },
+     "asOf": "2026-11-03T11:55:17",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb13"
+    },
+    {
+     "ticker": "CLSGb9",
+     "isin": "KZ2P00016322",
+     "currency": "KZT",
+     "ytm": 21.83,
+     "price": 101.9,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "10.12.2028",
+     "termMonths": 25,
+     "liquidity": {
+      "level": "medium",
+      "trades": 5,
+      "volume": 0.031,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.9
+     },
+     "ask": {
+      "price": 101.8888
+     },
+     "asOf": "2026-11-03T11:51:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb9"
+    },
+    {
+     "ticker": "CLSGb10",
+     "isin": "KZ2P00016488",
+     "currency": "KZT",
+     "ytm": 22.13,
+     "price": 101.508,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "30.01.2029",
+     "termMonths": 27,
+     "liquidity": {
+      "level": "medium",
+      "trades": 14,
+      "volume": 0.777,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 103.0
+     },
+     "ask": {
+      "price": 102.5
+     },
+     "asOf": "2026-11-03T11:47:17",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb10"
+    },
+    {
+     "ticker": "CLSGb14",
+     "isin": "KZ2P00016538",
+     "currency": "KZT",
+     "ytm": 21.04,
+     "price": 101.0,
+     "coupon": 21.5,
+     "couponFreq": "",
+     "maturity": "29.10.2029",
+     "termMonths": 35,
+     "liquidity": {
       "level": "low",
-      "trades": 59,
-      "volume": 0.011,
+      "trades": 5,
+      "volume": 0.003,
       "marketMaker": false
      },
      "bid": {
       "price": 101.0
      },
      "ask": {
-      "price": 99.9
+      "price": 100.99
      },
-     "asOf": "2026-11-02T17:01:49",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb13"
+     "asOf": "2026-11-03T11:51:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb14"
     },
     {
      "ticker": "CLSGb8",
@@ -2306,104 +2331,79 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb8"
     },
     {
-     "ticker": "CLSGb15",
-     "isin": "KZ2P00016744",
-     "currency": "KZT",
-     "ytm": 21.35,
-     "price": 102.8932,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "06.02.2029",
-     "termMonths": 27,
-     "liquidity": {
-      "level": "low",
-      "trades": 17,
-      "volume": 0.004,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 102.9
-     },
-     "ask": {
-      "price": 101.9999
-     },
-     "asOf": "2026-11-02T17:01:50",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb15"
-    },
-    {
-     "ticker": "CLSGb10",
-     "isin": "KZ2P00016488",
-     "currency": "KZT",
-     "ytm": 21.5,
-     "price": 102.6099,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "30.01.2029",
-     "termMonths": 27,
-     "liquidity": {
-      "level": "medium",
-      "trades": 14,
-      "volume": 0.016,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 103.5
-     },
-     "ask": {
-      "price": 102.6099
-     },
-     "asOf": "2026-11-02T17:01:49",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb10"
-    },
-    {
-     "ticker": "CLSGb16",
-     "isin": "KZ2P00016751",
-     "currency": "KZT",
-     "ytm": 21.94,
-     "price": 102.0,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "13.05.2029",
-     "termMonths": 30,
-     "liquidity": {
-      "level": "low",
-      "trades": 16,
-      "volume": 0.011,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 103.25
-     },
-     "ask": {
-      "price": 100.8008
-     },
-     "asOf": "2026-11-02T17:01:50",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb16"
-    },
-    {
      "ticker": "CLSGb4",
      "isin": "KZ2P00011604",
      "currency": "KZT",
      "ytm": 20.46,
-     "price": 100.0,
+     "price": 100.49,
      "coupon": 20.5,
      "couponFreq": "",
      "maturity": "10.07.2027",
      "termMonths": 8,
      "liquidity": {
       "level": "medium",
-      "trades": 2,
+      "trades": 1,
       "volume": 0.199,
       "marketMaker": false
      },
      "bid": {
-      "price": 100.0001
+      "price": 100.49
      },
      "ask": {
-      "price": 99.0
+      "price": 100.4
      },
-     "asOf": "2026-11-02T17:01:50",
+     "asOf": "2026-11-03T11:54:43",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb4"
+    },
+    {
+     "ticker": "CLSGb15",
+     "isin": "KZ2P00016744",
+     "currency": "KZT",
+     "ytm": 21.35,
+     "price": 102.9,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "06.02.2029",
+     "termMonths": 27,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.054,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 102.9
+     },
+     "ask": {
+      "price": 102.8932
+     },
+     "asOf": "2026-11-03T11:38:35",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb15"
+    },
+    {
+     "ticker": "CLSGb16",
+     "isin": "KZ2P00016751",
+     "currency": "KZT",
+     "ytm": 21.58,
+     "price": 102.0101,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "13.05.2029",
+     "termMonths": 30,
+     "liquidity": {
+      "level": "high",
+      "trades": 6,
+      "volume": 0.97,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 102.1756
+     },
+     "ask": {
+      "price": 102.0099
+     },
+     "asOf": "2026-11-03T11:53:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CLSGb16"
     }
    ]
   },
@@ -2444,7 +2444,7 @@
    "name": "Citigroup Global Markets Holdings Inc.",
    "sector": "",
    "reporting": "unknown",
-   "reportingNote": "нет данных на странице эмитента",
+   "reportingNote": "страница эмитента не загрузилась (ConnectTimeout)",
    "bonds": [
     {
      "ticker": "CITI_KZe3",
@@ -2667,24 +2667,24 @@
      "isin": "KZ2C00017580",
      "currency": "KZT",
      "ytm": 25.19,
-     "price": 99.889,
+     "price": 99.89,
      "coupon": 25.0,
      "couponFreq": "",
      "maturity": "12.03.2027",
      "termMonths": 4,
      "liquidity": {
-      "level": "high",
-      "trades": 31,
-      "volume": 1.446,
+      "level": "low",
+      "trades": 3,
+      "volume": 0.006,
       "marketMaker": false
      },
      "bid": {
       "price": 103.0
      },
      "ask": {
-      "price": 99.88
+      "price": 99.89
      },
-     "asOf": "2026-11-02T17:01:55",
+     "asOf": "2026-11-03T11:55:01",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/FIVEb7"
     }
    ]
@@ -3125,29 +3125,25 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TEBNb10"
     },
     {
-     "ticker": "TEBNb17",
-     "isin": "KZ2C00000123",
+     "ticker": "ASBNb29",
+     "isin": "KZ2C00003556",
      "currency": "KZT",
-     "ytm": 7.999996310610756,
-     "price": 73.3278,
-     "coupon": 8.0,
+     "ytm": null,
+     "price": null,
+     "coupon": null,
      "couponFreq": "",
-     "maturity": "14.04.2027",
-     "termMonths": 5,
+     "maturity": "",
+     "termMonths": null,
      "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 3.101,
+      "level": "low",
+      "trades": null,
+      "volume": null,
       "marketMaker": false
      },
-     "bid": {
-      "price": 97.084
-     },
-     "ask": {
-      "price": 99.984
-     },
-     "asOf": "2008-11-27T00:00:00",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/TEBNb17"
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/ASBNb29"
     },
     {
      "ticker": "TEBNb11",
@@ -3196,6 +3192,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TEBNb16"
     },
     {
+     "ticker": "TEBNb17",
+     "isin": "KZ2C00000123",
+     "currency": "KZT",
+     "ytm": 7.999996310610756,
+     "price": 73.3278,
+     "coupon": 8.0,
+     "couponFreq": "",
+     "maturity": "14.04.2027",
+     "termMonths": 5,
+     "liquidity": {
+      "level": "high",
+      "trades": 1,
+      "volume": 3.101,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 97.084
+     },
+     "ask": {
+      "price": 99.984
+     },
+     "asOf": "2008-11-27T00:00:00",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/TEBNb17"
+    },
+    {
      "ticker": "ASBNb28",
      "isin": "KZ2C00003473",
      "currency": "KZT",
@@ -3215,27 +3236,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/ASBNb28"
-    },
-    {
-     "ticker": "ASBNb29",
-     "isin": "KZ2C00003556",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/ASBNb29"
     }
    ]
   },
@@ -3339,24 +3339,24 @@
      "isin": "KZ2P00018088",
      "currency": "KZT",
      "ytm": 23.0,
-     "price": 99.9813,
+     "price": 99.9826,
      "coupon": 23.0,
      "couponFreq": "",
      "maturity": "14.05.2028",
      "termMonths": 18,
      "liquidity": {
-      "level": "medium",
-      "trades": 33,
-      "volume": 0.105,
+      "level": "low",
+      "trades": 1,
+      "volume": 0.011,
       "marketMaker": false
      },
      "bid": {
-      "price": 99.9814
+      "price": 99.9826
      },
      "ask": {
-      "price": 99.9813
+      "price": 99.9826
      },
-     "asOf": "2026-11-02T17:01:56",
+     "asOf": "2026-11-03T11:47:46",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/GLLKb2"
     },
     {
@@ -3390,31 +3390,6 @@
    "reporting": "good",
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
-    {
-     "ticker": "HCBNb27",
-     "isin": "KZ2C00017507",
-     "currency": "KZT",
-     "ytm": 19.0,
-     "price": 99.9152,
-     "coupon": 19.0,
-     "couponFreq": "",
-     "maturity": "01.04.2028",
-     "termMonths": 17,
-     "liquidity": {
-      "level": "high",
-      "trades": 4,
-      "volume": 512.507,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9152
-     },
-     "ask": {
-      "price": 99.9152
-     },
-     "asOf": "2026-05-20T17:00:38",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb27"
-    },
     {
      "ticker": "HCBNb31",
      "isin": "KZ2C00017549",
@@ -3466,29 +3441,75 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb35"
     },
     {
-     "ticker": "HCBNb17",
-     "isin": "KZ2C00014066",
+     "ticker": "HCBNb27",
+     "isin": "KZ2C00017507",
      "currency": "KZT",
-     "ytm": 16.11,
-     "price": 108.0,
-     "coupon": 19.1,
+     "ytm": 19.0,
+     "price": 99.9152,
+     "coupon": 19.0,
      "couponFreq": "",
-     "maturity": "14.07.2030",
-     "termMonths": 44,
+     "maturity": "01.04.2028",
+     "termMonths": 17,
      "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.001,
-      "marketMaker": true
+      "level": "high",
+      "trades": 4,
+      "volume": 512.507,
+      "marketMaker": false
      },
      "bid": {
-      "price": 108.0
+      "price": 99.9152
      },
      "ask": {
-      "price": 108.0
+      "price": 99.9152
      },
-     "asOf": "2026-11-02T17:01:56",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb17"
+     "asOf": "2026-05-20T17:00:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb27"
+    },
+    {
+     "ticker": "HCBNb30",
+     "isin": "KZ2C00017531",
+     "currency": "KZT",
+     "ytm": 18.0,
+     "price": 99.9335,
+     "coupon": 18.0,
+     "couponFreq": "",
+     "maturity": "30.06.2029",
+     "termMonths": 31,
+     "liquidity": {
+      "level": "low",
+      "trades": 5,
+      "volume": 0.01,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.9335
+     },
+     "ask": {
+      "price": 99.9335
+     },
+     "asOf": "2026-08-06T17:28:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb30"
+    },
+    {
+     "ticker": "HCBNb36",
+     "isin": "KZ2C00020782",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 17.0,
+     "couponFreq": "",
+     "maturity": "23.10.2027",
+     "termMonths": 12,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb36"
     },
     {
      "ticker": "HCBNb25",
@@ -3539,52 +3560,6 @@
      },
      "asOf": "2026-05-20T17:00:38",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb26"
-    },
-    {
-     "ticker": "HCBNb30",
-     "isin": "KZ2C00017531",
-     "currency": "KZT",
-     "ytm": 18.0,
-     "price": 99.9335,
-     "coupon": 18.0,
-     "couponFreq": "",
-     "maturity": "30.06.2029",
-     "termMonths": 31,
-     "liquidity": {
-      "level": "low",
-      "trades": 5,
-      "volume": 0.01,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9335
-     },
-     "ask": {
-      "price": 99.9335
-     },
-     "asOf": "2026-08-06T17:28:24",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb30"
-    },
-    {
-     "ticker": "HCBNb36",
-     "isin": "KZ2C00020782",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 17.0,
-     "couponFreq": "",
-     "maturity": "23.10.2027",
-     "termMonths": 12,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb36"
     },
     {
      "ticker": "HCBNb15",
@@ -3662,6 +3637,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb18"
     },
     {
+     "ticker": "HCBNb19",
+     "isin": "KZ2C00014124",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 101.8912,
+     "coupon": 19.25,
+     "couponFreq": "",
+     "maturity": "04.07.2027",
+     "termMonths": 8,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.364,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 101.8912
+     },
+     "ask": {
+      "price": 101.8912
+     },
+     "asOf": "2026-11-03T11:39:37",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb19"
+    },
+    {
      "ticker": "HCBNb20",
      "isin": "KZ2C00014173",
      "currency": "KZT",
@@ -3681,31 +3681,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb20"
-    },
-    {
-     "ticker": "HCBNb24",
-     "isin": "KZ2C00017481",
-     "currency": "KZT",
-     "ytm": 17.12,
-     "price": 100.6586,
-     "coupon": 19.5,
-     "couponFreq": "",
-     "maturity": "04.03.2027",
-     "termMonths": 4,
-     "liquidity": {
-      "level": "low",
-      "trades": 1,
-      "volume": 0.002,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.6586
-     },
-     "ask": {
-      "price": 100.6586
-     },
-     "asOf": "2026-10-30T17:28:52",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb24"
     },
     {
      "ticker": "HCBNb28",
@@ -3798,6 +3773,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb34"
     },
     {
+     "ticker": "HCBNb24",
+     "isin": "KZ2C00017481",
+     "currency": "KZT",
+     "ytm": 17.12,
+     "price": 100.6586,
+     "coupon": 19.5,
+     "couponFreq": "",
+     "maturity": "04.03.2027",
+     "termMonths": 4,
+     "liquidity": {
+      "level": "low",
+      "trades": 1,
+      "volume": 0.002,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.6586
+     },
+     "ask": {
+      "price": 100.6586
+     },
+     "asOf": "2026-10-30T17:28:52",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb24"
+    },
+    {
      "ticker": "HCBNb14",
      "isin": "KZ2C00011351",
      "currency": "KZT",
@@ -3823,6 +3823,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb14"
     },
     {
+     "ticker": "HCBNb17",
+     "isin": "KZ2C00014066",
+     "currency": "KZT",
+     "ytm": 16.11,
+     "price": 108.0,
+     "coupon": 19.1,
+     "couponFreq": "",
+     "maturity": "14.07.2030",
+     "termMonths": 44,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.01,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 102.7825
+     },
+     "ask": {
+      "price": 108.0
+     },
+     "asOf": "2026-11-03T11:47:58",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb17"
+    },
+    {
      "ticker": "HCBNb22",
      "isin": "KZ2C00017127",
      "currency": "KZT",
@@ -3844,65 +3869,15 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb22"
     },
     {
-     "ticker": "HCBNb11",
-     "isin": "KZ2C00009926",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 100.664,
-     "coupon": 16.5,
-     "couponFreq": "",
-     "maturity": "08.08.2028",
-     "termMonths": 21,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.031,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 97.7269
-     },
-     "ask": {
-      "price": 100.664
-     },
-     "asOf": "2026-10-30T17:28:43",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb11"
-    },
-    {
-     "ticker": "HCBNb13",
-     "isin": "KZ2C00011195",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 102.379,
-     "coupon": 18.15,
-     "couponFreq": "",
-     "maturity": "27.02.2028",
-     "termMonths": 16,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.01,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 102.3791
-     },
-     "ask": {
-      "price": 102.379
-     },
-     "asOf": "2026-11-02T17:28:30",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb13"
-    },
-    {
-     "ticker": "HCBNb21",
-     "isin": "KZ2C00017119",
-     "currency": "KZT",
+     "ticker": "HCBNe1",
+     "isin": "KZQ000001213",
+     "currency": "USD",
      "ytm": null,
      "price": null,
-     "coupon": 19.5,
+     "coupon": null,
      "couponFreq": "",
-     "maturity": "30.01.2027",
-     "termMonths": 3,
+     "maturity": "30.07.2027",
+     "termMonths": 9,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -3912,7 +3887,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb21"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNe1"
     },
     {
      "ticker": "HCBNb29",
@@ -3940,15 +3915,40 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb29"
     },
     {
-     "ticker": "HCBNe1",
-     "isin": "KZQ000001213",
-     "currency": "USD",
+     "ticker": "HCBNb11",
+     "isin": "KZ2C00009926",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 100.664,
+     "coupon": 16.5,
+     "couponFreq": "",
+     "maturity": "08.08.2028",
+     "termMonths": 21,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.031,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 97.7269
+     },
+     "ask": {
+      "price": 100.664
+     },
+     "asOf": "2026-10-30T17:28:43",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb11"
+    },
+    {
+     "ticker": "HCBNb21",
+     "isin": "KZ2C00017119",
+     "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": null,
+     "coupon": 19.5,
      "couponFreq": "",
-     "maturity": "30.07.2027",
-     "termMonths": 9,
+     "maturity": "30.01.2027",
+     "termMonths": 3,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -3958,32 +3958,32 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNe1"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb21"
     },
     {
-     "ticker": "HCBNb19",
-     "isin": "KZ2C00014124",
+     "ticker": "HCBNb13",
+     "isin": "KZ2C00011195",
      "currency": "KZT",
      "ytm": 16.0,
-     "price": 101.8983,
-     "coupon": 19.25,
+     "price": 102.3739,
+     "coupon": 18.15,
      "couponFreq": "",
-     "maturity": "04.07.2027",
-     "termMonths": 8,
+     "maturity": "27.02.2028",
+     "termMonths": 16,
      "liquidity": {
       "level": "medium",
-      "trades": 1,
-      "volume": 0.001,
+      "trades": 3,
+      "volume": 0.212,
       "marketMaker": true
      },
      "bid": {
-      "price": 101.8983
+      "price": 102.3739
      },
      "ask": {
-      "price": 101.8983
+      "price": 102.3738
      },
-     "asOf": "2026-11-02T17:29:01",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb19"
+     "asOf": "2026-11-03T11:45:29",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HCBNb13"
     },
     {
      "ticker": "HCBNb23",
@@ -4083,25 +4083,25 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "KEGCb1",
-     "isin": "KZ2C00003572",
+     "ticker": "KEGCb2",
+     "isin": "KZ2C00003978",
      "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 12.9,
+     "ytm": 9.99999483705734,
+     "price": 111.0517,
+     "coupon": 11.5,
      "couponFreq": "",
-     "maturity": "26.05.2031",
-     "termMonths": 54,
+     "maturity": "29.08.2032",
+     "termMonths": 69,
      "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
+      "level": "high",
+      "trades": 1,
+      "volume": 510.352,
       "marketMaker": false
      },
      "bid": null,
      "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KEGCb1"
+     "asOf": "2018-04-28T17:00:20",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KEGCb2"
     },
     {
      "ticker": "KEGCb4",
@@ -4154,25 +4154,25 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KEGCb3"
     },
     {
-     "ticker": "KEGCb2",
-     "isin": "KZ2C00003978",
+     "ticker": "KEGCb1",
+     "isin": "KZ2C00003572",
      "currency": "KZT",
-     "ytm": 9.99999483705734,
-     "price": 111.0517,
-     "coupon": 11.5,
+     "ytm": null,
+     "price": null,
+     "coupon": 12.9,
      "couponFreq": "",
-     "maturity": "29.08.2032",
-     "termMonths": 69,
+     "maturity": "26.05.2031",
+     "termMonths": 54,
      "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 510.352,
+      "level": "low",
+      "trades": null,
+      "volume": null,
       "marketMaker": false
      },
      "bid": null,
      "ask": null,
-     "asOf": "2018-04-28T17:00:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KEGCb2"
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KEGCb1"
     }
    ]
   },
@@ -4189,75 +4189,75 @@
      "isin": "KZ2C00018034",
      "currency": "KZT",
      "ytm": 18.0,
-     "price": 104.0063,
+     "price": 104.0,
      "coupon": 21.0,
      "couponFreq": "",
      "maturity": "28.05.2028",
      "termMonths": 19,
      "liquidity": {
       "level": "medium",
-      "trades": 3,
+      "trades": 1,
       "volume": 0.003,
       "marketMaker": true
      },
      "bid": {
-      "price": 104.0063
+      "price": 104.0
      },
      "ask": {
-      "price": 104.0063
+      "price": 100.0
      },
-     "asOf": "2026-11-02T17:02:00",
+     "asOf": "2026-11-03T11:52:38",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb10"
+    },
+    {
+     "ticker": "MFKMb9",
+     "isin": "KZ2C00017010",
+     "currency": "KZT",
+     "ytm": 18.0,
+     "price": 105.6776,
+     "coupon": 21.0,
+     "couponFreq": "",
+     "maturity": "20.03.2029",
+     "termMonths": 28,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.004,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 105.6831
+     },
+     "ask": {
+      "price": 105.6776
+     },
+     "asOf": "2026-11-03T11:51:36",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb9"
     },
     {
      "ticker": "MFKMb11",
      "isin": "KZ2C00018125",
      "currency": "KZT",
      "ytm": 18.0,
-     "price": 103.9951,
+     "price": 103.9,
      "coupon": 21.0,
      "couponFreq": "",
      "maturity": "26.05.2028",
      "termMonths": 19,
      "liquidity": {
       "level": "medium",
-      "trades": 17,
-      "volume": 0.002,
+      "trades": 5,
+      "volume": 0.108,
       "marketMaker": true
      },
      "bid": {
-      "price": 103.9951
+      "price": 104.0
      },
      "ask": {
-      "price": 102.0
+      "price": 103.9
      },
-     "asOf": "2026-11-02T17:02:00",
+     "asOf": "2026-11-03T11:52:02",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb11"
-    },
-    {
-     "ticker": "MFKMb12",
-     "isin": "KZ2C00018257",
-     "currency": "KZT",
-     "ytm": 18.5,
-     "price": 105.0,
-     "coupon": 21.0,
-     "couponFreq": "",
-     "maturity": "26.05.2029",
-     "termMonths": 30,
-     "liquidity": {
-      "level": "medium",
-      "trades": 6,
-      "volume": 0.286,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 106.0371
-     },
-     "ask": {
-      "price": 104.99
-     },
-     "asOf": "2026-11-02T17:02:01",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb12"
     },
     {
      "ticker": "MFKMb8",
@@ -4285,29 +4285,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb8"
     },
     {
-     "ticker": "MFKMb9",
-     "isin": "KZ2C00017010",
+     "ticker": "MFKMb12",
+     "isin": "KZ2C00018257",
      "currency": "KZT",
-     "ytm": 18.0,
-     "price": 105.6831,
+     "ytm": 18.5,
+     "price": 105.0,
      "coupon": 21.0,
      "couponFreq": "",
-     "maturity": "20.03.2029",
-     "termMonths": 28,
+     "maturity": "26.05.2029",
+     "termMonths": 30,
      "liquidity": {
       "level": "medium",
-      "trades": 6,
-      "volume": 0.003,
+      "trades": 3,
+      "volume": 0.001,
       "marketMaker": true
      },
      "bid": {
-      "price": 106.0
+      "price": 105.0
      },
      "ask": {
-      "price": 101.0
+      "price": 105.0
      },
-     "asOf": "2026-11-02T17:02:01",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb9"
+     "asOf": "2026-11-03T11:49:47",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFKMb12"
     }
    ]
   },
@@ -4640,53 +4640,28 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "ORBSb8",
-     "isin": "KZ2P00017791",
-     "currency": "KZT",
-     "ytm": 20.5,
-     "price": 101.8858,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "21.04.2028",
-     "termMonths": 17,
-     "liquidity": {
-      "level": "low",
-      "trades": 25,
-      "volume": 0.009,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.89
-     },
-     "ask": {
-      "price": 100.7101
-     },
-     "asOf": "2026-11-02T17:02:09",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/ORBSb8"
-    },
-    {
      "ticker": "ORBSb6",
      "isin": "KZ2P00016124",
      "currency": "USD",
-     "ytm": 9.5,
-     "price": 99.9945,
+     "ytm": 6.13,
+     "price": 106.49,
      "coupon": 9.5,
      "couponFreq": "",
      "maturity": "26.11.2028",
      "termMonths": 24,
      "liquidity": {
       "level": "medium",
-      "trades": 2,
-      "volume": 0.923,
+      "trades": 1,
+      "volume": 0.147,
       "marketMaker": false
      },
      "bid": {
-      "price": 100.0
+      "price": 97.1001
      },
      "ask": {
-      "price": 99.9945
+      "price": 99.9947
      },
-     "asOf": "2026-11-02T17:02:25",
+     "asOf": "2026-11-03T11:50:59",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/ORBSb6"
     },
     {
@@ -4713,6 +4688,31 @@
      },
      "asOf": "2026-11-02T17:02:09",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/ORBSb7"
+    },
+    {
+     "ticker": "ORBSb8",
+     "isin": "KZ2P00017791",
+     "currency": "KZT",
+     "ytm": 20.72,
+     "price": 101.6,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "21.04.2028",
+     "termMonths": 17,
+     "liquidity": {
+      "level": "low",
+      "trades": 4,
+      "volume": 0.002,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.89
+     },
+     "ask": {
+      "price": 101.8858
+     },
+     "asOf": "2026-11-03T11:50:05",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/ORBSb8"
     }
    ]
   },
@@ -4791,7 +4791,7 @@
      "isin": "KZ2P00019078",
      "currency": "USD",
      "ytm": 10.0,
-     "price": 99.999,
+     "price": 100.7992,
      "coupon": 10.0,
      "couponFreq": "",
      "maturity": "05.08.2028",
@@ -4806,9 +4806,9 @@
       "price": 100.8
      },
      "ask": {
-      "price": 99.999
+      "price": 100.7992
      },
-     "asOf": "2026-11-02T17:02:25",
+     "asOf": "2026-11-03T11:51:51",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/QGLDb1"
     }
    ]
@@ -4825,25 +4825,25 @@
      "ticker": "KZTCb3",
      "isin": "KZ2C00012961",
      "currency": "KZT",
-     "ytm": 17.67,
-     "price": 104.9999,
+     "ytm": 17.66,
+     "price": 103.387,
      "coupon": 22.0,
      "couponFreq": "",
      "maturity": "17.03.2028",
      "termMonths": 16,
      "liquidity": {
       "level": "medium",
-      "trades": 15,
-      "volume": 0.001,
+      "trades": 2,
+      "volume": 0.005,
       "marketMaker": true
      },
      "bid": {
-      "price": 105.8271
+      "price": 103.387
      },
      "ask": {
-      "price": 103.4
+      "price": 104.9999
      },
-     "asOf": "2026-11-02T17:01:57",
+     "asOf": "2026-11-03T11:51:51",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZTCb3"
     }
    ]
@@ -5340,25 +5340,25 @@
      "ticker": "SMTLb1",
      "isin": "KZ2P00015290",
      "currency": "KZT",
-     "ytm": 22.06,
-     "price": 99.8998,
+     "ytm": 22.0,
+     "price": 99.9868,
      "coupon": 22.0,
      "couponFreq": "",
      "maturity": "24.10.2028",
      "termMonths": 23,
      "liquidity": {
       "level": "low",
-      "trades": 30,
-      "volume": 0.01,
+      "trades": 4,
+      "volume": 0.007,
       "marketMaker": false
      },
      "bid": {
-      "price": 100.0039
+      "price": 99.99
      },
      "ask": {
-      "price": 99.894
+      "price": 99.9868
      },
-     "asOf": "2026-11-02T17:02:09",
+     "asOf": "2026-11-03T11:55:19",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/SMTLb1"
     },
     {
@@ -5967,27 +5967,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/AGKKpp17"
     },
     {
-     "ticker": "AGKKpp18",
-     "isin": "KZ2C00017705",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 18.4,
-     "couponFreq": "",
-     "maturity": "23.05.2027",
-     "termMonths": 7,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/AGKKpp18"
-    },
-    {
      "ticker": "AGKKb8",
      "isin": "KZ2C00003804",
      "currency": "KZT",
@@ -6007,6 +5986,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/AGKKb8"
+    },
+    {
+     "ticker": "AGKKpp18",
+     "isin": "KZ2C00017705",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 18.4,
+     "couponFreq": "",
+     "maturity": "23.05.2027",
+     "termMonths": 7,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/AGKKpp18"
     },
     {
      "ticker": "AGKKb14",
@@ -6494,31 +6494,6 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "BRKZe14",
-     "isin": "XS2800066297",
-     "currency": "USD",
-     "ytm": 4.29,
-     "price": 100.55,
-     "coupon": 5.5,
-     "couponFreq": "",
-     "maturity": "15.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 915.097,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 100.55
-     },
-     "ask": {
-      "price": 100.55
-     },
-     "asOf": "2026-10-22T17:31:48",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe14"
-    },
-    {
      "ticker": "BRKZb39",
      "isin": "KZ2C00011575",
      "currency": "KZT",
@@ -6561,50 +6536,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb44"
     },
     {
-     "ticker": "BRKZe16",
-     "isin": "XS2917067204",
+     "ticker": "BRKZe14",
+     "isin": "XS2800066297",
      "currency": "USD",
-     "ytm": 4.9,
-     "price": 101.1217,
-     "coupon": 5.25,
+     "ytm": 4.29,
+     "price": 100.55,
+     "coupon": 5.5,
      "couponFreq": "",
-     "maturity": "23.10.2029",
-     "termMonths": 35,
+     "maturity": "15.04.2027",
+     "termMonths": 5,
      "liquidity": {
       "level": "high",
-      "trades": 2,
-      "volume": 4.291,
+      "trades": 1,
+      "volume": 915.097,
       "marketMaker": true
      },
      "bid": {
-      "price": 101.1217
+      "price": 100.55
      },
      "ask": {
-      "price": 101.1217
+      "price": 100.55
      },
-     "asOf": "2026-04-08T17:30:55",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe16"
-    },
-    {
-     "ticker": "BRKZb17",
-     "isin": "KZ2C00006286",
-     "currency": "KZT",
-     "ytm": null,
-     "price": 100.0,
-     "coupon": 0.15,
-     "couponFreq": "",
-     "maturity": "07.10.2039",
-     "termMonths": 153,
-     "liquidity": {
-      "level": "low",
-      "trades": 1,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": "2019-12-03T15:28:08",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb17"
+     "asOf": "2026-10-22T17:31:48",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe14"
     },
     {
      "ticker": "BRKZb26",
@@ -6693,6 +6647,52 @@
      },
      "asOf": "2026-06-08T17:31:00",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb47"
+    },
+    {
+     "ticker": "BRKZe16",
+     "isin": "XS2917067204",
+     "currency": "USD",
+     "ytm": 4.9,
+     "price": 101.1217,
+     "coupon": 5.25,
+     "couponFreq": "",
+     "maturity": "23.10.2029",
+     "termMonths": 35,
+     "liquidity": {
+      "level": "high",
+      "trades": 2,
+      "volume": 4.291,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 101.1217
+     },
+     "ask": {
+      "price": 101.1217
+     },
+     "asOf": "2026-04-08T17:30:55",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe16"
+    },
+    {
+     "ticker": "BRKZb17",
+     "isin": "KZ2C00006286",
+     "currency": "KZT",
+     "ytm": null,
+     "price": 100.0,
+     "coupon": 0.15,
+     "couponFreq": "",
+     "maturity": "07.10.2039",
+     "termMonths": 153,
+     "liquidity": {
+      "level": "low",
+      "trades": 1,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": "2019-12-03T15:28:08",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb17"
     },
     {
      "ticker": "BRKZe20",
@@ -6808,6 +6808,77 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb23"
     },
     {
+     "ticker": "BRKZb37",
+     "isin": "KZ2C00010379",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 15.0,
+     "couponFreq": "",
+     "maturity": "21.08.2033",
+     "termMonths": 81,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb37"
+    },
+    {
+     "ticker": "BRKZb48",
+     "isin": "KZ2C00016103",
+     "currency": "KZT",
+     "ytm": 19.95,
+     "price": 101.009,
+     "coupon": 1.95,
+     "couponFreq": "",
+     "maturity": "26.12.2035",
+     "termMonths": 110,
+     "liquidity": {
+      "level": "high",
+      "trades": 1,
+      "volume": 9488.534,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.009
+     },
+     "ask": {
+      "price": 101.009
+     },
+     "asOf": "2026-06-08T17:31:00",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb48"
+    },
+    {
+     "ticker": "BRKZe12",
+     "isin": "XS2337670694",
+     "currency": "USD",
+     "ytm": 4.85,
+     "price": 92.0,
+     "coupon": 2.95,
+     "couponFreq": "",
+     "maturity": "06.05.2031",
+     "termMonths": 53,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.441,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 92.0
+     },
+     "ask": {
+      "price": 92.0
+     },
+     "asOf": "2026-07-27T17:36:25",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe12"
+    },
+    {
      "ticker": "BRKZe17",
      "isin": "XS2917067386",
      "currency": "KZT",
@@ -6900,15 +6971,15 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb24"
     },
     {
-     "ticker": "BRKZb37",
-     "isin": "KZ2C00010379",
+     "ticker": "BRKZb38",
+     "isin": "KZ2C00011583",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": 15.0,
+     "coupon": 6.0,
      "couponFreq": "",
-     "maturity": "21.08.2033",
-     "termMonths": 81,
+     "maturity": "30.11.2033",
+     "termMonths": 84,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -6918,57 +6989,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb37"
-    },
-    {
-     "ticker": "BRKZb48",
-     "isin": "KZ2C00016103",
-     "currency": "KZT",
-     "ytm": 19.95,
-     "price": 101.009,
-     "coupon": 1.95,
-     "couponFreq": "",
-     "maturity": "26.12.2035",
-     "termMonths": 110,
-     "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 9488.534,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.009
-     },
-     "ask": {
-      "price": 101.009
-     },
-     "asOf": "2026-06-08T17:31:00",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb48"
-    },
-    {
-     "ticker": "BRKZe12",
-     "isin": "XS2337670694",
-     "currency": "USD",
-     "ytm": 4.85,
-     "price": 92.0,
-     "coupon": 2.95,
-     "couponFreq": "",
-     "maturity": "06.05.2031",
-     "termMonths": 53,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.441,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 92.0
-     },
-     "ask": {
-      "price": 92.0
-     },
-     "asOf": "2026-07-27T17:36:25",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe12"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb38"
     },
     {
      "ticker": "BRKZb11",
@@ -6992,27 +7013,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb11"
     },
     {
-     "ticker": "BRKZb38",
-     "isin": "KZ2C00011583",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 6.0,
-     "couponFreq": "",
-     "maturity": "30.11.2033",
-     "termMonths": 84,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb38"
-    },
-    {
      "ticker": "BRKZb6",
      "isin": "KZ2C00003713",
      "currency": "KZT",
@@ -7032,73 +7032,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb6"
-    },
-    {
-     "ticker": "BRKZe18",
-     "isin": "XS3032932645",
-     "currency": "USD",
-     "ytm": null,
-     "price": null,
-     "coupon": 5.625,
-     "couponFreq": "",
-     "maturity": "07.04.2030",
-     "termMonths": 41,
-     "liquidity": {
-      "level": "medium",
-      "trades": null,
-      "volume": null,
-      "marketMaker": true
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe18"
-    },
-    {
-     "ticker": "BRKZb14",
-     "isin": "KZ2C00004273",
-     "currency": "KZT",
-     "ytm": 14.4,
-     "price": 90.6156,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "18.06.2030",
-     "termMonths": 43,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.002,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 90.6156
-     },
-     "ask": {
-      "price": 90.6156
-     },
-     "asOf": "2026-10-30T17:31:56",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb14"
-    },
-    {
-     "ticker": "BRKZb18",
-     "isin": "KZ2C00006765",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 0.15,
-     "couponFreq": "",
-     "maturity": "14.05.2040",
-     "termMonths": 160,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb18"
     },
     {
      "ticker": "BRKZb25",
@@ -7185,6 +7118,115 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb41"
     },
     {
+     "ticker": "BRKZe18",
+     "isin": "XS3032932645",
+     "currency": "USD",
+     "ytm": null,
+     "price": null,
+     "coupon": 5.625,
+     "couponFreq": "",
+     "maturity": "07.04.2030",
+     "termMonths": 41,
+     "liquidity": {
+      "level": "medium",
+      "trades": null,
+      "volume": null,
+      "marketMaker": true
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZe18"
+    },
+    {
+     "ticker": "BRKZb14",
+     "isin": "KZ2C00004273",
+     "currency": "KZT",
+     "ytm": 14.4,
+     "price": 90.6156,
+     "coupon": 11.0,
+     "couponFreq": "",
+     "maturity": "18.06.2030",
+     "termMonths": 43,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.002,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 90.6156
+     },
+     "ask": {
+      "price": 90.6156
+     },
+     "asOf": "2026-10-30T17:31:56",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb14"
+    },
+    {
+     "ticker": "BRKZb18",
+     "isin": "KZ2C00006765",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 0.15,
+     "couponFreq": "",
+     "maturity": "14.05.2040",
+     "termMonths": 160,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb18"
+    },
+    {
+     "ticker": "BRKZb40",
+     "isin": "KZ2C00012227",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb40"
+    },
+    {
+     "ticker": "BRKZb43",
+     "isin": "KZ2C00013423",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb43"
+    },
+    {
      "ticker": "BRKZe15",
      "isin": "XS2800066370",
      "currency": "KZT",
@@ -7235,15 +7277,15 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb10"
     },
     {
-     "ticker": "BRKZb40",
-     "isin": "KZ2C00012227",
+     "ticker": "BRKZb28",
+     "isin": "KZ2C00009140",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": null,
+     "coupon": 0.5,
      "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
+     "maturity": "15.02.2035",
+     "termMonths": 98,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -7253,11 +7295,11 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb40"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb28"
     },
     {
-     "ticker": "BRKZb43",
-     "isin": "KZ2C00013423",
+     "ticker": "BRKZb45",
+     "isin": "KZ2C00014553",
      "currency": "KZT",
      "ytm": null,
      "price": null,
@@ -7274,7 +7316,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb43"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb45"
     },
     {
      "ticker": "BRKZe21",
@@ -7342,48 +7384,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb22"
-    },
-    {
-     "ticker": "BRKZb28",
-     "isin": "KZ2C00009140",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 0.5,
-     "couponFreq": "",
-     "maturity": "15.02.2035",
-     "termMonths": 98,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb28"
-    },
-    {
-     "ticker": "BRKZb45",
-     "isin": "KZ2C00014553",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BRKZb45"
     }
    ]
   },
@@ -7395,48 +7395,6 @@
    "reporting": "good",
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
-    {
-     "ticker": "CCBNb33",
-     "isin": "KZ2C00007714",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 11.5,
-     "couponFreq": "",
-     "maturity": "09.11.2028",
-     "termMonths": 24,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNb33"
-    },
-    {
-     "ticker": "CCBNb38",
-     "isin": "KZ2C00015865",
-     "currency": "USD",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "10.12.2026",
-     "termMonths": 1,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNb38"
-    },
     {
      "ticker": "CCBNpp3",
      "isin": "KZ2C00016202",
@@ -7480,6 +7438,48 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNb30"
     },
     {
+     "ticker": "CCBNb33",
+     "isin": "KZ2C00007714",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 11.5,
+     "couponFreq": "",
+     "maturity": "09.11.2028",
+     "termMonths": 24,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNb33"
+    },
+    {
+     "ticker": "CCBNb38",
+     "isin": "KZ2C00015865",
+     "currency": "USD",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "10.12.2026",
+     "termMonths": 1,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNb38"
+    },
+    {
      "ticker": "CCBNpp1",
      "isin": "KZ2C00012664",
      "currency": "KZT",
@@ -7501,27 +7501,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNpp1"
     },
     {
-     "ticker": "CCBNpp2",
-     "isin": "KZ2C00015626",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNpp2"
-    },
-    {
      "ticker": "CCBNpp4",
      "isin": "KZ2C00016210",
      "currency": "KZT",
@@ -7541,6 +7520,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNpp4"
+    },
+    {
+     "ticker": "CCBNpp2",
+     "isin": "KZ2C00015626",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/CCBNpp2"
     }
    ]
   },
@@ -8177,27 +8177,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/INCApp23"
     },
     {
-     "ticker": "INCApp26",
-     "isin": "KZ2C00020220",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 17.25,
-     "couponFreq": "",
-     "maturity": "24.09.2034",
-     "termMonths": 93,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/INCApp26"
-    },
-    {
      "ticker": "INCApp10",
      "isin": "KZ2C00012805",
      "currency": "KZT",
@@ -8259,6 +8238,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/INCApp22"
+    },
+    {
+     "ticker": "INCApp26",
+     "isin": "KZ2C00020220",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 17.25,
+     "couponFreq": "",
+     "maturity": "24.09.2034",
+     "termMonths": 93,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/INCApp26"
     },
     {
      "ticker": "INCApp11",
@@ -8432,6 +8432,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb17"
     },
     {
+     "ticker": "KAFIb12",
+     "isin": "KZ2C00008514",
+     "currency": "KZT",
+     "ytm": 15.0,
+     "price": 103.9517,
+     "coupon": 16.85,
+     "couponFreq": "",
+     "maturity": "28.07.2029",
+     "termMonths": 32,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.299,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 103.9517
+     },
+     "ask": {
+      "price": 103.9517
+     },
+     "asOf": "2026-11-02T17:31:20",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb12"
+    },
+    {
      "ticker": "KAFIb21",
      "isin": "KZ2C00017150",
      "currency": "KZT",
@@ -8474,71 +8499,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb22"
     },
     {
-     "ticker": "KAFIb12",
-     "isin": "KZ2C00008514",
+     "ticker": "KAFIb11",
+     "isin": "KZ2C00007862",
      "currency": "KZT",
-     "ytm": 15.0,
-     "price": 103.9517,
-     "coupon": 16.85,
+     "ytm": 15.5,
+     "price": 95.9719,
+     "coupon": 11.9,
      "couponFreq": "",
-     "maturity": "28.07.2029",
-     "termMonths": 32,
+     "maturity": "20.08.2028",
+     "termMonths": 21,
      "liquidity": {
       "level": "medium",
       "trades": 1,
-      "volume": 0.299,
+      "volume": 0.3,
       "marketMaker": true
      },
      "bid": {
-      "price": 103.9517
+      "price": 93.0489
      },
      "ask": {
-      "price": 103.9517
+      "price": 95.9719
      },
-     "asOf": "2026-11-02T17:31:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb12"
-    },
-    {
-     "ticker": "KAFIpp8",
-     "isin": "KZ2C00013910",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 17.4,
-     "couponFreq": "",
-     "maturity": "08.05.2030",
-     "termMonths": 42,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp8"
-    },
-    {
-     "ticker": "KAFIpp9",
-     "isin": "KZ2C00013944",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 18.0,
-     "couponFreq": "",
-     "maturity": "12.06.2030",
-     "termMonths": 43,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp9"
+     "asOf": "2026-11-03T11:52:27",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb11"
     },
     {
      "ticker": "KAFIb14",
@@ -8587,6 +8570,48 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb18"
     },
     {
+     "ticker": "KAFIpp8",
+     "isin": "KZ2C00013910",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 17.4,
+     "couponFreq": "",
+     "maturity": "08.05.2030",
+     "termMonths": 42,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp8"
+    },
+    {
+     "ticker": "KAFIpp9",
+     "isin": "KZ2C00013944",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 18.0,
+     "couponFreq": "",
+     "maturity": "12.06.2030",
+     "termMonths": 43,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp9"
+    },
+    {
      "ticker": "KAFIpp13",
      "isin": "KZ2C00019495",
      "currency": "KZT",
@@ -8606,27 +8631,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp13"
-    },
-    {
-     "ticker": "KAFIpp7",
-     "isin": "KZ2C00011674",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 15.75,
-     "couponFreq": "",
-     "maturity": "22.07.2031",
-     "termMonths": 56,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp7"
     },
     {
      "ticker": "KAFIb13",
@@ -8654,15 +8658,15 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb13"
     },
     {
-     "ticker": "KAFIb23",
-     "isin": "KZ2C00017176",
+     "ticker": "KAFIpp7",
+     "isin": "KZ2C00011674",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": null,
+     "coupon": 15.75,
      "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
+     "maturity": "22.07.2031",
+     "termMonths": 56,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -8672,32 +8676,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb23"
-    },
-    {
-     "ticker": "KAFIb11",
-     "isin": "KZ2C00007862",
-     "currency": "KZT",
-     "ytm": 15.5,
-     "price": 94.4882,
-     "coupon": 11.9,
-     "couponFreq": "",
-     "maturity": "20.08.2028",
-     "termMonths": 21,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.3,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 94.4882
-     },
-     "ask": {
-      "price": 94.4882
-     },
-     "asOf": "2026-11-02T17:31:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb11"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp7"
     },
     {
      "ticker": "KAFIb16",
@@ -8725,6 +8704,27 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb16"
     },
     {
+     "ticker": "KAFIb23",
+     "isin": "KZ2C00017176",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb23"
+    },
+    {
      "ticker": "KAFIpp12",
      "isin": "KZ2C00017846",
      "currency": "KZT",
@@ -8744,6 +8744,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp12"
+    },
+    {
+     "ticker": "KAFIb19",
+     "isin": "KZ2C00017093",
+     "currency": "KZT",
+     "ytm": 14.51,
+     "price": 107.19,
+     "coupon": 18.4,
+     "couponFreq": "",
+     "maturity": "05.02.2029",
+     "termMonths": 27,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.497,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 103.5
+     },
+     "ask": {
+      "price": 107.19
+     },
+     "asOf": "2026-10-29T17:31:33",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb19"
     },
     {
      "ticker": "KAFIb24",
@@ -8788,31 +8813,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp6"
     },
     {
-     "ticker": "KAFIb19",
-     "isin": "KZ2C00017093",
-     "currency": "KZT",
-     "ytm": 14.51,
-     "price": 107.19,
-     "coupon": 18.4,
-     "couponFreq": "",
-     "maturity": "05.02.2029",
-     "termMonths": 27,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.497,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 103.5
-     },
-     "ask": {
-      "price": 107.19
-     },
-     "asOf": "2026-10-29T17:31:33",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb19"
-    },
-    {
      "ticker": "KAFIpp11",
      "isin": "KZ2C00013969",
      "currency": "KZT",
@@ -8832,6 +8832,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp11"
+    },
+    {
+     "ticker": "KAFIb20",
+     "isin": "KZ2C00017143",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 17.5,
+     "couponFreq": "",
+     "maturity": "22.05.2029",
+     "termMonths": 30,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb20"
     },
     {
      "ticker": "KAFIpp1",
@@ -8897,27 +8918,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIpp5"
     },
     {
-     "ticker": "KAFIb20",
-     "isin": "KZ2C00017143",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 17.5,
-     "couponFreq": "",
-     "maturity": "22.05.2029",
-     "termMonths": 30,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KAFIb20"
-    },
-    {
      "ticker": "KAFIpp10",
      "isin": "KZ2C00013951",
      "currency": "KZT",
@@ -8949,27 +8949,6 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "KZIKb47",
-     "isin": "KZ2C00020089",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 16.22,
-     "couponFreq": "",
-     "maturity": "29.10.2029",
-     "termMonths": 35,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb47"
-    },
-    {
      "ticker": "KZIKb36",
      "isin": "KZ2C00007839",
      "currency": "KZT",
@@ -8991,15 +8970,15 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb36"
     },
     {
-     "ticker": "KZIKb49",
-     "isin": "KZ2C00020105",
+     "ticker": "KZIKb47",
+     "isin": "KZ2C00020089",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": null,
+     "coupon": 16.22,
      "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
+     "maturity": "29.10.2029",
+     "termMonths": 35,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -9009,7 +8988,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb49"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb47"
     },
     {
      "ticker": "KZIKb31",
@@ -9031,6 +9010,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb31"
+    },
+    {
+     "ticker": "KZIKb49",
+     "isin": "KZ2C00020105",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb49"
     },
     {
      "ticker": "KZIKb33",
@@ -9167,6 +9167,52 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb41"
     },
     {
+     "ticker": "KZIKb28",
+     "isin": "KZ2C00004356",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 0.1,
+     "couponFreq": "",
+     "maturity": "21.06.2049",
+     "termMonths": 268,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb28"
+    },
+    {
+     "ticker": "KZIKb39",
+     "isin": "KZ2C00014736",
+     "currency": "KZT",
+     "ytm": 13.0,
+     "price": 113.8391,
+     "coupon": 18.0,
+     "couponFreq": "",
+     "maturity": "24.07.2030",
+     "termMonths": 44,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.012,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 113.8391
+     },
+     "ask": {
+      "price": 113.8391
+     },
+     "asOf": "2026-11-02T17:31:22",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb39"
+    },
+    {
      "ticker": "KZIKb43",
      "isin": "KZ2C00015956",
      "currency": "KZT",
@@ -9238,52 +9284,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb50"
     },
     {
-     "ticker": "KZIKb28",
-     "isin": "KZ2C00004356",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 0.1,
-     "couponFreq": "",
-     "maturity": "21.06.2049",
-     "termMonths": 268,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb28"
-    },
-    {
-     "ticker": "KZIKb39",
-     "isin": "KZ2C00014736",
-     "currency": "KZT",
-     "ytm": 13.0,
-     "price": 113.8391,
-     "coupon": 18.0,
-     "couponFreq": "",
-     "maturity": "24.07.2030",
-     "termMonths": 44,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.012,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 113.8391
-     },
-     "ask": {
-      "price": 113.8391
-     },
-     "asOf": "2026-11-02T17:31:22",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb39"
-    },
-    {
      "ticker": "BTDVb4",
      "isin": "KZ2C00006807",
      "currency": "KZT",
@@ -9303,27 +9303,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BTDVb4"
-    },
-    {
-     "ticker": "KZIKb44",
-     "isin": "KZ2C00015964",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 16.1,
-     "couponFreq": "",
-     "maturity": "24.09.2030",
-     "termMonths": 46,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb44"
     },
     {
      "ticker": "KZIKb29",
@@ -9391,6 +9370,27 @@
      },
      "asOf": "2026-11-02T17:31:22",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb42"
+    },
+    {
+     "ticker": "KZIKb44",
+     "isin": "KZ2C00015964",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 16.1,
+     "couponFreq": "",
+     "maturity": "24.09.2030",
+     "termMonths": 46,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZIKb44"
     },
     {
      "ticker": "BTDVb5",
@@ -9515,6 +9515,52 @@
    "reporting": "good",
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
+    {
+     "ticker": "KFUSb49",
+     "isin": "KZ2C00008951",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 108.3741,
+     "coupon": 2.5,
+     "couponFreq": "",
+     "maturity": "25.11.2029",
+     "termMonths": 37,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.012,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 108.3741
+     },
+     "ask": {
+      "price": 108.3741
+     },
+     "asOf": "2026-11-02T17:31:21",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb49"
+    },
+    {
+     "ticker": "KFUSb59",
+     "isin": "KZ2C00009512",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb59"
+    },
     {
      "ticker": "KFUSb105",
      "isin": "KZ2C00015105",
@@ -9726,52 +9772,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb146"
     },
     {
-     "ticker": "KFUSb49",
-     "isin": "KZ2C00008951",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 108.3741,
-     "coupon": 2.5,
-     "couponFreq": "",
-     "maturity": "25.11.2029",
-     "termMonths": 37,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.012,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 108.3741
-     },
-     "ask": {
-      "price": 108.3741
-     },
-     "asOf": "2026-11-02T17:31:21",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb49"
-    },
-    {
-     "ticker": "KFUSb59",
-     "isin": "KZ2C00009512",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb59"
-    },
-    {
      "ticker": "KFUSb88",
      "isin": "KZ2C00012151",
      "currency": "KZT",
@@ -9816,6 +9816,31 @@
      },
      "asOf": "2026-09-10T17:31:18",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb92"
+    },
+    {
+     "ticker": "KFUSb10",
+     "isin": "KZ2C00007326",
+     "currency": "KZT",
+     "ytm": 14.25,
+     "price": 94.688,
+     "coupon": 9.5,
+     "couponFreq": "",
+     "maturity": "12.02.2028",
+     "termMonths": 15,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.008,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 92.6305
+     },
+     "ask": {
+      "price": 94.688
+     },
+     "asOf": "2026-11-03T11:37:59",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb10"
     },
     {
      "ticker": "KFUSb11",
@@ -9975,6 +10000,31 @@
      },
      "asOf": "2026-11-02T17:31:21",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb7"
+    },
+    {
+     "ticker": "KFUSb46",
+     "isin": "KZ2C00008928",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 103.2327,
+     "coupon": 2.4,
+     "couponFreq": "",
+     "maturity": "25.11.2027",
+     "termMonths": 13,
+     "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.3,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 103.2327
+     },
+     "ask": {
+      "price": 103.2327
+     },
+     "asOf": "2026-11-02T17:31:21",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb46"
     },
     {
      "ticker": "KFUSb26",
@@ -10166,31 +10216,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb144"
     },
     {
-     "ticker": "KFUSb46",
-     "isin": "KZ2C00008928",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 103.2327,
-     "coupon": 2.4,
-     "couponFreq": "",
-     "maturity": "25.11.2027",
-     "termMonths": 13,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.3,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 103.2327
-     },
-     "ask": {
-      "price": 103.2327
-     },
-     "asOf": "2026-11-02T17:31:21",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb46"
-    },
-    {
      "ticker": "KFUSb89",
      "isin": "KZ2C00012169",
      "currency": "KZT",
@@ -10262,29 +10287,71 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb91"
     },
     {
-     "ticker": "KFUSb10",
-     "isin": "KZ2C00007326",
+     "ticker": "KFUSb48",
+     "isin": "KZ2C00008944",
      "currency": "KZT",
-     "ytm": 14.25,
-     "price": 94.6544,
-     "coupon": 9.5,
+     "ytm": 16.0,
+     "price": 106.7412,
+     "coupon": 2.75,
      "couponFreq": "",
-     "maturity": "12.02.2028",
-     "termMonths": 15,
+     "maturity": "20.01.2030",
+     "termMonths": 39,
      "liquidity": {
       "level": "medium",
-      "trades": 2,
-      "volume": 0.001,
+      "trades": 3,
+      "volume": 0.225,
       "marketMaker": true
      },
      "bid": {
-      "price": 99.3335
+      "price": 107.0
      },
      "ask": {
-      "price": 94.6544
+      "price": 105.9999
      },
-     "asOf": "2026-10-29T17:31:34",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb10"
+     "asOf": "2026-11-02T17:31:21",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb48"
+    },
+    {
+     "ticker": "KFUSb56",
+     "isin": "KZ2C00009488",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb56"
+    },
+    {
+     "ticker": "KFUSb75",
+     "isin": "KZ2C00012011",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 12.5,
+     "couponFreq": "",
+     "maturity": "15.01.2027",
+     "termMonths": 2,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb75"
     },
     {
      "ticker": "KFUSb103",
@@ -10392,73 +10459,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb116"
     },
     {
-     "ticker": "KFUSb48",
-     "isin": "KZ2C00008944",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 106.7412,
-     "coupon": 2.75,
-     "couponFreq": "",
-     "maturity": "20.01.2030",
-     "termMonths": 39,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.225,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 107.0
-     },
-     "ask": {
-      "price": 105.9999
-     },
-     "asOf": "2026-11-02T17:31:21",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb48"
-    },
-    {
-     "ticker": "KFUSb56",
-     "isin": "KZ2C00009488",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb56"
-    },
-    {
-     "ticker": "KFUSb75",
-     "isin": "KZ2C00012011",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 12.5,
-     "couponFreq": "",
-     "maturity": "15.01.2027",
-     "termMonths": 2,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb75"
-    },
-    {
      "ticker": "KFUSb80",
      "isin": "KZ2C00012060",
      "currency": "KZT",
@@ -10499,6 +10499,77 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb81"
+    },
+    {
+     "ticker": "KFUSb47",
+     "isin": "KZ2C00008936",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 103.1124,
+     "coupon": 2.55,
+     "couponFreq": "",
+     "maturity": "20.01.2028",
+     "termMonths": 15,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.011,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 103.1124
+     },
+     "ask": {
+      "price": 103.1124
+     },
+     "asOf": "2026-11-02T17:31:21",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb47"
+    },
+    {
+     "ticker": "KFUSb58",
+     "isin": "KZ2C00009504",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb58"
+    },
+    {
+     "ticker": "KFUSb73",
+     "isin": "KZ2C00011997",
+     "currency": "KZT",
+     "ytm": 18.25,
+     "price": 95.4239,
+     "coupon": 12.5,
+     "couponFreq": "",
+     "maturity": "06.11.2026",
+     "termMonths": 0,
+     "liquidity": {
+      "level": "high",
+      "trades": 1,
+      "volume": 120.047,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 95.4239
+     },
+     "ask": {
+      "price": 95.4239
+     },
+     "asOf": "2025-12-03T17:30:42",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb73"
     },
     {
      "ticker": "KFUSb28",
@@ -10583,77 +10654,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb136"
-    },
-    {
-     "ticker": "KFUSb47",
-     "isin": "KZ2C00008936",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 103.1124,
-     "coupon": 2.55,
-     "couponFreq": "",
-     "maturity": "20.01.2028",
-     "termMonths": 15,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.011,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 103.1124
-     },
-     "ask": {
-      "price": 103.1124
-     },
-     "asOf": "2026-11-02T17:31:21",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb47"
-    },
-    {
-     "ticker": "KFUSb58",
-     "isin": "KZ2C00009504",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb58"
-    },
-    {
-     "ticker": "KFUSb73",
-     "isin": "KZ2C00011997",
-     "currency": "KZT",
-     "ytm": 18.25,
-     "price": 95.4239,
-     "coupon": 12.5,
-     "couponFreq": "",
-     "maturity": "06.11.2026",
-     "termMonths": 0,
-     "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 120.047,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 95.4239
-     },
-     "ask": {
-      "price": 95.4239
-     },
-     "asOf": "2025-12-03T17:30:42",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb73"
     },
     {
      "ticker": "KFUSb94",
@@ -10742,6 +10742,27 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb98"
+    },
+    {
+     "ticker": "KFUSb74",
+     "isin": "KZ2C00012003",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 12.5,
+     "couponFreq": "",
+     "maturity": "04.12.2026",
+     "termMonths": 1,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb74"
     },
     {
      "ticker": "KFUSb29",
@@ -10868,27 +10889,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb145"
-    },
-    {
-     "ticker": "KFUSb74",
-     "isin": "KZ2C00012003",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 12.5,
-     "couponFreq": "",
-     "maturity": "04.12.2026",
-     "termMonths": 1,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb74"
     },
     {
      "ticker": "KFUSb99",
@@ -11130,6 +11130,27 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb93"
     },
     {
+     "ticker": "KFUSb57",
+     "isin": "KZ2C00009496",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb57"
+    },
+    {
      "ticker": "KFUSb111",
      "isin": "KZ2C00015162",
      "currency": "KZT",
@@ -11212,27 +11233,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb141"
-    },
-    {
-     "ticker": "KFUSb57",
-     "isin": "KZ2C00009496",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KFUSb57"
     },
     {
      "ticker": "KFUSb97",
@@ -11531,8 +11531,8 @@
    "kind": "corp",
    "name": "ЛОГИКОМ",
    "sector": "",
-   "reporting": "good",
-   "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
+   "reporting": "unknown",
+   "reportingNote": "страница эмитента не загрузилась (ConnectTimeout)",
    "bonds": [
     {
      "ticker": "LOGCb4",
@@ -11743,7 +11743,7 @@
      "maturity": "14.01.2027",
      "termMonths": 2,
      "liquidity": {
-      "level": "medium",
+      "level": "high",
       "trades": 1,
       "volume": 0.92,
       "marketMaker": false
@@ -12023,6 +12023,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb10"
     },
     {
+     "ticker": "MFLGb13",
+     "isin": "KZ2P00013501",
+     "currency": "KZT",
+     "ytm": 21.79,
+     "price": 100.0,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "03.04.2027",
+     "termMonths": 5,
+     "liquidity": {
+      "level": "low",
+      "trades": 3,
+      "volume": 0.001,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.0
+     },
+     "ask": {
+      "price": 100.0
+     },
+     "asOf": "2026-11-03T11:38:43",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb13"
+    },
+    {
      "ticker": "MFLGb25",
      "isin": "KZ2P00017056",
      "currency": "KZT",
@@ -12115,6 +12140,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb33"
     },
     {
+     "ticker": "MFLGb7",
+     "isin": "KZ2P00012875",
+     "currency": "KZT",
+     "ytm": 29.54,
+     "price": 98.0,
+     "coupon": 20.0,
+     "couponFreq": "",
+     "maturity": "23.01.2027",
+     "termMonths": 3,
+     "liquidity": {
+      "level": "low",
+      "trades": 7,
+      "volume": 0.001,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 98.0001
+     },
+     "ask": {
+      "price": 98.0
+     },
+     "asOf": "2026-11-03T11:53:52",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb7"
+    },
+    {
      "ticker": "MFLGb20",
      "isin": "KZ2P00014285",
      "currency": "KZT",
@@ -12161,31 +12211,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb28"
     },
     {
-     "ticker": "MFLGb13",
-     "isin": "KZ2P00013501",
-     "currency": "KZT",
-     "ytm": 21.83,
-     "price": 100.0,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "03.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "low",
-      "trades": 1,
-      "volume": 0.001,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 100.0
-     },
-     "asOf": "2026-10-27T17:01:17",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb13"
-    },
-    {
      "ticker": "MFLGb22",
      "isin": "KZ2P00015696",
      "currency": "KZT",
@@ -12209,31 +12234,6 @@
      },
      "asOf": "2026-11-02T17:02:02",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb22"
-    },
-    {
-     "ticker": "MFLGb7",
-     "isin": "KZ2P00012875",
-     "currency": "KZT",
-     "ytm": 22.31,
-     "price": 99.495,
-     "coupon": 20.0,
-     "couponFreq": "",
-     "maturity": "23.01.2027",
-     "termMonths": 3,
-     "liquidity": {
-      "level": "low",
-      "trades": 4,
-      "volume": 0.005,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9999
-     },
-     "ask": {
-      "price": 98.9999
-     },
-     "asOf": "2026-11-02T17:02:02",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLGb7"
     },
     {
      "ticker": "MFLGb11",
@@ -12321,24 +12321,24 @@
      "isin": "KZ2P00015266",
      "currency": "KZT",
      "ytm": 23.18,
-     "price": 98.9936,
+     "price": 98.9939,
      "coupon": 22.0,
      "couponFreq": "",
      "maturity": "17.10.2027",
      "termMonths": 11,
      "liquidity": {
-      "level": "low",
-      "trades": 10,
-      "volume": 0.01,
+      "level": "medium",
+      "trades": 4,
+      "volume": 0.053,
       "marketMaker": false
      },
      "bid": {
-      "price": 102.0
+      "price": 100.0
      },
      "ask": {
-      "price": 98.8199
+      "price": 98.9936
      },
-     "asOf": "2026-11-02T17:02:00",
+     "asOf": "2026-11-03T11:39:14",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFHCb1"
     }
    ]
@@ -12588,31 +12588,6 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "MFLNb2",
-     "isin": "KZ2P00017353",
-     "currency": "KZT",
-     "ytm": 23.0,
-     "price": 99.9994,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "01.04.2028",
-     "termMonths": 17,
-     "liquidity": {
-      "level": "medium",
-      "trades": 24,
-      "volume": 0.1,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9994
-     },
-     "ask": {
-      "price": 99.9994
-     },
-     "asOf": "2026-11-02T17:02:03",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLNb2"
-    },
-    {
      "ticker": "MFLNb3",
      "isin": "KZ2P00020076",
      "currency": "KZT",
@@ -12659,6 +12634,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLNb1"
     },
     {
+     "ticker": "MFLNb2",
+     "isin": "KZ2P00017353",
+     "currency": "KZT",
+     "ytm": 23.0,
+     "price": 99.9989,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "01.04.2028",
+     "termMonths": 17,
+     "liquidity": {
+      "level": "medium",
+      "trades": 11,
+      "volume": 0.023,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.9989
+     },
+     "ask": {
+      "price": 99.9989
+     },
+     "asOf": "2026-11-03T11:54:28",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFLNb2"
+    },
+    {
      "ticker": "MFLNpp1",
      "isin": "KZ2P00018575",
      "currency": "USD",
@@ -12690,6 +12690,31 @@
    "reportingNote": "данные на 01.10.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
+     "ticker": "MFRFb15",
+     "isin": "KZ2P00012271",
+     "currency": "KZT",
+     "ytm": 21.87,
+     "price": 101.49,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "29.05.2028",
+     "termMonths": 19,
+     "liquidity": {
+      "level": "low",
+      "trades": 9,
+      "volume": 0.002,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.49
+     },
+     "ask": {
+      "price": 101.45
+     },
+     "asOf": "2026-11-03T11:48:48",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb15"
+    },
+    {
      "ticker": "MFRFb22",
      "isin": "KZ2P00015613",
      "currency": "USD",
@@ -12709,6 +12734,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb22"
+    },
+    {
+     "ticker": "MFRFb26",
+     "isin": "KZ2P00016306",
+     "currency": "KZT",
+     "ytm": 22.49,
+     "price": 100.8997,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "11.02.2029",
+     "termMonths": 27,
+     "liquidity": {
+      "level": "low",
+      "trades": 24,
+      "volume": 0.009,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.91
+     },
+     "ask": {
+      "price": 99.999
+     },
+     "asOf": "2026-11-03T11:54:15",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb26"
     },
     {
      "ticker": "MFRFb28",
@@ -12734,31 +12784,6 @@
      },
      "asOf": "2026-10-30T17:01:41",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb28"
-    },
-    {
-     "ticker": "MFRFb15",
-     "isin": "KZ2P00012271",
-     "currency": "KZT",
-     "ytm": 21.9,
-     "price": 101.45,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "29.05.2028",
-     "termMonths": 19,
-     "liquidity": {
-      "level": "medium",
-      "trades": 7,
-      "volume": 0.508,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.45
-     },
-     "ask": {
-      "price": 100.0
-     },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb15"
     },
     {
      "ticker": "MFRFpp1",
@@ -12810,50 +12835,100 @@
      "ticker": "MFRFb24",
      "isin": "KZ2P00015845",
      "currency": "KZT",
-     "ytm": 22.24,
-     "price": 101.2,
+     "ytm": 22.18,
+     "price": 101.3,
      "coupon": 23.0,
      "couponFreq": "",
      "maturity": "24.10.2028",
      "termMonths": 23,
      "liquidity": {
-      "level": "low",
-      "trades": 67,
-      "volume": 0.001,
+      "level": "medium",
+      "trades": 28,
+      "volume": 0.1,
       "marketMaker": false
      },
      "bid": {
-      "price": 101.2038
+      "price": 101.4
      },
      "ask": {
-      "price": 100.6
+      "price": 101.0
      },
-     "asOf": "2026-11-02T17:02:06",
+     "asOf": "2026-11-03T11:49:34",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb24"
+    },
+    {
+     "ticker": "MFRFb9",
+     "isin": "KZ2P00010366",
+     "currency": "KZT",
+     "ytm": 24.96,
+     "price": 100.0,
+     "coupon": 25.0,
+     "couponFreq": "",
+     "maturity": "14.12.2026",
+     "termMonths": 1,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.076,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.0
+     },
+     "ask": {
+      "price": 100.0
+     },
+     "asOf": "2026-11-03T11:54:41",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb9"
+    },
+    {
+     "ticker": "MFRFb19",
+     "isin": "KZ2P00014004",
+     "currency": "KZT",
+     "ytm": 23.34,
+     "price": 96.82,
+     "coupon": 21.0,
+     "couponFreq": "",
+     "maturity": "26.06.2028",
+     "termMonths": 20,
+     "liquidity": {
+      "level": "low",
+      "trades": 12,
+      "volume": 0.002,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.9973
+     },
+     "ask": {
+      "price": 96.82
+     },
+     "asOf": "2026-11-03T11:55:17",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb19"
     },
     {
      "ticker": "MFRFb27",
      "isin": "KZ2P00016314",
      "currency": "KZT",
-     "ytm": 22.05,
-     "price": 101.8,
+     "ytm": 22.8,
+     "price": 101.6999,
      "coupon": 23.0,
      "couponFreq": "",
      "maturity": "23.04.2029",
      "termMonths": 29,
      "liquidity": {
       "level": "medium",
-      "trades": 146,
-      "volume": 0.019,
+      "trades": 38,
+      "volume": 0.039,
       "marketMaker": false
      },
      "bid": {
-      "price": 109.9241
+      "price": 101.8
      },
      "ask": {
-      "price": 70.0
+      "price": 100.0
      },
-     "asOf": "2026-11-02T17:02:06",
+     "asOf": "2026-11-03T11:53:03",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb27"
     },
     {
@@ -12949,31 +13024,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb23"
     },
     {
-     "ticker": "MFRFb26",
-     "isin": "KZ2P00016306",
-     "currency": "KZT",
-     "ytm": 22.49,
-     "price": 100.9,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "11.02.2029",
-     "termMonths": 27,
-     "liquidity": {
-      "level": "medium",
-      "trades": 90,
-      "volume": 0.071,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 103.0
-     },
-     "ask": {
-      "price": 70.0
-     },
-     "asOf": "2026-11-02T17:02:06",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb26"
-    },
-    {
      "ticker": "MFRFb25",
      "isin": "KZ2P00016173",
      "currency": "KZT",
@@ -13037,31 +13087,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFpp2"
     },
     {
-     "ticker": "MFRFb9",
-     "isin": "KZ2P00010366",
-     "currency": "KZT",
-     "ytm": 16.26,
-     "price": 101.0,
-     "coupon": 25.0,
-     "couponFreq": "",
-     "maturity": "14.12.2026",
-     "termMonths": 1,
-     "liquidity": {
-      "level": "medium",
-      "trades": 26,
-      "volume": 0.248,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.0
-     },
-     "ask": {
-      "price": 100.002
-     },
-     "asOf": "2026-11-02T17:02:06",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb9"
-    },
-    {
      "ticker": "MFRFb18",
      "isin": "KZ2P00013998",
      "currency": "KZT",
@@ -13085,31 +13110,6 @@
      },
      "asOf": "2026-11-02T17:02:06",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb18"
-    },
-    {
-     "ticker": "MFRFb19",
-     "isin": "KZ2P00014004",
-     "currency": "KZT",
-     "ytm": 23.34,
-     "price": 96.82,
-     "coupon": 21.0,
-     "couponFreq": "",
-     "maturity": "26.06.2028",
-     "termMonths": 20,
-     "liquidity": {
-      "level": "medium",
-      "trades": 102,
-      "volume": 0.017,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9976
-     },
-     "ask": {
-      "price": 96.8
-     },
-     "asOf": "2026-11-02T17:02:06",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFRFb19"
     }
    ]
   },
@@ -13297,7 +13297,7 @@
      "maturity": "26.05.2027",
      "termMonths": 7,
      "liquidity": {
-      "level": "medium",
+      "level": "high",
       "trades": 4,
       "volume": 1.002,
       "marketMaker": false
@@ -13389,18 +13389,18 @@
      "maturity": "30.06.2028",
      "termMonths": 20,
      "liquidity": {
-      "level": "low",
-      "trades": 12,
-      "volume": 0.01,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.026,
       "marketMaker": false
      },
      "bid": {
-      "price": 99.99
+      "price": 100.0
      },
      "ask": {
       "price": 99.99
      },
-     "asOf": "2026-11-02T17:02:06",
+     "asOf": "2026-11-03T11:42:16",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSCb10"
     },
     {
@@ -13732,6 +13732,31 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
+     "ticker": "MFCFb2",
+     "isin": "KZ2P00014640",
+     "currency": "KZT",
+     "ytm": 61.59,
+     "price": 100.0,
+     "coupon": 22.5,
+     "couponFreq": "",
+     "maturity": "20.02.2027",
+     "termMonths": 4,
+     "liquidity": {
+      "level": "low",
+      "trades": 4,
+      "volume": 0.006,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.9
+     },
+     "ask": {
+      "price": 98.9917
+     },
+     "asOf": "2026-11-02T17:01:59",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFCFb2"
+    },
+    {
      "ticker": "MFCFb1",
      "isin": "KZ2P00011950",
      "currency": "KZT",
@@ -13755,31 +13780,6 @@
      },
      "asOf": "2026-10-23T17:01:12",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFCFb1"
-    },
-    {
-     "ticker": "MFCFb2",
-     "isin": "KZ2P00014640",
-     "currency": "KZT",
-     "ytm": 22.41,
-     "price": 100.0,
-     "coupon": 22.5,
-     "couponFreq": "",
-     "maturity": "20.02.2027",
-     "termMonths": 4,
-     "liquidity": {
-      "level": "medium",
-      "trades": 4,
-      "volume": 0.019,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.9
-     },
-     "ask": {
-      "price": 98.9917
-     },
-     "asOf": "2026-11-02T17:01:59",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFCFb2"
     }
    ]
   },
@@ -13827,24 +13827,24 @@
      "isin": "KZ2P00014426",
      "currency": "KZT",
      "ytm": 21.0,
-     "price": 99.9746,
+     "price": 99.9738,
      "coupon": 21.0,
      "couponFreq": "",
      "maturity": "09.04.2028",
      "termMonths": 17,
      "liquidity": {
       "level": "medium",
-      "trades": 23,
-      "volume": 0.095,
+      "trades": 8,
+      "volume": 0.077,
       "marketMaker": true
      },
      "bid": {
-      "price": 100.0001
+      "price": 99.974
      },
      "ask": {
-      "price": 98.7699
+      "price": 99.9738
      },
-     "asOf": "2026-11-02T17:01:58",
+     "asOf": "2026-11-03T11:54:13",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFACb4"
     },
     {
@@ -13914,7 +13914,7 @@
      "maturity": "05.09.2027",
      "termMonths": 10,
      "liquidity": {
-      "level": "medium",
+      "level": "high",
       "trades": 1,
       "volume": 1.038,
       "marketMaker": false
@@ -13933,24 +13933,24 @@
      "isin": "KZ2P00017346",
      "currency": "KZT",
      "ytm": 23.0,
-     "price": 99.9604,
+     "price": 99.9635,
      "coupon": 23.0,
      "couponFreq": "",
      "maturity": "14.05.2028",
      "termMonths": 18,
      "liquidity": {
       "level": "medium",
-      "trades": 4,
-      "volume": 0.111,
+      "trades": 1,
+      "volume": 0.055,
       "marketMaker": false
      },
      "bid": {
-      "price": 99.9604
+      "price": 99.9635
      },
      "ask": {
-      "price": 99.9604
+      "price": 99.9635
      },
-     "asOf": "2026-11-02T17:01:58",
+     "asOf": "2026-11-03T11:55:20",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFBHb2"
     }
    ]
@@ -14100,25 +14100,25 @@
      "ticker": "MFCIb2",
      "isin": "KZ2P00011166",
      "currency": "KZT",
-     "ytm": 22.27,
-     "price": 99.85,
+     "ytm": 22.3,
+     "price": 99.84,
      "coupon": 22.0,
      "couponFreq": "",
      "maturity": "13.05.2027",
      "termMonths": 6,
      "liquidity": {
-      "level": "medium",
+      "level": "low",
       "trades": 1,
-      "volume": 0.03,
+      "volume": 0.008,
       "marketMaker": false
      },
      "bid": {
-      "price": 99.85
+      "price": 100.0
      },
      "ask": {
       "price": 99.84
      },
-     "asOf": "2026-11-02T17:01:59",
+     "asOf": "2026-11-03T11:50:18",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFCIb2"
     }
    ]
@@ -14462,31 +14462,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFDFb5"
     },
     {
-     "ticker": "MFDFb4",
-     "isin": "KZ2P00015985",
-     "currency": "KZT",
-     "ytm": 22.0,
-     "price": 99.9958,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "17.11.2028",
-     "termMonths": 24,
-     "liquidity": {
-      "level": "medium",
-      "trades": 25,
-      "volume": 0.06,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 99.9958
-     },
-     "asOf": "2026-11-02T17:02:00",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFDFb4"
-    },
-    {
      "ticker": "MFDFb7",
      "isin": "KZ2P00016678",
      "currency": "USD",
@@ -14554,6 +14529,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFDFb8"
     },
     {
+     "ticker": "MFDFb4",
+     "isin": "KZ2P00015985",
+     "currency": "KZT",
+     "ytm": 19.02,
+     "price": 105.0,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "17.11.2028",
+     "termMonths": 24,
+     "liquidity": {
+      "level": "low",
+      "trades": 1,
+      "volume": 0.001,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 95.0001
+     },
+     "ask": {
+      "price": 104.0
+     },
+     "asOf": "2026-11-03T11:53:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFDFb4"
+    },
+    {
      "ticker": "MFDFb3",
      "isin": "KZ2P00013840",
      "currency": "KZT",
@@ -14589,31 +14589,6 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "MFUCb9",
-     "isin": "KZ2P00015431",
-     "currency": "USD",
-     "ytm": 12.17,
-     "price": 98.0,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "08.10.2028",
-     "termMonths": 23,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.09,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 98.0
-     },
-     "ask": {
-      "price": 98.0
-     },
-     "asOf": "2026-11-02T17:02:23",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFUCb9"
-    },
-    {
      "ticker": "MFUCb11",
      "isin": "KZ2P00019508",
      "currency": "USD",
@@ -14633,6 +14608,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFUCb11"
+    },
+    {
+     "ticker": "MFUCb9",
+     "isin": "KZ2P00015431",
+     "currency": "USD",
+     "ytm": 13.0,
+     "price": 96.62,
+     "coupon": 11.0,
+     "couponFreq": "",
+     "maturity": "08.10.2028",
+     "termMonths": 23,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.839,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 96.62
+     },
+     "ask": {
+      "price": 96.62
+     },
+     "asOf": "2026-11-03T11:51:13",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFUCb9"
     },
     {
      "ticker": "MFUCb15",
@@ -14856,6 +14856,98 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
+     "ticker": "MFMOb39",
+     "isin": "KZ2P00016876",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb39"
+    },
+    {
+     "ticker": "MFMOb42",
+     "isin": "KZ2P00016819",
+     "currency": "USD",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb42"
+    },
+    {
+     "ticker": "MFMOb48",
+     "isin": "KZ2P00018211",
+     "currency": "USD",
+     "ytm": 9.63,
+     "price": 101.0,
+     "coupon": 11.0,
+     "couponFreq": "",
+     "maturity": "29.06.2027",
+     "termMonths": 8,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.045,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 59.01
+     },
+     "ask": {
+      "price": 101.0
+     },
+     "asOf": "2026-09-25T17:02:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb48"
+    },
+    {
+     "ticker": "MFMOb24",
+     "isin": "KZ2P00013212",
+     "currency": "KZT",
+     "ytm": 22.83,
+     "price": 99.49,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "02.07.2027",
+     "termMonths": 8,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.632,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.94
+     },
+     "ask": {
+      "price": 99.49
+     },
+     "asOf": "2026-11-03T11:52:03",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb24"
+    },
+    {
      "ticker": "MFMOb26",
      "isin": "KZ2P00013204",
      "currency": "USD",
@@ -14931,71 +15023,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb36"
     },
     {
-     "ticker": "MFMOb39",
-     "isin": "KZ2P00016876",
+     "ticker": "MFMOb37",
+     "isin": "KZ2P00016850",
      "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
+     "ytm": 22.79,
+     "price": 101.2,
+     "coupon": 23.0,
      "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
+     "maturity": "27.07.2028",
+     "termMonths": 21,
      "liquidity": {
       "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb39"
-    },
-    {
-     "ticker": "MFMOb42",
-     "isin": "KZ2P00016819",
-     "currency": "USD",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb42"
-    },
-    {
-     "ticker": "MFMOb48",
-     "isin": "KZ2P00018211",
-     "currency": "USD",
-     "ytm": 9.63,
-     "price": 101.0,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "29.06.2027",
-     "termMonths": 8,
-     "liquidity": {
-      "level": "medium",
       "trades": 1,
-      "volume": 0.045,
+      "volume": 0.01,
       "marketMaker": false
      },
      "bid": {
-      "price": 59.01
+      "price": 100.3
      },
      "ask": {
-      "price": 101.0
+      "price": 101.2
      },
-     "asOf": "2026-09-25T17:02:24",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb48"
+     "asOf": "2026-11-03T11:51:39",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb37"
     },
     {
      "ticker": "MFMOb7",
@@ -15021,31 +15071,6 @@
      },
      "asOf": "2026-11-02T17:02:04",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb7"
-    },
-    {
-     "ticker": "MFMOb15",
-     "isin": "KZ2P00013295",
-     "currency": "KZT",
-     "ytm": 21.91,
-     "price": 100.0,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "18.11.2026",
-     "termMonths": 0,
-     "liquidity": {
-      "level": "low",
-      "trades": 1,
-      "volume": 0.01,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 100.0
-     },
-     "asOf": "2026-11-02T17:02:03",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb15"
     },
     {
      "ticker": "MFMOb38",
@@ -15094,29 +15119,54 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb46"
     },
     {
-     "ticker": "MFMOb28",
-     "isin": "KZ2P00013352",
-     "currency": "USD",
-     "ytm": 8.74,
-     "price": 102.0,
-     "coupon": 12.0,
+     "ticker": "MFMOb15",
+     "isin": "KZ2P00013295",
+     "currency": "KZT",
+     "ytm": 21.91,
+     "price": 100.0,
+     "coupon": 22.0,
      "couponFreq": "",
-     "maturity": "20.06.2027",
-     "termMonths": 7,
+     "maturity": "18.11.2026",
+     "termMonths": 0,
      "liquidity": {
-      "level": "medium",
+      "level": "low",
       "trades": 1,
-      "volume": 0.046,
+      "volume": 0.01,
       "marketMaker": false
      },
      "bid": {
-      "price": 102.0
+      "price": 100.0
      },
      "ask": {
-      "price": 102.0
+      "price": 100.0
      },
-     "asOf": "2026-11-02T17:02:18",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb28"
+     "asOf": "2026-11-02T17:02:03",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb15"
+    },
+    {
+     "ticker": "MFMOb33",
+     "isin": "KZ2P00014608",
+     "currency": "USD",
+     "ytm": 6.05,
+     "price": 104.9994,
+     "coupon": 11.0,
+     "couponFreq": "",
+     "maturity": "19.11.2027",
+     "termMonths": 12,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.048,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 104.9994
+     },
+     "ask": {
+      "price": 104.9994
+     },
+     "asOf": "2026-11-03T11:31:31",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb33"
     },
     {
      "ticker": "MFMOb44",
@@ -15144,29 +15194,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb44"
     },
     {
-     "ticker": "MFMOb24",
-     "isin": "KZ2P00013212",
-     "currency": "KZT",
-     "ytm": 68.37,
-     "price": 75.7131,
-     "coupon": 22.0,
+     "ticker": "MFMOb28",
+     "isin": "KZ2P00013352",
+     "currency": "USD",
+     "ytm": 8.74,
+     "price": 102.0,
+     "coupon": 12.0,
      "couponFreq": "",
-     "maturity": "02.07.2027",
-     "termMonths": 8,
+     "maturity": "20.06.2027",
+     "termMonths": 7,
      "liquidity": {
-      "level": "low",
-      "trades": 2,
-      "volume": 0.005,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.046,
       "marketMaker": false
      },
      "bid": {
-      "price": 96.05
+      "price": 102.0
      },
      "ask": {
-      "price": 61.4259
+      "price": 102.0
      },
-     "asOf": "2026-11-02T17:02:03",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb24"
+     "asOf": "2026-11-02T17:02:18",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb28"
     },
     {
      "ticker": "MFMOb49",
@@ -15194,6 +15244,77 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb49"
     },
     {
+     "ticker": "MFMOb51",
+     "isin": "KZ2P00020621",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb51"
+    },
+    {
+     "ticker": "MFMOb23",
+     "isin": "KZ2P00013154",
+     "currency": "KZT",
+     "ytm": 22.19,
+     "price": 99.9,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "16.05.2027",
+     "termMonths": 6,
+     "liquidity": {
+      "level": "low",
+      "trades": 2,
+      "volume": 0.014,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.9
+     },
+     "ask": {
+      "price": 99.9
+     },
+     "asOf": "2026-11-03T11:52:27",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb23"
+    },
+    {
+     "ticker": "MFMOb45",
+     "isin": "KZ2P00018195",
+     "currency": "KZT",
+     "ytm": -23.95,
+     "price": 143.49,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "26.08.2027",
+     "termMonths": 10,
+     "liquidity": {
+      "level": "low",
+      "trades": 1,
+      "volume": 0.001,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 143.49
+     },
+     "ask": {
+      "price": 143.49
+     },
+     "asOf": "2026-10-22T17:02:45",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb45"
+    },
+    {
      "ticker": "MFMOb25",
      "isin": "KZ2P00013220",
      "currency": "KZT",
@@ -15217,31 +15338,6 @@
      },
      "asOf": "2026-10-30T17:01:23",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb25"
-    },
-    {
-     "ticker": "MFMOb33",
-     "isin": "KZ2P00014608",
-     "currency": "USD",
-     "ytm": 12.01,
-     "price": 99.0,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "19.11.2027",
-     "termMonths": 12,
-     "liquidity": {
-      "level": "medium",
-      "trades": 7,
-      "volume": 0.091,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 99.9999
-     },
-     "asOf": "2026-10-29T17:01:33",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb33"
     },
     {
      "ticker": "MFMOb35",
@@ -15269,29 +15365,50 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb35"
     },
     {
-     "ticker": "MFMOb45",
-     "isin": "KZ2P00018195",
-     "currency": "KZT",
-     "ytm": -23.95,
-     "price": 143.49,
-     "coupon": 22.0,
+     "ticker": "MFMOb43",
+     "isin": "KZ2P00017882",
+     "currency": "USD",
+     "ytm": 11.0,
+     "price": 99.9991,
+     "coupon": 11.0,
      "couponFreq": "",
-     "maturity": "26.08.2027",
-     "termMonths": 10,
+     "maturity": "17.04.2027",
+     "termMonths": 5,
      "liquidity": {
-      "level": "low",
-      "trades": 1,
-      "volume": 0.001,
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.765,
       "marketMaker": false
      },
      "bid": {
-      "price": 143.49
+      "price": 99.9991
      },
      "ask": {
-      "price": 143.49
+      "price": 99.999
      },
-     "asOf": "2026-10-22T17:02:45",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb45"
+     "asOf": "2026-05-15T17:01:14",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb43"
+    },
+    {
+     "ticker": "MFMOb52",
+     "isin": "KZ2P00020639",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb52"
     },
     {
      "ticker": "MFMOb27",
@@ -15342,81 +15459,6 @@
      },
      "asOf": "2026-11-02T17:02:18",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb34"
-    },
-    {
-     "ticker": "MFMOb37",
-     "isin": "KZ2P00016850",
-     "currency": "KZT",
-     "ytm": 22.79,
-     "price": 100.3,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "27.07.2028",
-     "termMonths": 21,
-     "liquidity": {
-      "level": "low",
-      "trades": 32,
-      "volume": 0.01,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.0
-     },
-     "ask": {
-      "price": 99.99
-     },
-     "asOf": "2026-11-02T17:02:04",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb37"
-    },
-    {
-     "ticker": "MFMOb43",
-     "isin": "KZ2P00017882",
-     "currency": "USD",
-     "ytm": 11.0,
-     "price": 99.9991,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "17.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.765,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9991
-     },
-     "ask": {
-      "price": 99.999
-     },
-     "asOf": "2026-05-15T17:01:14",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb43"
-    },
-    {
-     "ticker": "MFMOb30",
-     "isin": "KZ2P00014467",
-     "currency": "KZT",
-     "ytm": 21.1,
-     "price": 100.875,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "11.12.2027",
-     "termMonths": 13,
-     "liquidity": {
-      "level": "low",
-      "trades": 2,
-      "volume": 0.005,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 100.875
-     },
-     "ask": {
-      "price": 99.99
-     },
-     "asOf": "2026-11-02T17:02:03",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb30"
     },
     {
      "ticker": "MFMOb40",
@@ -15519,6 +15561,52 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb50"
     },
     {
+     "ticker": "MFMOb30",
+     "isin": "KZ2P00014467",
+     "currency": "KZT",
+     "ytm": 21.1,
+     "price": 100.875,
+     "coupon": 22.0,
+     "couponFreq": "",
+     "maturity": "11.12.2027",
+     "termMonths": 13,
+     "liquidity": {
+      "level": "low",
+      "trades": 2,
+      "volume": 0.005,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.875
+     },
+     "ask": {
+      "price": 99.99
+     },
+     "asOf": "2026-11-02T17:02:03",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb30"
+    },
+    {
+     "ticker": "MFMOb53",
+     "isin": "KZ2P00020647",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": null,
+     "couponFreq": "",
+     "maturity": "",
+     "termMonths": null,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb53"
+    },
+    {
      "ticker": "MFMOb10",
      "isin": "KZ2P00012651",
      "currency": "USD",
@@ -15542,31 +15630,6 @@
      },
      "asOf": "2026-11-02T17:02:17",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb10"
-    },
-    {
-     "ticker": "MFMOb23",
-     "isin": "KZ2P00013154",
-     "currency": "KZT",
-     "ytm": 21.99,
-     "price": 99.9999,
-     "coupon": 22.0,
-     "couponFreq": "",
-     "maturity": "16.05.2027",
-     "termMonths": 6,
-     "liquidity": {
-      "level": "medium",
-      "trades": 16,
-      "volume": 0.825,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9999
-     },
-     "ask": {
-      "price": 99.0
-     },
-     "asOf": "2026-11-02T17:02:03",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFMOb23"
     },
     {
      "ticker": "MFMOb29",
@@ -15770,104 +15833,54 @@
    "reportingNote": "данные на 01.10.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "MFOKb20",
-     "isin": "KZ2C00010916",
-     "currency": "KZT",
-     "ytm": 24.66,
-     "price": 95.99,
-     "coupon": 19.0,
-     "couponFreq": "",
-     "maturity": "15.08.2027",
-     "termMonths": 9,
-     "liquidity": {
-      "level": "medium",
-      "trades": 41,
-      "volume": 0.001,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 96.4463
-     },
-     "ask": {
-      "price": 94.0474
-     },
-     "asOf": "2026-11-02T17:02:04",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb20"
-    },
-    {
-     "ticker": "MFOKb35",
-     "isin": "KZ2C00018240",
-     "currency": "KZT",
-     "ytm": 22.41,
-     "price": 100.888,
-     "coupon": 24.0,
-     "couponFreq": "",
-     "maturity": "10.06.2027",
-     "termMonths": 7,
-     "liquidity": {
-      "level": "low",
-      "trades": 60,
-      "volume": 0.011,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.95
-     },
-     "ask": {
-      "price": 100.25
-     },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb35"
-    },
-    {
      "ticker": "MFOKb21",
      "isin": "KZ2C00011906",
      "currency": "KZT",
-     "ytm": 20.29,
-     "price": 98.5999,
+     "ytm": 20.3,
+     "price": 98.59,
      "coupon": 19.0,
      "couponFreq": "",
      "maturity": "28.01.2028",
      "termMonths": 15,
      "liquidity": {
       "level": "medium",
-      "trades": 38,
-      "volume": 0.049,
+      "trades": 2,
+      "volume": 0.002,
       "marketMaker": true
      },
      "bid": {
-      "price": 98.6
+      "price": 98.5999
      },
      "ask": {
-      "price": 96.77
+      "price": 98.59
      },
-     "asOf": "2026-11-02T17:02:04",
+     "asOf": "2026-11-03T11:43:21",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb21"
     },
     {
-     "ticker": "MFOKb31",
-     "isin": "KZ2C00015576",
-     "currency": "KZT",
-     "ytm": 20.58,
-     "price": 100.7,
-     "coupon": 21.59,
+     "ticker": "MFOKb19",
+     "isin": "KZ2C00010825",
+     "currency": "USD",
+     "ytm": 10.03,
+     "price": 99.9899,
+     "coupon": 10.0,
      "couponFreq": "",
-     "maturity": "21.11.2028",
-     "termMonths": 24,
+     "maturity": "18.03.2027",
+     "termMonths": 4,
      "liquidity": {
       "level": "medium",
-      "trades": 27,
-      "volume": 0.1,
+      "trades": 1,
+      "volume": 0.046,
       "marketMaker": true
      },
      "bid": {
-      "price": 101.0
+      "price": 99.8
      },
      "ask": {
-      "price": 100.0
+      "price": 99.9899
      },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb31"
+     "asOf": "2026-11-03T11:38:02",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb19"
     },
     {
      "ticker": "MFOKb17",
@@ -15891,81 +15904,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb17"
     },
     {
-     "ticker": "MFOKb24",
-     "isin": "KZ2C00013258",
-     "currency": "KZT",
-     "ytm": 20.01,
-     "price": 101.17,
-     "coupon": 21.0,
-     "couponFreq": "",
-     "maturity": "12.03.2028",
-     "termMonths": 16,
-     "liquidity": {
-      "level": "medium",
-      "trades": 6,
-      "volume": 0.084,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 101.1798
-     },
-     "ask": {
-      "price": 101.1699
-     },
-     "asOf": "2026-11-02T17:02:04",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb24"
-    },
-    {
-     "ticker": "MFOKb37",
-     "isin": "KZ2C00020550",
-     "currency": "KZT",
-     "ytm": 24.06,
-     "price": 99.55,
-     "coupon": 23.0,
-     "couponFreq": "",
-     "maturity": "13.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "medium",
-      "trades": 151,
-      "volume": 1.167,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 105.6609
-     },
-     "ask": {
-      "price": 99.2
-     },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb37"
-    },
-    {
-     "ticker": "MFOKb25",
-     "isin": "KZ2C00013266",
-     "currency": "KZT",
-     "ytm": 21.08,
-     "price": 97.4798,
-     "coupon": 19.0,
-     "couponFreq": "",
-     "maturity": "31.03.2028",
-     "termMonths": 17,
-     "liquidity": {
-      "level": "medium",
-      "trades": 23,
-      "volume": 0.001,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 99.9142
-     },
-     "ask": {
-      "price": 95.8
-     },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb25"
-    },
-    {
      "ticker": "MFOKb26",
      "isin": "KZ2C00013274",
      "currency": "KZT",
@@ -15977,18 +15915,68 @@
      "termMonths": 19,
      "liquidity": {
       "level": "medium",
-      "trades": 18,
-      "volume": 0.01,
+      "trades": 1,
+      "volume": 0.002,
       "marketMaker": true
      },
      "bid": {
-      "price": 99.3023
+      "price": 97.0
      },
      "ask": {
       "price": 97.0
      },
-     "asOf": "2026-11-02T17:02:05",
+     "asOf": "2026-11-03T11:42:03",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb26"
+    },
+    {
+     "ticker": "MFOKb35",
+     "isin": "KZ2C00018240",
+     "currency": "KZT",
+     "ytm": 22.41,
+     "price": 100.898,
+     "coupon": 24.0,
+     "couponFreq": "",
+     "maturity": "10.06.2027",
+     "termMonths": 7,
+     "liquidity": {
+      "level": "medium",
+      "trades": 4,
+      "volume": 0.02,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.898
+     },
+     "ask": {
+      "price": 100.5
+     },
+     "asOf": "2026-11-03T11:51:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb35"
+    },
+    {
+     "ticker": "MFOKb27",
+     "isin": "KZ2C00010833",
+     "currency": "USD",
+     "ytm": 10.51,
+     "price": 99.4999,
+     "coupon": 10.0,
+     "couponFreq": "",
+     "maturity": "18.11.2027",
+     "termMonths": 12,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.045,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 99.49
+     },
+     "ask": {
+      "price": 99.4999
+     },
+     "asOf": "2026-11-03T11:39:37",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb27"
     },
     {
      "ticker": "MFOKb23",
@@ -16001,7 +15989,7 @@
      "maturity": "19.02.2028",
      "termMonths": 15,
      "liquidity": {
-      "level": "medium",
+      "level": "high",
       "trades": 1,
       "volume": 1.009,
       "marketMaker": false
@@ -16014,6 +16002,31 @@
      },
      "asOf": "2026-05-29T17:01:01",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb23"
+    },
+    {
+     "ticker": "MFOKb30",
+     "isin": "KZ2C00015568",
+     "currency": "KZT",
+     "ytm": 21.0,
+     "price": 100.0,
+     "coupon": 21.59,
+     "couponFreq": "",
+     "maturity": "21.11.2028",
+     "termMonths": 24,
+     "liquidity": {
+      "level": "medium",
+      "trades": 5,
+      "volume": 0.244,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 100.5
+     },
+     "ask": {
+      "price": 100.69
+     },
+     "asOf": "2026-11-03T11:50:32",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb30"
     },
     {
      "ticker": "MFOKb33",
@@ -16037,29 +16050,54 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb33"
     },
     {
-     "ticker": "MFOKb28",
-     "isin": "KZ2C00015394",
-     "currency": "KZT",
-     "ytm": 23.3,
-     "price": 99.5001,
-     "coupon": 23.0,
+     "ticker": "MFOKb36",
+     "isin": "KZ2C00020543",
+     "currency": "USD",
+     "ytm": 11.0,
+     "price": 99.9991,
+     "coupon": 11.0,
      "couponFreq": "",
-     "maturity": "24.12.2028",
-     "termMonths": 25,
+     "maturity": "13.04.2027",
+     "termMonths": 5,
      "liquidity": {
-      "level": "high",
-      "trades": 146,
-      "volume": 1.993,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.365,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.9991
+     },
+     "ask": {
+      "price": 99.9991
+     },
+     "asOf": "2026-11-03T11:42:56",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb36"
+    },
+    {
+     "ticker": "MFOKb24",
+     "isin": "KZ2C00013258",
+     "currency": "KZT",
+     "ytm": 21.0,
+     "price": 101.1779,
+     "coupon": 21.0,
+     "couponFreq": "",
+     "maturity": "12.03.2028",
+     "termMonths": 16,
+     "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.022,
       "marketMaker": true
      },
      "bid": {
-      "price": 100.841
+      "price": 100.0005
      },
      "ask": {
-      "price": 99.0
+      "price": 101.1779
      },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb28"
+     "asOf": "2026-11-03T11:45:27",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb24"
     },
     {
      "ticker": "MFOKb29",
@@ -16083,104 +16121,129 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb29"
     },
     {
-     "ticker": "MFOKb36",
-     "isin": "KZ2C00020543",
-     "currency": "USD",
-     "ytm": 11.0,
-     "price": 99.999,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "13.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "high",
-      "trades": 4,
-      "volume": 4.519,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.999
-     },
-     "ask": {
-      "price": 99.999
-     },
-     "asOf": "2026-11-02T17:02:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb36"
-    },
-    {
-     "ticker": "MFOKb19",
-     "isin": "KZ2C00010825",
-     "currency": "USD",
-     "ytm": 10.03,
-     "price": 99.9898,
-     "coupon": 10.0,
-     "couponFreq": "",
-     "maturity": "18.03.2027",
-     "termMonths": 4,
-     "liquidity": {
-      "level": "medium",
-      "trades": 4,
-      "volume": 0.046,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 99.9991
-     },
-     "ask": {
-      "price": 99.8
-     },
-     "asOf": "2026-11-02T17:02:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb19"
-    },
-    {
-     "ticker": "MFOKb27",
-     "isin": "KZ2C00010833",
-     "currency": "USD",
-     "ytm": 10.51,
-     "price": 99.492,
-     "coupon": 10.0,
-     "couponFreq": "",
-     "maturity": "18.11.2027",
-     "termMonths": 12,
-     "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.136,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 99.492
-     },
-     "ask": {
-      "price": 99.4
-     },
-     "asOf": "2026-11-02T17:02:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb27"
-    },
-    {
-     "ticker": "MFOKb30",
-     "isin": "KZ2C00015568",
+     "ticker": "MFOKb25",
+     "isin": "KZ2C00013266",
      "currency": "KZT",
-     "ytm": 20.7,
-     "price": 100.5,
+     "ytm": 21.1,
+     "price": 97.4599,
+     "coupon": 19.0,
+     "couponFreq": "",
+     "maturity": "31.03.2028",
+     "termMonths": 17,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.081,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 97.46
+     },
+     "ask": {
+      "price": 97.4599
+     },
+     "asOf": "2026-11-03T11:51:37",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb25"
+    },
+    {
+     "ticker": "MFOKb28",
+     "isin": "KZ2C00015394",
+     "currency": "KZT",
+     "ytm": 23.3,
+     "price": 99.5,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "24.12.2028",
+     "termMonths": 25,
+     "liquidity": {
+      "level": "medium",
+      "trades": 21,
+      "volume": 0.045,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 100.8
+     },
+     "ask": {
+      "price": 99.5
+     },
+     "asOf": "2026-11-03T11:53:16",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb28"
+    },
+    {
+     "ticker": "MFOKb31",
+     "isin": "KZ2C00015576",
+     "currency": "KZT",
+     "ytm": 20.58,
+     "price": 100.7,
      "coupon": 21.59,
      "couponFreq": "",
      "maturity": "21.11.2028",
      "termMonths": 24,
      "liquidity": {
       "level": "medium",
-      "trades": 8,
-      "volume": 0.135,
+      "trades": 2,
+      "volume": 0.254,
       "marketMaker": true
      },
      "bid": {
-      "price": 100.5
+      "price": 100.7
      },
      "ask": {
-      "price": 100.3
+      "price": 100.7
      },
-     "asOf": "2026-11-02T17:02:05",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb30"
+     "asOf": "2026-11-03T11:55:18",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb31"
+    },
+    {
+     "ticker": "MFOKb37",
+     "isin": "KZ2C00020550",
+     "currency": "KZT",
+     "ytm": 23.0,
+     "price": 99.9939,
+     "coupon": 23.0,
+     "couponFreq": "",
+     "maturity": "13.04.2027",
+     "termMonths": 5,
+     "liquidity": {
+      "level": "medium",
+      "trades": 16,
+      "volume": 0.028,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 100.4159
+     },
+     "ask": {
+      "price": 99.5782
+     },
+     "asOf": "2026-11-03T11:53:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb37"
+    },
+    {
+     "ticker": "MFOKb20",
+     "isin": "KZ2C00010916",
+     "currency": "KZT",
+     "ytm": 24.68,
+     "price": 95.99,
+     "coupon": 19.0,
+     "couponFreq": "",
+     "maturity": "15.08.2027",
+     "termMonths": 9,
+     "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.01,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 95.99
+     },
+     "ask": {
+      "price": 95.99
+     },
+     "asOf": "2026-11-03T11:51:50",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFOKb20"
     },
     {
      "ticker": "MFOKb32",
@@ -16846,6 +16909,31 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
+     "ticker": "MFAFb15",
+     "isin": "KZ2P00018351",
+     "currency": "USD",
+     "ytm": 13.0,
+     "price": 99.999,
+     "coupon": 13.0,
+     "couponFreq": "",
+     "maturity": "30.06.2027",
+     "termMonths": 8,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.772,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 58.0001
+     },
+     "ask": {
+      "price": 99.999
+     },
+     "asOf": "2026-11-03T11:47:04",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFAFb15"
+    },
+    {
      "ticker": "MFAFb18",
      "isin": "KZ2P00019573",
      "currency": "USD",
@@ -16969,31 +17057,6 @@
      },
      "asOf": "2026-10-30T17:00:27",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFAFb19"
-    },
-    {
-     "ticker": "MFAFb15",
-     "isin": "KZ2P00018351",
-     "currency": "USD",
-     "ytm": 13.0,
-     "price": 99.9988,
-     "coupon": 13.0,
-     "couponFreq": "",
-     "maturity": "30.06.2027",
-     "termMonths": 8,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.045,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.9988
-     },
-     "ask": {
-      "price": 99.9988
-     },
-     "asOf": "2026-10-22T17:03:09",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFAFb15"
     },
     {
      "ticker": "MFAFb13",
@@ -17303,29 +17366,25 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "HSBKb22",
-     "isin": "KZ2C00012482",
+     "ticker": "HSBKb25",
+     "isin": "KZ2C00020295",
      "currency": "KZT",
-     "ytm": 17.21,
-     "price": 100.956,
-     "coupon": 1.25,
+     "ytm": null,
+     "price": null,
+     "coupon": null,
      "couponFreq": "",
-     "maturity": "03.12.2027",
-     "termMonths": 13,
+     "maturity": "",
+     "termMonths": null,
      "liquidity": {
-      "level": "medium",
-      "trades": 11,
-      "volume": 0.419,
-      "marketMaker": true
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
      },
-     "bid": {
-      "price": 100.956
-     },
-     "ask": {
-      "price": 100.51
-     },
-     "asOf": "2026-11-02T17:29:01",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HSBKb22"
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HSBKb25"
     },
     {
      "ticker": "HSBKb21",
@@ -17370,27 +17429,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/HSBKb24"
     },
     {
-     "ticker": "HSBKb25",
-     "isin": "KZ2C00020295",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": null,
-     "couponFreq": "",
-     "maturity": "",
-     "termMonths": null,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/HSBKb25"
-    },
-    {
      "ticker": "KKGBb12",
      "isin": "KZ2C00003358",
      "currency": "KZT",
@@ -17410,6 +17448,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KKGBb12"
+    },
+    {
+     "ticker": "HSBKb22",
+     "isin": "KZ2C00012482",
+     "currency": "KZT",
+     "ytm": 17.21,
+     "price": 100.9457,
+     "coupon": 1.25,
+     "couponFreq": "",
+     "maturity": "03.12.2027",
+     "termMonths": 13,
+     "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.014,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 100.9457
+     },
+     "ask": {
+      "price": 100.9457
+     },
+     "asOf": "2026-11-03T11:53:14",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/HSBKb22"
     }
    ]
   },
@@ -17453,65 +17516,15 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "KMGZe11",
-     "isin": "XS1595713782",
-     "currency": "USD",
-     "ytm": 5.8,
-     "price": 99.5292,
-     "coupon": 4.75,
-     "couponFreq": "",
-     "maturity": "19.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.453,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 99.5292
-     },
-     "ask": {
-      "price": 100.4259
-     },
-     "asOf": "2026-11-02T17:31:38",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZe11"
-    },
-    {
-     "ticker": "KMGZe15",
-     "isin": "XS1807299331",
-     "currency": "USD",
-     "ytm": 6.55,
-     "price": 97.9,
-     "coupon": 6.375,
-     "couponFreq": "",
-     "maturity": "24.10.2048",
-     "termMonths": 260,
-     "liquidity": {
-      "level": "high",
-      "trades": 1,
-      "volume": 3.324,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 97.9
-     },
-     "ask": {
-      "price": 97.9
-     },
-     "asOf": "2026-07-29T17:31:42",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZe15"
-    },
-    {
-     "ticker": "KMGZpp1",
-     "isin": "KZ2C00008969",
+     "ticker": "KMGZpp2",
+     "isin": "KZ2C00009736",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": 9.3,
+     "coupon": 0.5,
      "couponFreq": "",
-     "maturity": "16.10.2035",
-     "termMonths": 106,
+     "maturity": "01.04.2033",
+     "termMonths": null,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -17521,7 +17534,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZpp1"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZpp2"
     },
     {
      "ticker": "KMGZe12",
@@ -17599,15 +17612,40 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZe16"
     },
     {
-     "ticker": "KMGZpp2",
-     "isin": "KZ2C00009736",
+     "ticker": "KMGZe11",
+     "isin": "XS1595713782",
+     "currency": "USD",
+     "ytm": 5.8,
+     "price": 99.5292,
+     "coupon": 4.75,
+     "couponFreq": "",
+     "maturity": "19.04.2027",
+     "termMonths": 5,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.453,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 99.5292
+     },
+     "ask": {
+      "price": 100.4259
+     },
+     "asOf": "2026-11-02T17:31:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZe11"
+    },
+    {
+     "ticker": "KMGZpp1",
+     "isin": "KZ2C00008969",
      "currency": "KZT",
      "ytm": null,
      "price": null,
-     "coupon": 0.5,
+     "coupon": 9.3,
      "couponFreq": "",
-     "maturity": "01.04.2033",
-     "termMonths": null,
+     "maturity": "16.10.2035",
+     "termMonths": 106,
      "liquidity": {
       "level": "low",
       "trades": null,
@@ -17617,7 +17655,7 @@
      "bid": null,
      "ask": null,
      "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZpp2"
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZpp1"
     },
     {
      "ticker": "KMGZpp3",
@@ -17639,6 +17677,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZpp3"
+    },
+    {
+     "ticker": "KMGZe15",
+     "isin": "XS1807299331",
+     "currency": "USD",
+     "ytm": 6.55,
+     "price": 97.9,
+     "coupon": 6.375,
+     "couponFreq": "",
+     "maturity": "24.10.2048",
+     "termMonths": 260,
+     "liquidity": {
+      "level": "high",
+      "trades": 1,
+      "volume": 3.324,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 97.9
+     },
+     "ask": {
+      "price": 97.9
+     },
+     "asOf": "2026-07-29T17:31:42",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KMGZe15"
     }
    ]
   },
@@ -18036,6 +18099,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/KZAGb5"
     },
     {
+     "ticker": "BTRKe2",
+     "isin": "XS3189694345",
+     "currency": "USD",
+     "ytm": 5.64,
+     "price": 96.55,
+     "coupon": 4.65,
+     "couponFreq": "",
+     "maturity": "01.10.2030",
+     "termMonths": 46,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.88,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 95.55
+     },
+     "ask": {
+      "price": 96.55
+     },
+     "asOf": "2026-11-03T11:42:17",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKe2"
+    },
+    {
      "ticker": "BTRKb15",
      "isin": "KZ2C00012243",
      "currency": "KZT",
@@ -18122,31 +18210,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKb6"
-    },
-    {
-     "ticker": "BTRKb7",
-     "isin": "KZ2C00007383",
-     "currency": "KZT",
-     "ytm": 13.75,
-     "price": 91.091,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "19.03.2031",
-     "termMonths": 52,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.001,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 85.9546
-     },
-     "ask": {
-      "price": 91.091
-     },
-     "asOf": "2026-10-15T17:31:08",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKb7"
     },
     {
      "ticker": "BTRKb8",
@@ -18291,29 +18354,29 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKb24"
     },
     {
-     "ticker": "BTRKe2",
-     "isin": "XS3189694345",
-     "currency": "USD",
-     "ytm": 5.93,
-     "price": 95.55,
-     "coupon": 4.65,
+     "ticker": "BTRKb7",
+     "isin": "KZ2C00007383",
+     "currency": "KZT",
+     "ytm": 13.75,
+     "price": 91.1475,
+     "coupon": 11.0,
      "couponFreq": "",
-     "maturity": "01.10.2030",
-     "termMonths": 46,
+     "maturity": "19.03.2031",
+     "termMonths": 52,
      "liquidity": {
-      "level": "high",
+      "level": "medium",
       "trades": 1,
-      "volume": 2.149,
+      "volume": 0.001,
       "marketMaker": true
      },
      "bid": {
-      "price": 97.0
+      "price": 91.1475
      },
      "ask": {
-      "price": 95.55
+      "price": 91.1475
      },
-     "asOf": "2026-10-09T17:31:34",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKe2"
+     "asOf": "2026-11-03T11:51:36",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKb7"
     },
     {
      "ticker": "BTRKb30",
@@ -18450,6 +18513,27 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKb22"
     },
     {
+     "ticker": "KZAGb6",
+     "isin": "KZ2C00004323",
+     "currency": "KZT",
+     "ytm": null,
+     "price": null,
+     "coupon": 17.0,
+     "couponFreq": "",
+     "maturity": "29.06.2028",
+     "termMonths": 20,
+     "liquidity": {
+      "level": "low",
+      "trades": null,
+      "volume": null,
+      "marketMaker": false
+     },
+     "bid": null,
+     "ask": null,
+     "asOf": null,
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZAGb6"
+    },
+    {
      "ticker": "BTRKb9",
      "isin": "KZ2C00010304",
      "currency": "KZT",
@@ -18494,27 +18578,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BTRKe5"
-    },
-    {
-     "ticker": "KZAGb6",
-     "isin": "KZ2C00004323",
-     "currency": "KZT",
-     "ytm": null,
-     "price": null,
-     "coupon": 17.0,
-     "couponFreq": "",
-     "maturity": "29.06.2028",
-     "termMonths": 20,
-     "liquidity": {
-      "level": "low",
-      "trades": null,
-      "volume": null,
-      "marketMaker": false
-     },
-     "bid": null,
-     "ask": null,
-     "asOf": null,
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/KZAGb6"
     },
     {
      "ticker": "BTRKb21",
@@ -19051,56 +19114,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb6"
     },
     {
-     "ticker": "JSBNb8",
-     "isin": "KZ2C00013696",
-     "currency": "KZT",
-     "ytm": 13.03,
-     "price": 114.4,
-     "coupon": 18.0,
-     "couponFreq": "",
-     "maturity": "13.08.2030",
-     "termMonths": 45,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.008,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 108.4
-     },
-     "ask": {
-      "price": 114.4
-     },
-     "asOf": "2026-11-02T17:31:20",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb8"
-    },
-    {
-     "ticker": "JSBNb9",
-     "isin": "KZ2C00016806",
-     "currency": "KZT",
-     "ytm": 15.0,
-     "price": 108.2066,
-     "coupon": 17.5,
-     "couponFreq": "",
-     "maturity": "12.03.2031",
-     "termMonths": 52,
-     "liquidity": {
-      "level": "medium",
-      "trades": 1,
-      "volume": 0.001,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 101.4976
-     },
-     "ask": {
-      "price": 108.2066
-     },
-     "asOf": "2026-06-11T17:00:38",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb9"
-    },
-    {
      "ticker": "JSBNb2",
      "isin": "KZ2C00011658",
      "currency": "KZT",
@@ -19149,6 +19162,56 @@
      },
      "asOf": "2026-11-02T17:31:19",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb3"
+    },
+    {
+     "ticker": "JSBNb8",
+     "isin": "KZ2C00013696",
+     "currency": "KZT",
+     "ytm": 13.03,
+     "price": 114.4,
+     "coupon": 18.0,
+     "couponFreq": "",
+     "maturity": "13.08.2030",
+     "termMonths": 45,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.008,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 108.4
+     },
+     "ask": {
+      "price": 114.4
+     },
+     "asOf": "2026-11-02T17:31:20",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb8"
+    },
+    {
+     "ticker": "JSBNb9",
+     "isin": "KZ2C00016806",
+     "currency": "KZT",
+     "ytm": 15.0,
+     "price": 108.2066,
+     "coupon": 17.5,
+     "couponFreq": "",
+     "maturity": "12.03.2031",
+     "termMonths": 52,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.001,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 101.4976
+     },
+     "ask": {
+      "price": 108.2066
+     },
+     "asOf": "2026-06-11T17:00:38",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/JSBNb9"
     },
     {
      "ticker": "JSBNb11",
@@ -19566,31 +19629,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSLb14"
     },
     {
-     "ticker": "MFSLb5",
-     "isin": "KZ2P00012339",
-     "currency": "KZT",
-     "ytm": 20.0,
-     "price": 100.4101,
-     "coupon": 21.0,
-     "couponFreq": "",
-     "maturity": "15.04.2027",
-     "termMonths": 5,
-     "liquidity": {
-      "level": "medium",
-      "trades": 2,
-      "volume": 0.01,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 100.5
-     },
-     "ask": {
-      "price": 100.4101
-     },
-     "asOf": "2026-10-30T17:01:28",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSLb5"
-    },
-    {
      "ticker": "MFSLb13",
      "isin": "KZ2P00014574",
      "currency": "KZT",
@@ -19685,6 +19723,31 @@
      },
      "asOf": "2026-11-02T17:02:07",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSLb12"
+    },
+    {
+     "ticker": "MFSLb5",
+     "isin": "KZ2P00012339",
+     "currency": "KZT",
+     "ytm": 20.0,
+     "price": 100.4,
+     "coupon": 21.0,
+     "couponFreq": "",
+     "maturity": "15.04.2027",
+     "termMonths": 5,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.101,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 100.4101
+     },
+     "ask": {
+      "price": 100.4
+     },
+     "asOf": "2026-11-03T11:44:24",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/MFSLb5"
     }
    ]
   },
@@ -19728,79 +19791,79 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
-     "ticker": "SCLBb2",
-     "isin": "KZ2P00014798",
-     "currency": "KZT",
-     "ytm": 20.31,
-     "price": 101.0,
-     "coupon": 21.0,
-     "couponFreq": "",
-     "maturity": "08.08.2028",
-     "termMonths": 21,
-     "liquidity": {
-      "level": "medium",
-      "trades": 17,
-      "volume": 0.021,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 101.0
-     },
-     "ask": {
-      "price": 100.0
-     },
-     "asOf": "2026-11-02T17:02:09",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/SCLBb2"
-    },
-    {
-     "ticker": "SCLBb3",
-     "isin": "KZ2P00017577",
-     "currency": "USD",
-     "ytm": 11.0,
-     "price": 99.996,
-     "coupon": 11.0,
-     "couponFreq": "",
-     "maturity": "21.07.2029",
-     "termMonths": 32,
-     "liquidity": {
-      "level": "medium",
-      "trades": 5,
-      "volume": 0.091,
-      "marketMaker": false
-     },
-     "bid": {
-      "price": 99.996
-     },
-     "ask": {
-      "price": 99.9929
-     },
-     "asOf": "2026-11-02T17:02:26",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/SCLBb3"
-    },
-    {
      "ticker": "SCLBb1",
      "isin": "KZ2P00013113",
      "currency": "KZT",
-     "ytm": 20.27,
+     "ytm": 20.26,
      "price": 99.98,
      "coupon": 20.25,
      "couponFreq": "",
      "maturity": "30.01.2028",
      "termMonths": 15,
      "liquidity": {
-      "level": "low",
-      "trades": 12,
-      "volume": 0.002,
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.2,
       "marketMaker": false
      },
      "bid": {
-      "price": 99.98
+      "price": 97.5
      },
      "ask": {
       "price": 99.98
      },
-     "asOf": "2026-11-02T17:02:09",
+     "asOf": "2026-11-03T11:55:20",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/SCLBb1"
+    },
+    {
+     "ticker": "SCLBb3",
+     "isin": "KZ2P00017577",
+     "currency": "USD",
+     "ytm": 11.0,
+     "price": 99.9957,
+     "coupon": 11.0,
+     "couponFreq": "",
+     "maturity": "21.07.2029",
+     "termMonths": 32,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.046,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 99.996
+     },
+     "ask": {
+      "price": 99.9957
+     },
+     "asOf": "2026-11-03T11:39:37",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/SCLBb3"
+    },
+    {
+     "ticker": "SCLBb2",
+     "isin": "KZ2P00014798",
+     "currency": "KZT",
+     "ytm": 20.31,
+     "price": 100.9999,
+     "coupon": 21.0,
+     "couponFreq": "",
+     "maturity": "08.08.2028",
+     "termMonths": 21,
+     "liquidity": {
+      "level": "medium",
+      "trades": 2,
+      "volume": 0.049,
+      "marketMaker": false
+     },
+     "bid": {
+      "price": 101.0
+     },
+     "ask": {
+      "price": 100.9999
+     },
+     "asOf": "2026-11-03T11:46:37",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/SCLBb2"
     }
    ]
   },
@@ -19984,6 +20047,31 @@
    "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль отсутствует",
    "bonds": [
     {
+     "ticker": "TSSPb1",
+     "isin": "KZ2P00008113",
+     "currency": "KZT",
+     "ytm": 17.99,
+     "price": 99.99,
+     "coupon": 18.0,
+     "couponFreq": "",
+     "maturity": "10.07.2028",
+     "termMonths": 20,
+     "liquidity": {
+      "level": "medium",
+      "trades": 5,
+      "volume": 0.051,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 99.99
+     },
+     "ask": {
+      "price": 98.5658
+     },
+     "asOf": "2026-11-03T11:45:43",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/TSSPb1"
+    },
+    {
      "ticker": "TSSPb6",
      "isin": "KZ2P00014301",
      "currency": "KZT",
@@ -20053,31 +20141,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/TSSPb8"
-    },
-    {
-     "ticker": "TSSPb1",
-     "isin": "KZ2P00008113",
-     "currency": "KZT",
-     "ytm": 17.99,
-     "price": 99.989,
-     "coupon": 18.0,
-     "couponFreq": "",
-     "maturity": "10.07.2028",
-     "termMonths": 20,
-     "liquidity": {
-      "level": "medium",
-      "trades": 7,
-      "volume": 0.001,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 98.56
-     },
-     "asOf": "2026-11-02T17:02:10",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/TSSPb1"
     }
    ]
   },
@@ -20220,24 +20283,24 @@
      "isin": "KZ2P00014673",
      "currency": "USD",
      "ytm": 10.0,
-     "price": 99.998,
+     "price": 99.9992,
      "coupon": 10.0,
      "couponFreq": "",
      "maturity": "11.09.2027",
      "termMonths": 10,
      "liquidity": {
       "level": "medium",
-      "trades": 25,
-      "volume": 0.032,
+      "trades": 2,
+      "volume": 0.014,
       "marketMaker": true
      },
      "bid": {
-      "price": 100.0
+      "price": 99.1864
      },
      "ask": {
-      "price": 99.25
+      "price": 99.9992
      },
-     "asOf": "2026-11-02T17:02:24",
+     "asOf": "2026-11-03T11:50:32",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/MRDNb1"
     }
    ]
@@ -20262,17 +20325,17 @@
      "termMonths": 19,
      "liquidity": {
       "level": "low",
-      "trades": 16,
-      "volume": 0.003,
+      "trades": 4,
+      "volume": 0.011,
       "marketMaker": false
      },
      "bid": {
-      "price": 102.0
+      "price": 101.9966
      },
      "ask": {
-      "price": 101.2029
+      "price": 101.9965
      },
-     "asOf": "2026-11-02T17:02:11",
+     "asOf": "2026-11-03T11:49:08",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/UZPAb1"
     }
    ]
@@ -21442,8 +21505,8 @@
    "kind": "corp",
    "name": "Частная компания BI Development Ltd.",
    "sector": "",
-   "reporting": "unknown",
-   "reportingNote": "страница эмитента не загрузилась (ConnectTimeout)",
+   "reporting": "good",
+   "reportingNote": "данные на 01.07.26; активы больше обязательств; чистая прибыль есть",
    "bonds": [
     {
      "ticker": "BIGDb3",
@@ -21471,6 +21534,31 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb3"
     },
     {
+     "ticker": "BIGDb5",
+     "isin": "KZ2D00012861",
+     "currency": "KZT",
+     "ytm": 16.0,
+     "price": 101.7834,
+     "coupon": 19.5,
+     "couponFreq": "",
+     "maturity": "29.05.2027",
+     "termMonths": 7,
+     "liquidity": {
+      "level": "medium",
+      "trades": 3,
+      "volume": 0.001,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 101.7834
+     },
+     "ask": {
+      "price": 101.7833
+     },
+     "asOf": "2026-11-03T11:42:55",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb5"
+    },
+    {
      "ticker": "BIGDb9",
      "isin": "KZ2D00015351",
      "currency": "KZT",
@@ -21490,31 +21578,6 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb9"
-    },
-    {
-     "ticker": "BIGDb5",
-     "isin": "KZ2D00012861",
-     "currency": "KZT",
-     "ytm": 16.0,
-     "price": 101.7903,
-     "coupon": 19.5,
-     "couponFreq": "",
-     "maturity": "29.05.2027",
-     "termMonths": 7,
-     "liquidity": {
-      "level": "medium",
-      "trades": 12,
-      "volume": 0.002,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 101.7975
-     },
-     "ask": {
-      "price": 100.74
-     },
-     "asOf": "2026-11-02T17:31:16",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb5"
     },
     {
      "ticker": "BIGDb15",
@@ -21617,31 +21680,6 @@
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb6"
     },
     {
-     "ticker": "BIGDb8",
-     "isin": "KZ2D00015344",
-     "currency": "KZT",
-     "ytm": 18.5,
-     "price": 101.9089,
-     "coupon": 20.0,
-     "couponFreq": "",
-     "maturity": "21.05.2028",
-     "termMonths": 18,
-     "liquidity": {
-      "level": "medium",
-      "trades": 2,
-      "volume": 0.003,
-      "marketMaker": true
-     },
-     "bid": {
-      "price": 100.0
-     },
-     "ask": {
-      "price": 101.0
-     },
-     "asOf": "2026-10-29T17:01:09",
-     "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb8"
-    },
-    {
      "ticker": "BIGDb16",
      "isin": "KZ2D00020054",
      "currency": "KZT",
@@ -21661,6 +21699,31 @@
      "ask": null,
      "asOf": null,
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb16"
+    },
+    {
+     "ticker": "BIGDb8",
+     "isin": "KZ2D00015344",
+     "currency": "KZT",
+     "ytm": 18.5,
+     "price": 101.9045,
+     "coupon": 20.0,
+     "couponFreq": "",
+     "maturity": "21.05.2028",
+     "termMonths": 18,
+     "liquidity": {
+      "level": "medium",
+      "trades": 1,
+      "volume": 0.001,
+      "marketMaker": true
+     },
+     "bid": {
+      "price": 101.9045
+     },
+     "ask": {
+      "price": 101.9045
+     },
+     "asOf": "2026-11-03T11:45:28",
+     "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb8"
     },
     {
      "ticker": "BIGDb12",
@@ -21763,24 +21826,24 @@
      "isin": "KZ2D00015419",
      "currency": "KZT",
      "ytm": 18.5,
-     "price": 101.9056,
+     "price": 101.9045,
      "coupon": 20.0,
      "couponFreq": "",
      "maturity": "21.05.2028",
      "termMonths": 18,
      "liquidity": {
       "level": "medium",
-      "trades": 2,
-      "volume": 0.299,
+      "trades": 3,
+      "volume": 0.009,
       "marketMaker": true
      },
      "bid": {
       "price": 101.9056
      },
      "ask": {
-      "price": 101.9056
+      "price": 101.9045
      },
-     "asOf": "2026-11-02T17:01:48",
+     "asOf": "2026-11-03T11:38:22",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/BIGDb11"
     }
    ]
@@ -21878,25 +21941,25 @@
      "ticker": "SWPSb1",
      "isin": "KZ2P00013881",
      "currency": "KZT",
-     "ytm": 20.6,
-     "price": 100.5,
+     "ytm": 18.51,
+     "price": 103.3,
      "coupon": 21.0,
      "couponFreq": "",
      "maturity": "28.05.2028",
      "termMonths": 19,
      "liquidity": {
-      "level": "medium",
-      "trades": 3,
-      "volume": 0.039,
+      "level": "low",
+      "trades": 1,
+      "volume": 0.017,
       "marketMaker": false
      },
      "bid": {
-      "price": 100.5
+      "price": 98.5
      },
      "ask": {
-      "price": 100.5
+      "price": 103.3
      },
-     "asOf": "2026-11-02T17:02:09",
+     "asOf": "2026-11-03T11:45:44",
      "kaseUrl": "https://kase.kz/ru/investors/bonds/SWPSb1"
     }
    ]
