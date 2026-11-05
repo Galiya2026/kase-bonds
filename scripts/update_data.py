@@ -28,6 +28,7 @@ def levels(volumes):
 
 
 ISSUER_URL = "https://kase.kz/ru/listing/issuers/{code}"
+ROE_GOOD = 7.0      # «хорошая» отчётность: рентабельность капитала (ROE) не ниже 7%; подобрано по 4 эмитентам, сверенным с daur
 VALUE = re.compile(r"(-?\d[\d ]*,\d\d)\s*(тыс\.|млн\.?)?\s*([A-Z]{3})")
 
 
@@ -58,11 +59,14 @@ def parse_reporting(html, today):
     if not (assets and liab and profit):
         return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена"
     ok_balance, ok_profit = assets[0] > liab[0], profit[0] > 0
+    m_roe = re.search(r"\bROE\s+(-?\d[\d ]*,\d\d)\s*%", text)
+    roe = float(m_roe.group(1).replace(" ", "").replace(",", ".")) if m_roe else None
     note = (f"данные на {dates[0]}; активы {'больше' if ok_balance else 'не больше'} обязательств; "
-            f"чистая прибыль {'есть' if ok_profit else 'отсутствует'}")
+            f"чистая прибыль {'есть' if ok_profit else 'отсутствует'}"
+            + (f"; ROE {str(roe).replace('.', ',')}%" if roe is not None else ""))
     if age > 12 or not ok_balance:
         return "weak", note
-    if age <= 6 and ok_profit:
+    if age <= 6 and ok_profit and (roe is None or roe >= ROE_GOOD):
         return "good", note
     return "medium", note
 
