@@ -142,7 +142,7 @@ footer { color: var(--fg-2); font-size: 12px; }
 .curtag { font-size: 11px; padding: 1px 6px; border-radius: 999px; background: var(--surface-2, rgba(0,0,0,.06)); color: var(--fg-2); }
 .lownote { font-size: 12px; color: var(--fg-2); }
 .manual { margin-top: 8px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12.5px; }
-.manual input { width: 90px; border: 1px solid var(--line); background: var(--bg); border-radius: 6px; padding: 4px 6px; font-family: var(--mono); }
+.manual input { width: 100px; border: 1px solid var(--accent); background: var(--surface); border-radius: 6px; padding: 5px 8px; font-family: var(--mono); font-size: 13px; }
 .manual .tag { font-size: 11px; color: var(--good); }
 .lower { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 14px 12px; }
 .lower > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 0; }
@@ -416,10 +416,18 @@ function sync() {
 for (const [id, key] of [['cur', 'cur'], ['repSel', 'rep']])
   $(id).onclick = e => { const b = e.target.closest('button'); if (b) { state[key] = b.dataset.v; sync(); } };
 $('chips').onclick = e => { const b = e.target.closest('.chip'); if (b) { state.f[b.dataset.f] = !state.f[b.dataset.f]; sync(); } };
-$('out').onchange = e => {
-  const inp = e.target.closest('input[data-ticker]');
-  if (inp) setManual(inp.dataset.ticker, inp.value);
-};
+document.addEventListener('change', e => {
+  const inp = e.target.closest && e.target.closest('input[data-ticker]');
+  if (inp) {
+    e.stopPropagation();
+    setManual(inp.dataset.ticker, inp.value);
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.target.matches && e.target.matches('input[data-ticker]') && e.key === 'Enter') {
+    e.target.blur();
+  }
+});
 $('out').onclick = e => {
   const h = e.target.closest('.co-head'); if (!h) return;
   const k = h.dataset.key; open.has(k) ? open.delete(k) : open.add(k); render();
