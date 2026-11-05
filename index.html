@@ -157,7 +157,7 @@ footer { color: var(--fg-2); font-size: 12px; }
 
   <div id="banners"></div>
 
-  <p class="lead">Корпоративные облигации с актуальным продавцом, прошедшие фильтр по доходности, цене, сроку не меньше шести месяцев и качеству эмитента. Государственные бумаги исключены.</p>
+  <p class="lead">Корпоративные облигации с актуальным продавцом, прошедшие фильтр по доходности (KZT от 18%, USD от 5%), цене продажи 98–102%, сроку не меньше шести месяцев и качеству эмитента. Государственные бумаги исключены. Состав актуален на момент проверки.</p>
 
   <section class="summary" id="summary" aria-label="Сводка"></section>
 
@@ -178,28 +178,21 @@ footer { color: var(--fg-2); font-size: 12px; }
           <button type="button" data-v="weak" aria-pressed="false">Плохая</button>
         </div>
       </div>
-      <div class="field"><span class="lbl">Ликвидность</span>
-        <div class="seg" id="liqSel">
-          <button type="button" data-v="all" aria-pressed="true">Все</button>
-          <button type="button" data-v="high" aria-pressed="false">Высокая</button>
-          <button type="button" data-v="medium" aria-pressed="false">Средняя</button>
-          <button type="button" data-v="low" aria-pressed="false">Слабая</button>
-        </div>
-      </div>
+
     </div>
     <div class="field"><span class="lbl">Критерии отбора</span>
       <div class="chips" id="chips">
         <button type="button" class="chip" data-f="corp" aria-pressed="true">Только корпоративные</button>
-        <button type="button" class="chip" data-f="kzt" aria-pressed="true">KZT от 17%</button>
+        <button type="button" class="chip" data-f="kzt" aria-pressed="true">KZT от 18%</button>
         <button type="button" class="chip" data-f="usd" aria-pressed="true">USD от 5%</button>
-        <button type="button" class="chip" data-f="price" aria-pressed="true">Цена продажи 95–103%</button>
+        <button type="button" class="chip" data-f="price" aria-pressed="true">Цена продажи 98–102%</button>
         <button type="button" class="chip" data-f="term6" aria-pressed="true">Срок от 6 месяцев</button>
         <button type="button" class="chip" data-f="avail" aria-pressed="true">Есть актуальный продавец</button>
       </div>
     </div>
     <details class="weights">
       <summary>Как выстроен порядок</summary>
-      <p class="hint">Компании и выпуски идут от более к менее приоритетному: сначала отчётность эмитента (хорошая, средняя, нет оценки, плохая), затем ликвидность выпуска (высокая, средняя, слабая), затем объём: оборот за день служит заменой объёма заявки продавца, которого KASE в открытых данных не отдаёт. При равенстве выше выпуск с большей доходностью. Балл от 0 до 100 на карточке для сравнения: отчётность 50%, ликвидность 30%, заявки 20%. Фильтр цены смотрит на лучшую котировку на продажу. Компании делятся на два блока: выше те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней, ниже все остальные. Выпуски в тенге и долларах показаны внутри одной компании.</p>
+      <p class="hint">Выпуски расположены от более к менее приоритетному: сначала отчётность эмитента (хорошая → средняя → нет оценки → плохая), затем ликвидность и объём заявки продавца (оборот за день как прокси, т.к. KASE не отдаёт открытый стакан). При равенстве выше выпуск с большей доходностью. Балл 0–100: отчётность 50%, ликвидность 30%, заявки 20%. Компании выше по приоритету — те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней. Несколько выпусков одного эмитента — это один заёмщик.</p>
     </details>
   </section>
 
@@ -216,8 +209,8 @@ const CFG = {
   REP: { good: 100, medium: 60, unknown: 50, weak: 20 },
   LIQ: { high: 100, medium: 60, low: 25 },
   W: { rep: 50, liq: 30, ord: 20 },        // веса балла на карточке
-  KZT_MIN: 17, USD_MIN: 5, TERM_MIN: 6,    // пороги доходности и срока
-  PRICE_MIN: 95, PRICE_MAX: 103            // цена продажи, % от номинала
+  KZT_MIN: 18, USD_MIN: 5, TERM_MIN: 6,    // пороги доходности и срока
+  PRICE_MIN: 98, PRICE_MAX: 102            // цена продажи, % от номинала
 };
 const REP_RANK = { good: 3, medium: 2, unknown: 1, weak: 0 };
 const LIQ_RANK = { high: 3, medium: 2, low: 1 };
@@ -242,7 +235,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
 };
 
-const state = Object.assign({ cur: 'all', rep: 'all', liq: 'all', f: { corp: true, kzt: true, usd: true, price: true, term6: true, avail: true } }, store.get('kase-state-v3', {}));
+const state = Object.assign({ cur: 'all', rep: 'all', f: { corp: true, kzt: true, usd: true, price: true, term6: true, avail: true } }, store.get('kase-state-v3', {}));
 let DATA = null;
 const open = new Set();
 
@@ -277,7 +270,6 @@ function build() {
     for (const b of c.bonds) {
       pool++;
       if (state.f.corp && c.kind === 'gov') { excluded.push({ c, b, reason: 'государственная бумага' }); continue; }
-      if (state.liq !== 'all' && (b.liquidity && b.liquidity.level) !== state.liq) continue;
       const s = scoreBond(c, b);
       if (s.excluded) { excluded.push({ c, b, reason: s.reason }); continue; }
       if (state.f.term6 && (b.termMonths || 0) < CFG.TERM_MIN) continue;
@@ -305,13 +297,14 @@ function bondHtml(b, c) {
   const ask = b.ask, bid = b.bid;
   return `<div class="bond">
     <div class="bond-top"><span class="tkr">${esc(b.ticker)}</span><span class="curtag">${b.currency === 'USD' ? '$ USD' : '₸ KZT'}</span>${lowWhy ? `<span class="lownote">Ниже по приоритету: ${lowWhy}.</span>` : ''}
+      ${window._bondCount > 1 ? `<span class="lownote" title="Все выпуски этого эмитента в списке относятся к одному заёмщику">⚠ ${window._bondCount} выпуска этого эмитента в списке — это один заёмщик.</span>` : ''}
       <span class="num" style="color:var(--accent);font-weight:600">${b.ytm == null ? 'доходность —' : '≈' + fmt(b.ytm) + '%'}</span>
       <a href="${esc(safeUrl(b.kaseUrl))}" target="_blank" rel="noopener">Карточка KASE ↗</a></div>
     <div class="kv">
       <div><div class="k">Цена последней сделки</div><div class="v">${b.price == null ? '—' : fmt(b.price, 2) + '%'}</div></div>
       <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
       <div><div class="k">До погашения</div><div class="v">${b.termMonths == null ? '—' : b.termMonths + ' мес.'}</div></div>
-      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' маркет-мейкер' : ''}</div></div>
+      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">Ликвидность: ${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' · маркет-мейкер' : ''}</div></div>
       <div><div class="k">Сделок</div><div class="v">${fmt(b.liquidity.trades, 0)}</div></div>
       <div><div class="k">Оборот, млн</div><div class="v">${fmt(b.liquidity.volume, 3)}</div></div>
       <div><div class="k">Покупка (bid)</div><div class="v">${bid ? fmt(bid.price, 2) : '—'}</div></div>
@@ -341,7 +334,7 @@ function coHtml(row, i) {
         <span class="ytm"> ${esc(best.ticker)}${best.ytm == null ? '' : ' · ≈' + fmt(best.ytm) + '%'}</span>
         <span class="bars">${bar(best.s.rep)}${bar(best.s.liq)}${bar(best.s.ord)}</span></span>
     </button>
-    ${isOpen ? `<div class="co-body">${bonds.map(b => bondHtml(b, c)).join('')}</div>` : ''}
+    ${isOpen ? `<div class="co-body">${(() => { window._bondCount = bonds.length; return bonds.map(b => bondHtml(b, c)).join(''); })()}</div>` : ''}
   </article>`;
 }
 
@@ -392,18 +385,18 @@ function banners() {
   const ageH = (Date.now() - new Date(DATA.updatedAt)) / 36e5;
   if (!DATA.demo && ageH > CFG.STALE_DATA_H) h += `<div class="banner stale">Данные устарели: последнее обновление ${Math.floor(ageH)} ч назад.</div>`;
   $('banners').innerHTML = h;
-  $('updated').innerHTML = `Источник: <b>${esc(DATA.source || 'KASE')}</b> · обновлено <b>${tFmt(DATA.updatedAt)}</b> (Алматы)`;
+  $('updated').innerHTML = `Проверено: <b>${tFmt(DATA.updatedAt)}</b> (Алматы) · Источник: <b>${esc(DATA.source || 'KASE')}</b> · Цена и доступность указаны у каждого выпуска`;
 }
 
 /* ---------- управление ---------- */
 function sync() {
   store.set('kase-state-v3', state);
   const mark = (id, val) => document.querySelectorAll('#' + id + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === val)));
-  mark('cur', state.cur); mark('repSel', state.rep); mark('liqSel', state.liq);
+  mark('cur', state.cur); mark('repSel', state.rep);
   document.querySelectorAll('#chips .chip').forEach(b => b.setAttribute('aria-pressed', String(!!state.f[b.dataset.f])));
   render();
 }
-for (const [id, key] of [['cur', 'cur'], ['repSel', 'rep'], ['liqSel', 'liq']])
+for (const [id, key] of [['cur', 'cur'], ['repSel', 'rep']])
   $(id).onclick = e => { const b = e.target.closest('button'); if (b) { state[key] = b.dataset.v; sync(); } };
 $('chips').onclick = e => { const b = e.target.closest('.chip'); if (b) { state.f[b.dataset.f] = !state.f[b.dataset.f]; sync(); } };
 $('out').onclick = e => {
