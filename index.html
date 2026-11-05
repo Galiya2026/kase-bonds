@@ -141,6 +141,9 @@ footer { color: var(--fg-2); font-size: 12px; }
 @media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s; } }
 .curtag { font-size: 11px; padding: 1px 6px; border-radius: 999px; background: var(--surface-2, rgba(0,0,0,.06)); color: var(--fg-2); }
 .lownote { font-size: 12px; color: var(--fg-2); }
+.manual { margin-top: 8px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12.5px; }
+.manual input { width: 90px; border: 1px solid var(--line); background: var(--bg); border-radius: 6px; padding: 4px 6px; font-family: var(--mono); }
+.manual .tag { font-size: 11px; color: var(--good); }
 .lower { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 14px 12px; }
 .lower > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 0; }
 .lower .list { margin-top: 8px; }
@@ -157,7 +160,7 @@ footer { color: var(--fg-2); font-size: 12px; }
 
   <div id="banners"></div>
 
-  <p class="lead">Корпоративные облигации с актуальным продавцом, прошедшие фильтр по доходности (KZT от 18%, USD от 5%), цене продажи 98–102%, сроку не меньше шести месяцев и качеству эмитента. Государственные бумаги исключены. Состав актуален на момент проверки.</p>
+  <p class="lead">Корпоративные облигации с актуальным продавцом, прошедшие фильтр по доходности (KZT от 18%, USD от 5%), цене продажи 98–102%, сроку не меньше шести месяцев и качеству эмитента. Государственные бумаги исключены. Объём заявки продавца можно вписать вручную из терминала брокера — он учитывается при ранжировании и сохраняется в браузере.</p>
 
   <section class="summary" id="summary" aria-label="Сводка"></section>
 
@@ -192,7 +195,7 @@ footer { color: var(--fg-2); font-size: 12px; }
     </div>
     <details class="weights">
       <summary>Как выстроен порядок</summary>
-      <p class="hint">Выпуски расположены от более к менее приоритетному: сначала отчётность эмитента (хорошая → средняя → нет оценки → плохая), затем ликвидность и объём заявки продавца (оборот за день как прокси, т.к. KASE не отдаёт открытый стакан). При равенстве выше выпуск с большей доходностью. Компании выше по приоритету — те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней. Несколько выпусков одного эмитента — это один заёмщик.</p>
+      <p class="hint">Выпуски расположены от более к менее приоритетному: сначала отчётность эмитента (хорошая → средняя → нет оценки → плохая), затем наличие живой заявки продавца и объём заявки (если вписан вручную из терминала — он приоритетнее дневного оборота). При равенстве выше выпуск с большей доходностью. Компании выше по приоритету — те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней. Несколько выпусков одного эмитента — это один заёмщик.</p>
     </details>
   </section>
 
@@ -239,6 +242,19 @@ const state = Object.assign({ cur: 'all', rep: 'all', f: { corp: true, kzt: true
 let DATA = null;
 const open = new Set();
 
+/* ---------- ручной объём заявки ---------- */
+const manualKey = 'kase-manual-vol';
+function loadManual() { try { return JSON.parse(localStorage.getItem(manualKey) || '{}'); } catch { return {}; } }
+function saveManual(obj) { try { localStorage.setItem(manualKey, JSON.stringify(obj)); } catch {} }
+let MANUAL = loadManual();
+function manualVol(ticker) { const v = MANUAL[ticker]; return (v == null || v === '') ? null : Number(v); }
+function setManual(ticker, val) {
+  if (val === '' || val == null || isNaN(val)) delete MANUAL[ticker];
+  else MANUAL[ticker] = Number(val);
+  saveManual(MANUAL);
+  render();
+}
+
 /* ---------- расчёт балла ---------- */
 function scoreBond(c, b) {
   const ask = b.ask, bid = b.bid;
@@ -254,10 +270,10 @@ function scoreBond(c, b) {
   const total = (rep * w.rep + liq * w.liq + ord * w.ord) / sum;
   return { excluded: false, noAsk, rep, liq, ord, total, spread: gap };
 }
-const volOf = b => (b.liquidity && b.liquidity.volume) || 0;
+const volOf = b => { const m = manualVol(b.ticker); return m != null ? m : ((b.liquidity && b.liquidity.volume) || 0); };
 const liqOf = b => LIQ_RANK[b.liquidity && b.liquidity.level] || 0;
 // выпуски внутри компании: ликвидность, затем объём, затем доходность
-const bondCmp = (a, b) => (liqOf(b) - liqOf(a)) || (volOf(b) - volOf(a)) || ((b.ytm ?? -1) - (a.ytm ?? -1));
+const bondCmp = (a, b) => (liqOf(b) - liqOf(a)) || (volOf(b) - volOf(a)) || ((b.ytm ?? -1) - (a.ytm ?? -1)); // приоритет: ликвидность (по обороту как прокси стакана), затем объём, затем доходность
 // компании: отчётность, затем лучший выпуск
 const coCmp = (a, b) => ((REP_RANK[b.c.reporting] ?? 1) - (REP_RANK[a.c.reporting] ?? 1)) || bondCmp(a.best, b.best);
 
@@ -304,7 +320,7 @@ function bondHtml(b, c) {
       <div><div class="k">Цена последней сделки</div><div class="v">${b.price == null ? '—' : fmt(b.price, 2) + '%'}</div></div>
       <div><div class="k">Купон</div><div class="v">${b.coupon == null ? '—' : fmt(b.coupon) + '%'}${b.couponFreq ? ' · ' + esc(b.couponFreq) : ''}</div></div>
       <div><div class="k">До погашения</div><div class="v">${b.termMonths == null ? '—' : b.termMonths + ' мес.'}</div></div>
-      <div><div class="k">Ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">Ликвидность: ${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' · маркет-мейкер' : ''}</div></div>
+      <div><div class="k">Заявка / ликвидность</div><div class="v"><span class="pill ${esc(b.liquidity.level)}">${b.ask ? 'Живая заявка продавца · ' : ''}${LIQ_LABEL[b.liquidity.level] || '—'}</span>${b.liquidity.marketMaker ? ' · маркет-мейкер' : ''}</div></div>
       <div><div class="k">Сделок</div><div class="v">${fmt(b.liquidity.trades, 0)}</div></div>
       <div><div class="k">Оборот, млн</div><div class="v">${fmt(b.liquidity.volume, 3)}</div></div>
       <div><div class="k">Покупка (bid)</div><div class="v">${bid ? fmt(bid.price, 2) : '—'}</div></div>
@@ -312,6 +328,11 @@ function bondHtml(b, c) {
       <div><div class="k">Спред</div><div class="v">${s.spread === null ? '—' : fmt(s.spread) + ' п.п.'}</div></div>
       <div><div class="k">Данные на</div><div class="v">${b.asOf ? b.asOf.slice(8, 10) + '.' + b.asOf.slice(5, 7) + ' ' + b.asOf.slice(11, 16) : '—'}</div></div>
       ${b.isin ? `<div><div class="k">ISIN</div><div class="v">${esc(b.isin)}</div></div>` : ''}
+    </div>
+    <div class="manual">
+      <span>Объём заявки продавца, млн:</span>
+      <input type="number" step="0.001" min="0" placeholder="из терминала" data-ticker="${esc(b.ticker)}" value="${manualVol(b.ticker) ?? ''}">
+      ${manualVol(b.ticker) != null ? '<span class="tag">вручную</span>' : ''}
     </div>
 </div>`;
 }
@@ -395,6 +416,10 @@ function sync() {
 for (const [id, key] of [['cur', 'cur'], ['repSel', 'rep']])
   $(id).onclick = e => { const b = e.target.closest('button'); if (b) { state[key] = b.dataset.v; sync(); } };
 $('chips').onclick = e => { const b = e.target.closest('.chip'); if (b) { state.f[b.dataset.f] = !state.f[b.dataset.f]; sync(); } };
+$('out').onchange = e => {
+  const inp = e.target.closest('input[data-ticker]');
+  if (inp) setManual(inp.dataset.ticker, inp.value);
+};
 $('out').onclick = e => {
   const h = e.target.closest('.co-head'); if (!h) return;
   const k = h.dataset.key; open.has(k) ? open.delete(k) : open.add(k); render();
