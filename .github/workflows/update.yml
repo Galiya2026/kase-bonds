@@ -1,7 +1,5 @@
 name: Обновление данных KASE
 on:
-  schedule:
-    - cron: "0 7 * * 2"
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -21,4 +19,3 @@ jobs:
           git config user.email "kase-bot@users.noreply.github.com"
           git add data.json
           git diff --cached --quiet || (git commit -m "Обновление данных KASE" && git push)
-
