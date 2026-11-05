@@ -192,7 +192,7 @@ footer { color: var(--fg-2); font-size: 12px; }
     </div>
     <details class="weights">
       <summary>Как выстроен порядок</summary>
-      <p class="hint">Выпуски расположены от более к менее приоритетному: сначала отчётность эмитента (хорошая → средняя → нет оценки → плохая), затем ликвидность и объём заявки продавца (оборот за день как прокси, т.к. KASE не отдаёт открытый стакан). При равенстве выше выпуск с большей доходностью. Балл 0–100: отчётность 50%, ликвидность 30%, заявки 20%. Компании выше по приоритету — те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней. Несколько выпусков одного эмитента — это один заёмщик.</p>
+      <p class="hint">Выпуски расположены от более к менее приоритетному: сначала отчётность эмитента (хорошая → средняя → нет оценки → плохая), затем ликвидность и объём заявки продавца (оборот за день как прокси, т.к. KASE не отдаёт открытый стакан). При равенстве выше выпуск с большей доходностью. Компании выше по приоритету — те, у кого есть выпуск с хорошей отчётностью и ликвидностью не ниже средней. Несколько выпусков одного эмитента — это один заёмщик.</p>
     </details>
   </section>
 
@@ -313,11 +313,7 @@ function bondHtml(b, c) {
       <div><div class="k">Данные на</div><div class="v">${b.asOf ? b.asOf.slice(8, 10) + '.' + b.asOf.slice(5, 7) + ' ' + b.asOf.slice(11, 16) : '—'}</div></div>
       ${b.isin ? `<div><div class="k">ISIN</div><div class="v">${esc(b.isin)}</div></div>` : ''}
     </div>
-    <div class="why" aria-label="Из чего сложился балл">
-      <div><div class="k"><span>Отчётность</span><span class="num">${Math.round(s.rep)}</span></div>${bar(s.rep)}</div>
-      <div><div class="k"><span>Ликвидность</span><span class="num">${Math.round(s.liq)}</span></div>${bar(s.liq)}</div>
-      <div><div class="k"><span>Заявки</span><span class="num">${Math.round(s.ord)}</span></div>${bar(s.ord)}</div>
-    </div></div>`;
+</div>`;
 }
 
 function coHtml(row, i) {
@@ -330,9 +326,9 @@ function coHtml(row, i) {
       <span style="min-width:0"><span class="co-name">${esc(c.name)}</span>
         <span class="co-meta"><span class="pill ${esc(c.reporting)}" title="${esc(c.reportingNote)}">Отчётность: ${REP_LABEL[c.reporting] || '—'}</span>
         <span>${esc(c.sector || '')} · ${n} ${plural(n, 'выпуск', 'выпуска', 'выпусков')} · ${curLabel}</span></span></span>
-      <span class="co-right"><span class="score">${Math.round(best.s.total)}</span>
+      <span class="co-right">
         <span class="ytm"> ${esc(best.ticker)}${best.ytm == null ? '' : ' · ≈' + fmt(best.ytm) + '%'}</span>
-        <span class="bars">${bar(best.s.rep)}${bar(best.s.liq)}${bar(best.s.ord)}</span></span>
+      </span>
     </button>
     ${isOpen ? `<div class="co-body">${(() => { window._bondCount = bonds.length; return bonds.map(b => bondHtml(b, c)).join(''); })()}</div>` : ''}
   </article>`;
