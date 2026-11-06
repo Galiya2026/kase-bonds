@@ -1,6 +1,8 @@
 name: Обновление данных KASE
 on:
   workflow_dispatch: {}
+  schedule:
+    - cron: "0 7 * * 2"      # каждый вторник в 12:00 по Алматы
 permissions:
   contents: write
 jobs:
