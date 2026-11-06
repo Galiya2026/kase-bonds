@@ -59,36 +59,48 @@ def parse_reporting(html, today):
     if not (assets and liab and profit):
         return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена"
     ok_balance, ok_profit = assets[0] > liab[0], profit[0] > 0
+    equity, charter = _row(text, "Собственный капитал", 1), _row(text, "Уставный капитал", 1)
+    ok_capital = not (equity and charter) or equity[0] >= charter[0]   # капитал не меньше уставного (нет накопленных убытков)
     m_roe = re.search(r"\bROE\s+(-?\d[\d ]*,\d\d)\s*%", text)
     roe = float(m_roe.group(1).replace(" ", "").replace(",", ".")) if m_roe else None
     note = (f"данные на {dates[0]}; активы {'больше' if ok_balance else 'не больше'} обязательств; "
             f"чистая прибыль {'есть' if ok_profit else 'отсутствует'}"
+            + ("" if ok_capital else "; капитал ниже уставного")
             + (f"; ROE {str(roe).replace('.', ',')}%" if roe is not None else ""))
     if age > 12 or not ok_balance:
         return "weak", note
-    if age <= 6 and ok_profit and (roe is None or roe >= ROE_GOOD):
+    if age <= 6 and ok_profit and ok_capital and (roe is None or roe >= ROE_GOOD):
         return "good", note
     return "medium", note
 
 
-def fetch_reporting(codes, today, budget=180):
-    """Скачивает страницы эмитентов. Не дольше budget секунд; если сайт не отвечает подряд 3 раза, останавливается."""
+def fetch_reporting(codes, today, budget=300):
+    """Страницы эмитентов грузим в 4 потока, каждую до 3 попыток. Одна неудача не останавливает остальные."""
     import requests
-    res, fails, t0 = {}, 0, time.time()
-    for n, code in enumerate(codes, 1):
-        if time.time() - t0 > budget or fails >= 3:
-            res[code] = ("unknown", "страница эмитента не загружена вовремя")
-            continue
-        try:
-            r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=(8, 15))
-            r.raise_for_status()
-            res[code] = parse_reporting(r.text, today)
-            fails = 0
-        except Exception as e:
-            fails += 1
-            res[code] = ("unknown", f"страница эмитента не загрузилась ({type(e).__name__})")
-        print(f"отчётность {n}/{len(codes)} {code}: {res[code][0]}", flush=True)
-        time.sleep(0.3)
+    from concurrent.futures import ThreadPoolExecutor
+    t0 = time.time()
+
+    def one(code):
+        err = "не успела загрузиться"
+        for attempt in range(3):
+            if time.time() - t0 > budget:
+                break
+            try:
+                r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=(8, 20))
+                r.raise_for_status()
+                return code, parse_reporting(r.text, today)
+            except Exception as e:
+                err = f"не загрузилась: {type(e).__name__}"
+                time.sleep(1.5 * (attempt + 1))
+        return code, ("unknown", f"страница эмитента {err}")
+
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        res = dict(ex.map(one, codes))
+    ok = sum(1 for v in res.values() if v[0] != "unknown")
+    print(f"Отчётность оценена у {ok} из {len(codes)} эмитентов за {round(time.time() - t0)} с", flush=True)
+    for c, v in res.items():
+        if v[0] == "unknown":
+            print("  нет оценки:", c, "-", v[1], flush=True)
     return res
 
 
@@ -173,7 +185,7 @@ def need_codes(items):
     for x in items:
         info = ISSUERS.get(x.get("org_code"), {})
         o = x.get("best_offer")
-        if x.get("org_code") and info.get("kind") != "gov" and seller_live(x, newest) and 95 <= o <= 103 and (x.get("dtm") or 0) >= 182:
+        if x.get("org_code") and info.get("kind") != "gov" and seller_live(x, newest) and 98 <= o <= 102 and (x.get("dtm") or 0) >= 182:
             codes.add(x["org_code"])
     return sorted(codes)
 
