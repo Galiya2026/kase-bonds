@@ -3,11 +3,19 @@ on:
   workflow_dispatch: {}
   schedule:
     - cron: "0 7 * * 2"
+  push:
+    paths:
+      - "index.html"
 permissions:
   contents: write
   pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   update:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +30,21 @@ jobs:
           git config user.email "kase-bot@users.noreply.github.com"
           git add data.json
           git diff --cached --quiet || (git commit -m "Обновление данных KASE" && git push)
-      - name: Опубликовать сайт
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Не удалось запустить публикацию сайта автоматически"
+  deploy:
+    needs: update
+    if: ${{ !cancelled() && (needs.update.result == 'success' || needs.update.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
+   
