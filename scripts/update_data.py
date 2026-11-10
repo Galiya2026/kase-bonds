@@ -43,21 +43,36 @@ def _row(text, label, n):
     return out
 
 
+PCT = re.compile(r"(-?\d[\d ]*,\d\d)\s*%")
+
+
+def _pct(text, label, n):
+    i = text.find(label)
+    if i < 0:
+        return []
+    return [float(v.replace(" ", "").replace(",", ".")) for v in PCT.findall(text[i + len(label): i + len(label) + 80])[:n]]
+
+
 def parse_reporting(html, today):
-    """Оценка отчётности по странице эмитента: (good / medium / weak / unknown, пояснение)."""
+    """Оценка отчётности по странице эмитента: (good / medium / weak / unknown, пояснение, показатели по периодам)."""
     from bs4 import BeautifulSoup
     text = re.sub(r"\s+", " ", BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
     m = re.search(r"Финансовые показатели((?: \d\d\.\d\d\.\d\d)+)", text)
     if not m:
-        return "unknown", "нет данных на странице эмитента"
+        return "unknown", "нет данных на странице эмитента", None
     dates = m.group(1).split()
     d, mth, y = (int(x) for x in dates[0].split("."))
     last = dt.date(2000 + y, mth, d)
     age = (today - last).days / 30.4
+    t = text[m.start():]
+    n = len(dates)
+    fin = {"dates": dates, "equity": _row(t, "Собственный капитал", n), "charter": _row(t, "Уставный капитал", n),
+           "assets": _row(t, "Совокупные активы", n), "liabilities": _row(t, "Совокупные обязательства", n),
+           "profit": _row(t, "Чистая прибыль", n), "roa": _pct(t, "ROA", n), "roe": _pct(t, "ROE", n), "ros": _pct(t, "ROS", n)}
     assets, liab, profit = (_row(text, lbl, len(dates)) for lbl in
                             ("Совокупные активы", "Совокупные обязательства", "Чистая прибыль"))
     if not (assets and liab and profit):
-        return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена"
+        return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена", None
     ok_balance, ok_profit = assets[0] > liab[0], profit[0] > 0
     equity, charter = _row(text, "Собственный капитал", 1), _row(text, "Уставный капитал", 1)
     ok_capital = not (equity and charter) or equity[0] >= charter[0]   # капитал не меньше уставного (нет накопленных убытков)
@@ -68,10 +83,10 @@ def parse_reporting(html, today):
             + ("" if ok_capital else "; капитал ниже уставного")
             + (f"; ROE {str(roe).replace('.', ',')}%" if roe is not None else ""))
     if age > 12 or not ok_balance:
-        return "weak", note
+        return "weak", note, fin
     if age <= 6 and ok_profit and ok_capital and (roe is None or roe >= ROE_GOOD):
-        return "good", note
-    return "medium", note
+        return "good", note, fin
+    return "medium", note, fin
 
 
 def fetch_reporting(codes, today, budget=300):
@@ -92,7 +107,7 @@ def fetch_reporting(codes, today, budget=300):
             except Exception as e:
                 err = f"не загрузилась: {type(e).__name__}"
                 time.sleep(1.5 * (attempt + 1))
-        return code, ("unknown", f"страница эмитента {err}")
+        return code, ("unknown", f"страница эмитента {err}", None)
 
     with ThreadPoolExecutor(max_workers=4) as ex:
         res = dict(ex.map(one, codes))
@@ -167,8 +182,9 @@ def build(items, reporting=None):
             "id": code.lower(), "kind": info.get("kind", "corp"),
             "name": info.get("name") or x.get("org_short_name_ru") or x.get("org_name_ru") or code,
             "sector": info.get("sector", ""),
-            "reporting": info.get("reporting") or reporting.get(code, ("unknown", ""))[0],
-            "reportingNote": info.get("note") or reporting.get(code, ("", ""))[1], "bonds": []})
+            "reporting": info.get("reporting") or reporting.get(code, ("unknown", "", None))[0],
+            "reportingNote": info.get("note") or reporting.get(code, ("", "", None))[1],
+            "fin": (reporting.get(code) or ("", "", None))[2], "bonds": []})
         c["bonds"].append({
             "ticker": x["code"], "isin": tk.get("nin", ""),
             "currency": tk.get("currency") or x.get("currency_type") or "KZT",
