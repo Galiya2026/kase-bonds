@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""Собирает data.json для дашборда из открытого API KASE (список облигаций).
+
+Запуск:  python scripts/update_data.py            (берёт данные с сайта)
+         python scripts/update_data.py файл.json  (берёт сохранённый ответ API, для проверки)
+Если данные получить не удалось, старый data.json остаётся нетронутым.
+Зависимости: pip install requests beautifulsoup4
+"""
+import json, re, sys, time, signal, datetime as dt
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "data.json"
+ISSUERS = json.loads((Path(__file__).parent / "issuers.json").read_text(encoding="utf-8"))["issuers"]
+API = ("https://kase.kz/api/instruments/securities?ticker_category=alternative_commercial_bonds,"
+       "alternative_bonds,main_bonds,main_commercial_bonds,private_bonds&category=bond&is_excluded=false&search=")
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; bonds-dashboard/1.0)", "Accept": "application/json",
+           "Referer": "https://kase.kz/ru/markets/corporate-bonds"}
+
+
+def levels(volumes):
+    """Ликвидность по терцилям оборота (в тенге) среди выпусков, по которым были сделки."""
+    vals = sorted(v for v in volumes.values() if v)
+    if not vals:
+        return {k: "low" for k in volumes}
+    hi, mid = vals[int(len(vals) * 2 / 3)], vals[int(len(vals) / 3)]
+    return {k: ("high" if v and v >= hi else "medium" if v and v >= mid else "low") for k, v in volumes.items()}
+
+
+ISSUER_URL = "https://kase.kz/ru/listing/issuers/{code}"
+ROE_GOOD = 7.0      # «хорошая» отчётность: рентабельность капитала (ROE) не ниже 7%; подобрано по 4 эмитентам, сверенным с daur
+VALUE = re.compile(r"(-?\d[\d ]*,\d\d)\s*(тыс\.|млн\.?)?\s*([A-Z]{3})")
+
+
+def _row(text, label, n):
+    i = text.find(label)
+    if i < 0:
+        return []
+    out = []
+    for num, unit, _cur in VALUE.findall(text[i + len(label): i + len(label) + 160])[:n]:
+        k = {"тыс.": 1e3, "млн": 1e6, "млн.": 1e6}.get(unit, 1)
+        out.append(float(num.replace(" ", "").replace(",", ".")) * k)
+    return out
+
+
+def parse_reporting(html, today):
+    """Оценка отчётности по странице эмитента: (good / medium / weak / unknown, пояснение)."""
+    from bs4 import BeautifulSoup
+    text = re.sub(r"\s+", " ", BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
+    m = re.search(r"Финансовые показатели((?: \d\d\.\d\d\.\d\d)+)", text)
+    if not m:
+        return "unknown", "нет данных на странице эмитента"
+    dates = m.group(1).split()
+    d, mth, y = (int(x) for x in dates[0].split("."))
+    last = dt.date(2000 + y, mth, d)
+    age = (today - last).days / 30.4
+    assets, liab, profit = (_row(text, lbl, len(dates)) for lbl in
+                            ("Совокупные активы", "Совокупные обязательства", "Чистая прибыль"))
+    if not (assets and liab and profit):
+        return "unknown", f"отчётность на {dates[0]}, часть показателей не найдена"
+    ok_balance, ok_profit = assets[0] > liab[0], profit[0] > 0
+    equity, charter = _row(text, "Собственный капитал", 1), _row(text, "Уставный капитал", 1)
+    ok_capital = not (equity and charter) or equity[0] >= charter[0]   # капитал не меньше уставного (нет накопленных убытков)
+    m_roe = re.search(r"\bROE\s+(-?\d[\d ]*,\d\d)\s*%", text)
+    roe = float(m_roe.group(1).replace(" ", "").replace(",", ".")) if m_roe else None
+    note = (f"данные на {dates[0]}; активы {'больше' if ok_balance else 'не больше'} обязательств; "
+            f"чистая прибыль {'есть' if ok_profit else 'отсутствует'}"
+            + ("" if ok_capital else "; капитал ниже уставного")
+            + (f"; ROE {str(roe).replace('.', ',')}%" if roe is not None else ""))
+    if age > 12 or not ok_balance:
+        return "weak", note
+    if age <= 6 and ok_profit and ok_capital and (roe is None or roe >= ROE_GOOD):
+        return "good", note
+    return "medium", note
+
+
+def fetch_reporting(codes, today, budget=300):
+    """Страницы эмитентов грузим в 4 потока, каждую до 3 попыток. Одна неудача не останавливает остальные."""
+    import requests
+    from concurrent.futures import ThreadPoolExecutor
+    t0 = time.time()
+
+    def one(code):
+        err = "не успела загрузиться"
+        for attempt in range(3):
+            if time.time() - t0 > budget:
+                break
+            try:
+                r = requests.get(ISSUER_URL.format(code=code), headers=HEADERS, timeout=(8, 20))
+                r.raise_for_status()
+                return code, parse_reporting(r.text, today)
+            except Exception as e:
+                err = f"не загрузилась: {type(e).__name__}"
+                time.sleep(1.5 * (attempt + 1))
+        return code, ("unknown", f"страница эмитента {err}")
+
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        res = dict(ex.map(one, codes))
+    ok = sum(1 for v in res.values() if v[0] != "unknown")
+    print(f"Отчётность оценена у {ok} из {len(codes)} эмитентов за {round(time.time() - t0)} с", flush=True)
+    for c, v in res.items():
+        if v[0] == "unknown":
+            print("  нет оценки:", c, "-", v[1], flush=True)
+    return res
+
+
+def seller_live(x, newest):
+    """Есть ли настоящая заявка продавца. Если живых заявок нет, KASE подставляет цену последней сделки
+    (цена покупки = цена продажи = цена сделки), а дата обновления остаётся старой."""
+    ask, bid, last = x.get("best_offer"), x.get("best_bid"), x.get("price")
+    if not ask:
+        return False
+    if bid == ask == last:
+        return False
+    d = (x.get("date0") or "")[:10]
+    try:
+        return (newest - dt.date.fromisoformat(d)).days <= 3
+    except ValueError:
+        return False
+
+
+def liquidity_level(x, live):
+    """Ликвидность: высокая — есть живая заявка продавца и (маркет-мейкер или 5+ сделок за день);
+    средняя — есть живая заявка и хотя бы одна сделка; слабая — всё остальное."""
+    deals = x.get("dealcnt") or 0
+    if live and (x.get("market_makers") or deals >= 5):
+        return "high"
+    if live and deals >= 1:
+        return "medium"
+    return "low"
+
+
+def calc_yield(coupon, price, dtm, kase):
+    """Простая доходность к погашению по цене продажи, % годовых. Для индексируемых бумаг
+    (купон сильно расходится с доходностью KASE) берём доходность KASE."""
+    if not coupon or not price or not dtm or dtm <= 0:
+        return kase
+    y = (coupon + (100 - price) / (dtm / 365)) / ((100 + price) / 2) * 100
+    if kase is not None and abs(y - kase) > 4:
+        return kase
+    return round(y, 2)
+
+
+def ddmmyyyy(iso):
+    try:
+        return dt.date.fromisoformat((iso or "")[:10]).strftime("%d.%m.%Y")
+    except ValueError:
+        return ""
+
+
+def build(items, reporting=None):
+    reporting = reporting or {}
+    items = [x for x in items if x.get("code") and (x.get("ticker") or {}).get("excl_date") is None]
+    lv = levels({x["code"]: x.get("volkzt") for x in items})
+    newest = max(dt.date.fromisoformat(x["date0"][:10]) for x in items if x.get("date0"))
+    companies = {}
+    for x in items:
+        tk = x.get("ticker") or {}
+        code = x.get("org_code") or x["code"]
+        info = ISSUERS.get(code, {})
+        dtm = x.get("dtm")
+        live = seller_live(x, newest)
+        level = liquidity_level(x, live)
+        bid = x.get("best_bid") if live else None
+        ask = x.get("best_offer") if live else None
+        c = companies.setdefault(code, {
+            "id": code.lower(), "kind": info.get("kind", "corp"),
+            "name": info.get("name") or x.get("org_short_name_ru") or x.get("org_name_ru") or code,
+            "sector": info.get("sector", ""),
+            "reporting": info.get("reporting") or reporting.get(code, ("unknown", ""))[0],
+            "reportingNote": info.get("note") or reporting.get(code, ("", ""))[1], "bonds": []})
+        c["bonds"].append({
+            "ticker": x["code"], "isin": tk.get("nin", ""),
+            "currency": tk.get("currency") or x.get("currency_type") or "KZT",
+            "ytm": calc_yield(tk.get("cupon"), ask, dtm, x.get("dohod")) if ask else x.get("dohod"),
+            "ytmKase": x.get("dohod"), "price": x.get("price") or x.get("close_price"),
+            "coupon": tk.get("cupon"), "couponFreq": "", "maturity": ddmmyyyy(tk.get("finish_date")),
+            "termMonths": round(dtm / 30.4) if dtm is not None else None,
+            "liquidity": {"level": level, "trades": x.get("dealcnt"),
+                          "volume": round(x["volkzt"] / 1e6, 3) if x.get("volkzt") else None,
+                          "marketMaker": bool(x.get("market_makers"))},
+            "bid": {"price": bid} if bid else None, "ask": {"price": ask} if ask else None,
+            "asOf": x.get("date0"),
+            "kaseUrl": f"https://kase.kz/ru/investors/bonds/{x['code']}",
+        })
+    return {"demo": False, "source": "kase.kz", "updatedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "companies": sorted(companies.values(), key=lambda c: c["name"])}
+
+
+def need_codes(items):
+    """Эмитенты, у которых есть выпуск с живым продавцом в нужном ценовом окне: только их отчётность и нужна."""
+    newest = max(dt.date.fromisoformat(x["date0"][:10]) for x in items if x.get("date0"))
+    codes = set()
+    for x in items:
+        info = ISSUERS.get(x.get("org_code"), {})
+        o = x.get("best_offer")
+        if x.get("org_code") and info.get("kind") != "gov" and seller_live(x, newest) and 98 <= o <= 102 and (x.get("dtm") or 0) >= 182:
+            codes.add(x["org_code"])
+    return sorted(codes)
+
+
+if __name__ == "__main__":
+    if hasattr(signal, "SIGALRM"):                   # страховка: не висеть дольше 8 минут
+        def _timeout(*_):
+            raise TimeoutError("превышено общее время работы (8 минут)")
+        signal.signal(signal.SIGALRM, _timeout)
+        signal.alarm(480)
+    try:
+        if len(sys.argv) > 1:
+            items = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+        else:
+            import requests
+            print("Загружаю список облигаций с kase.kz…", flush=True)
+            r = requests.get(API, headers=HEADERS, timeout=(8, 30))
+            r.raise_for_status()
+            items = r.json()
+        print("Получено выпусков:", len(items) if isinstance(items, list) else "?", flush=True)
+        if not isinstance(items, list) or not items:
+            raise RuntimeError("API вернул пустой или неожиданный ответ")
+        codes = need_codes(items)
+        print("Эмитентов для проверки отчётности:", len(codes), flush=True)
+        reporting = fetch_reporting(codes, dt.date.today()) if len(sys.argv) == 1 else {}
+        data = build(items, reporting)
+        if not data["companies"]:
+            raise RuntimeError("Не найдено ни одного выпуска")
+    except Exception as e:
+        print("ОШИБКА:", type(e).__name__, e, file=sys.stderr)
+        sys.exit(1)
+    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("Эмитентов:", len(data["companies"]), "выпусков:", sum(len(c["bonds"]) for c in data["companies"]))
